@@ -5,8 +5,8 @@
 lisäykset tulee julkaista aina **feature/nimi**-branchiin. 
 
 **Ohjeet:**
-1. Tee muutokset.
-2. tee julkaisu **feature/[nimi]**-branchiin.
+1. Luo uusi branch haarautumalla **feature/[nimi]**-branchista.
+2. Tee muutokset.
 3. Tee pull request pääbranchiin.
 
 **Tällä varmistetaan, että:**
