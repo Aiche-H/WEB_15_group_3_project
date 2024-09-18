@@ -1,0 +1,38 @@
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FFFFE0;
+    border: 1px solid #000080;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input, form textarea {
+    width: 96%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #000080;
+    border-radius: 5px;
+  }
+  
+  form input:focus, form textarea:focus {
+    border-color: #000080;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  form textarea {
+    height: 200px;
+  }
+
+  form [type="submit"]{
+    width: 99%;
+    background-color: #303098;
+    color: #FFFFE0;
+  }
