@@ -19,3 +19,6 @@ lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 ## päivitykset ja lisäykset
 
 -pohjat planeetoille tehty ja meta tiedot lisätty
+
+
+Saatu Git version hallinta käyttöön Markus
