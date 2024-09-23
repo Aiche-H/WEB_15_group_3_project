@@ -20,7 +20,7 @@ lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 
 -pohjat planeetoille tehty ja meta tiedot lisätty
 
--testattu uusi branch + merge + testattu visual studio codessa - Johannes
+-testattu uusi branch + merge + testattu visual studio codessa - Johannes + markus
 ```html
     <main>
         <p>testi</p>
