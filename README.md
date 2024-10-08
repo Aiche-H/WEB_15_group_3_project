@@ -21,7 +21,16 @@ lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 -pohjat planeetoille tehty ja meta tiedot lisätty
 
 -testattu uusi branch + merge + testattu visual studio codessa - Johannes + markus
-```html
-    <main>
-        <p>testi</p>
-    </main>
+    ```html
+            <main>
+                <p>testi</p>
+            </main>
+
+**Olen toteuttanut seuraavat muutokset sivuston navigointiin:**
+
+* **Uusi logo ja sivunavigointi:** Lisäsin uuden, visuaalisesti houkuttelevan logon ja implementoin toimivan sivunavigoinnin, joka parantaa sivuston käytettävyyttä.
+* **Parannettu JavaScript-toiminnallisuus:** Muokkaamalla js-tiedostoa varmistin, että sivunavigointi toimii sujuvasti ja responsiivisesti kaikilla laitteilla.
+* **Dropdown-valikko planeetoille:** Lisäsin dropdown-valikon, jonka avulla käyttäjät voivat helposti siirtymällä eri planeettojen välillä.
+* **Visuaaliset parannukset Materialize CSS:llä:** Hyödynnin Materialize CSS -kirjastoa luodakseni miellyttävän käyttökokemuksen:
+    * **Hover-efekti:** Navigointipalkki vaihtuu vaaleammaksi väriltään, kun käyttäjä siirtää hiiren osoittimen sen päälle.
+    * **Selkeät linkit:** Avattavan valikon linkkien väri on muutettu mustaksi, mikä parantaa luettavuutta.
