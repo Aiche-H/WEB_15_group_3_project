@@ -21,10 +21,11 @@ lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 -pohjat planeetoille tehty ja meta tiedot lisätty
 
 -testattu uusi branch + merge + testattu visual studio codessa - Johannes + markus
-    ```html
-            <main>
-                <p>testi</p>
-            </main>
+```html
+    <main>
+        <p>testi</p>
+    </main>
+```
 
 **Olen toteuttanut seuraavat muutokset sivuston navigointiin:**
 
