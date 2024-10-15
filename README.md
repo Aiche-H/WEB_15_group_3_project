@@ -35,3 +35,27 @@ lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 * **Visuaaliset parannukset Materialize CSS:llä:** Hyödynnin Materialize CSS -kirjastoa luodakseni miellyttävän käyttökokemuksen:
     * **Hover-efekti:** Navigointipalkki vaihtuu vaaleammaksi väriltään, kun käyttäjä siirtää hiiren osoittimen sen päälle.
     * **Selkeät linkit:** Avattavan valikon linkkien väri on muutettu mustaksi, mikä parantaa luettavuutta.
+
+
+**2024-10-15**
+
+Kyllä, voin kirjoittaa tämän sinulle ammattimaisemmin suomeksi:
+
+**Commit viesti:**
+
+Lisättiin kaikille sivuille yhteinen footer [alaviite] sekä varmistettiin, että ikonit toimivat kaikilla sivuilla. Lisättiin myös navigaatio kaikkiin index-tiedostoihin.
+
+**Muutokset:**
+
+* Lisättiin footer kaikille sivuille
+* Korjattiin ikonien toimiminen kaikilla sivuilla
+* Lisättiin navigaatio kaikkiin index-tiedostoihin
+
+**Tiedostomuutokset:**
+
+* README.md (muokattu)
+* index.html (muokattu)
+* indexFiles/ (kansio)
+    * indexContact.html (muokattu)
+    * indexEarth.html (muokattu)
+    * ... (muut index-tiedostot)
