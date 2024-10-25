@@ -97,8 +97,8 @@ Jokaiselle sivulle oma kansionsa, joka sisältää:
 
 Sisältää koko projektin laajuiset tiedostot:
 
-* CSS-tiedostot
-* JavaScript-tiedostot
+* `📁CSS`: global.css
+* `📁javascript`: global.js
 
 ## Muutoksien hyödyt
 
