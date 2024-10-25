@@ -76,10 +76,10 @@ Projektin kansiorakenne on päivitetty selkeämmäksi ja paremmin skaalautuvaksi
 
 Sisältää kaikki projektin yleiset resurssit:
 
-* Kuvat
-* Ladattavat tiedostot
-* Kirjastot
-* Frameworkit
+* `📁images/`:projektin laajat kuvat
+* `📁data/`:projektin laajat ladattavat tiedostot
+* `📁css/`:projektin laajat css kirjastot ja frameworkit
+* `📁javascript/`:projektin laajat javascript kirjastot ja frameworkit
 
 ### 📁 pages/
 
