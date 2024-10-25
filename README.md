@@ -85,13 +85,13 @@ Sisältää kaikki projektin yleiset resurssit:
 
 Jokaiselle sivulle oma kansionsa, joka sisältää:
 
-* `index.html` - Sivun päätiedosto
+* `index.html` - Sivun päätiedosto esim: `earth.html`
 * `📁local-css/` - Sivukohtaiset CSS-tiedostot
 * `📁local-javascript/` - Sivukohtaiset JavaScript-tiedostot
 * `📁local-data/` - Sivukohtainen data
 * `📁local-images/` - Sivukohtaiset kuvat
 
-*Huom: joka tiedosto sivun omassa kansiossa nimetaan esim. `earth.css` korvataan kunkin sivun nimellä*
+*Huom: joka tiedosto sivun omassa kansiossa nimetään esim. `earth.css` korvataan kunkin sivun nimellä*
 
 ### 📁 global/
 
