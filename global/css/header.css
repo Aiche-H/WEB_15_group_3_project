@@ -1,20 +1,10 @@
-.headerContainer {
-  width: clamp(280px, 60vw, 650px);
-  padding: 15px;
-  transform: translate(10vw, 55px);
-  backdrop-filter: var(--backdrop);
-  border-radius: 15px;
-  box-shadow: var(--box-shadow);
-  z-index: 10;
-}
-
 .headerImg {
   height: clamp(250px, 40vw, 420px);
-  transform: translateX(-20vw);
 }
 
 .navContainer {
   width: clamp(650px, 75vw, 1080px);
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -1,19 +1,8 @@
-.sunStructure{
-    width: 45%;
-    margin: auto;
-}
-
-.customContainer ul li {
+.decorated {
     list-style-type: disc !important;
     margin-left: 15px;
 }
 
 span {
     width: 100%;
-}
-
-@media only screen and (max-width: 1440px) {
-   .sunStructure{
-    width: 80%;
-} 
 }
