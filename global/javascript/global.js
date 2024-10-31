@@ -13,4 +13,5 @@ $(document).ready(function(){
         constrainWidth: false,
         closeOnClick: true
       });
+    $(" .materialboxed").materialbox();
 });

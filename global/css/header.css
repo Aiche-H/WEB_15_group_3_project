@@ -1,0 +1,111 @@
+.headerContainer {
+  width: clamp(280px, 60vw, 650px);
+  padding: 15px;
+  transform: translate(10vw, 55px);
+  backdrop-filter: var(--backdrop);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  z-index: 10;
+}
+
+.headerImg {
+  height: clamp(250px, 40vw, 420px);
+  transform: translateX(-20vw);
+}
+
+.navContainer {
+  width: clamp(650px, 75vw, 1080px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 150px;
+}
+
+.itemContainer {
+  width: 7%;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+
+.navItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  opacity: 0.3;
+  transition: 0.3s;
+}
+
+.navItem:hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)  scale(1.1);
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  opacity: 1;
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 0px 4px rgba(0, 0, 0, 1),
+    inset 0px 0px 0px 6px rgba(255, 255, 255, 1) !important;
+}
+
+.nameHidden {
+  height: 35px;
+  width: 90px;
+  opacity: 0.3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(90deg) translate(85%, 100%);
+  text-align: center;
+  transition: 0.3s;
+  cursor: default;
+}
+
+.nameVisible {
+  height: 35px;
+  width: 90px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(90deg) translate(85%, 70%);
+  text-align: center;
+  border-bottom: 1px solid var(--text-color);
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+  transition: 0.3s;
+  cursor: default;
+}
+
+.seperationLine {
+  width: 3%;
+  border-bottom: 1px solid var(--text-color);
+  margin-bottom: 3.3%;
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 768px) {
+  .headerContainer {
+    transform: translate(0vw, 55px);
+  }
+  .headerImg {
+    transform: translateX(0);
+  }
+  .textContainer {
+    width: max-content;
+    padding: 0px;
+  }
+  .navContainer {
+    display: none;
+  }
+}

@@ -116,3 +116,26 @@ Kaikki muutokset on testattu perusteellisesti:
 * Tiedostojen linkitykset
 * Resurssien saatavuus
 * Sivujen toimivuus
+
+## 2024-10-31
+
+## README: Muutokset aurinko-sivulle
+
+### Tehdyt muutokset
+
+* **Uusien tiedostojen lisääminen:**
+  * `header.css`: Sisältää tyylit sivun otsikko-osalle.
+  * `orbitanimation.css`: Sisältää tyylit kiertoradan animaatioihin.
+  * `header.js`: Sisältää JavaScript-koodia, joka hallinnoi otsikon toiminnallisuuksia (esim. interaktiivisuus).
+* **Tiedostojen sijainti:** Kaikki yllä mainitut tiedostot on lisätty `global`-kansioon.
+* **CSS-luokkien lisääminen:** Sivun asetteluun on lisätty uusia CSS-luokkia, jotka määrittelevät elementtien ulkoasun ja sijainnin. Nämä luokat hyödyntävät `header.css` ja `orbitanimation.css` -tiedostoissa määriteltyjä tyylejä.
+
+### Muutosten vaikutus
+
+Nämä muutokset parantavat aurinko-sivun ulkoasua ja käyttäjäkokemusta. Uudet CSS-luokat mahdollistavat dynaamisemman ja visuaalisesti miellyttävämmän sivun rakenteen. `orbitanimation.css` tuo sivulle interaktiivisuutta ja visuaalista kiinnostavuutta. `header.js` on custom navigoinnin hoves efektin toiminnallisuus.
+
+**Tarkempi kuvaus muutoksista:**
+
+* `header`-elementille on lisätty luokka `.headerContainer`, joka määrittelee sen koon, fontin ja värit.
+* `orbitanimation.css` sisältää animaation, joka pyörittää kuvaa hitaasti ympyrän muotoisessa radassa. Animaatio on liitetty
+* `header.js` sisältää JavaScript-koodin, joka muuttaa custom planeetta navigoinnin ulkonäköä hoverilla.
