@@ -1,17 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 :root {
-  --background-color: #0f0f0f;
-  --text-color: #f7f7f7;
-  --highlight-color: #ae00ff;
-  --dark-highlight-color: #27003a;
-  --background-gradient: radial-gradient(circle, var(--dark-highlight-color) 0%, var(--background-color) 50%);
+  --background-color: ;
+  --text-color: ;
+  --header-color: ;
+  --highlight-color: ;
+  --background-gradient: radial-gradient(circle, var(--highlight-color) 0%, var(--background-color) 50%);
   --box-shadow: -4px -4px 15px -5px rgba(255, 255, 255, 0.1),
     5px 5px 15px -5px rgba(0, 0, 0, 1);
   --border: 1px solid rgba(255, 255, 255, 0.3);
-  --backdrop: blur(3px);
-  --font-bebas: "Bebas Neue", sans-serif;
-  --font-open-sans: "Open Sans", sans-serif;
+  --backdrop: ;
+  --font-bebas: ;
+  --font-open-sans: ;
   font-size: 14px;
   line-height: 1.8rem;
   letter-spacing: 0.2rem;
@@ -38,7 +36,7 @@ header {
 }
 
 h1 {
-  color: var(--highlight-color);
+  color: var(--header-color);
   font-family: var(--font-bebas);
   font-weight: bold;
   font-size: 2rem;
@@ -46,7 +44,7 @@ h1 {
 }
 
 h2 {
-  color: var(--highlight-color);
+  color: var(--header-color);
   font-family: var(--font-bebas);
   font-size: 1.6rem;
   font-weight: bold;
@@ -54,7 +52,7 @@ h2 {
 }
 
 h3 {
-  color: var(--highlight-color);
+  color: var(--header-color);
   font-family: var(--font-bebas);
   font-size: 1.4rem;
   font-weight: bold;
@@ -63,7 +61,7 @@ h3 {
 
 u {
   text-decoration: underline;
-  text-decoration-color: var(--highlight-color);
+  text-decoration-color: var(--header-color);
 }
 
 p {
@@ -89,4 +87,11 @@ footer {
 
 .brand-logo img{
     width: 200px;
+}
+
+@media only screen and (max-width: 425px) {
+  :root{
+    font-size: 12px;
+  }
+
 }
