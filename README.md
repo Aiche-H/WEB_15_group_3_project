@@ -154,5 +154,4 @@ Haluan ilmoittaa, että olen aloittanut HTML-prototyyppien kehittämisen sekä M
 
 ### **Venus-projekti:**
 
-* Prototyypin kehitys on alkuvaiheessa, mutta olen jo luonut [mainitse jo toteutetut osat].
-* Tavoitteena on rakentaa prototyyppi, joka [mainitse prototyypin tavoitteet, esim. toimii pohjana tulevalle sovellukselle, esittelee konseptia].
+* Prototyypin kehitys on alkuvaiheessa.
