@@ -139,3 +139,20 @@ Nämä muutokset parantavat aurinko-sivun ulkoasua ja käyttäjäkokemusta. Uude
 * `header`-elementille on lisätty luokka `.headerContainer`, joka määrittelee sen koon, fontin ja värit.
 * `orbitanimation.css` sisältää animaation, joka pyörittää kuvaa hitaasti ympyrän muotoisessa radassa. Animaatio on liitetty
 * `header.js` sisältää JavaScript-koodin, joka muuttaa custom planeetta navigoinnin ulkonäköä hoverilla.
+
+## 2024-11-01
+
+Toki! Tässä on muutamia pidempiä ilmoitusvaihtoehtoja, joihin voit lisätä vielä lisää yksityiskohtia projektistasi ja tavoitteistasi:
+
+### **HTML-prototyypit Mercurius- ja Venus-projekteille**
+
+Haluan ilmoittaa, että olen aloittanut HTML-prototyyppien kehittämisen sekä Mercurius- että Venus-projekteille. Tällä hetkellä olen keskittynyt luomaan visuaalisen käyttöliittymän, joka heijastaa projektien tavoitteita ja tarjoaa käyttäjille intuitiivisen kokemuksen.
+
+**Mercurius-projekti:**
+
+* Prototyyppi sisältää kuvia ja tekstin toimivan navigoinnen ja muita toiminallisuuksia.
+
+### **Venus-projekti:**
+
+* Prototyypin kehitys on alkuvaiheessa, mutta olen jo luonut [mainitse jo toteutetut osat].
+* Tavoitteena on rakentaa prototyyppi, joka [mainitse prototyypin tavoitteet, esim. toimii pohjana tulevalle sovellukselle, esittelee konseptia].
