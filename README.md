@@ -155,3 +155,8 @@ Haluan ilmoittaa, että olen aloittanut HTML-prototyyppien kehittämisen sekä M
 ### **Venus-projekti:**
 
 * Prototyypin kehitys on alkuvaiheessa.
+
+## 2024-11-02
+
+* viimeistelty venus HTML prtotyyppi
+* viimeistelty maa HTML prototyyppi
