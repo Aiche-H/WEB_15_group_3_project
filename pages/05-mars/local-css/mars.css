@@ -1,0 +1,5 @@
+@media only screen and (max-width: 765px) {
+    table {
+        display: none;
+    }
+}
