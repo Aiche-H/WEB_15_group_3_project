@@ -160,3 +160,10 @@ Haluan ilmoittaa, että olen aloittanut HTML-prototyyppien kehittämisen sekä M
 
 * viimeistelty venus HTML prtotyyppi
 * viimeistelty maa HTML prototyyppi
+
+
+## 2024-11-00
+
+* Luotu About Us -sivu prototyyppi ja tehty siitä rautalangan mallinen. On teknisesti ottaen responsiivinen. Tekstit ovat LoremIpsumia.
+* Luotu local-kansiot & CSS tyylitiedosto
+* Lisätty indexiin sekä yhteystieto-sivulle navbariin linkki About Us
