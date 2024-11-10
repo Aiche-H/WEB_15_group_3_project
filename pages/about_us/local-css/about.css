@@ -1,0 +1,134 @@
+
+
+body {
+    color: #FFFFFF;
+    background-color: #1a1a1a; /* Adjusted for readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    margin: 100px;
+    align-items: center;
+}
+
+.about-content {
+    
+}
+
+/* Main Container Styling */
+.content-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* Team Section Styling */
+.team-section {
+    width: 50%;
+}
+
+/* Text and Large Image Section Styling */
+.text-and-image-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+/* Header Styling */
+.about-header {
+    text-align: center;
+    
+    
+}
+
+/* Team Section Styling */
+.team-section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.member-photo {
+    width: 200px;
+    height: 300px;
+    background-color: #ccc; /* Placeholder for image */
+    object-fit: cover;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    font-size: 14px;
+    line-height: 1,1px;
+}
+
+.member-heading {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Main Text Section Styling */
+.main-text {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.large-image {
+    background-image: url('/pages/about_us/local-images/laama2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    /* Stack the team section and text-and-image section vertically */
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Make team-section and text-and-image-section take full width */
+    .team-section, .text-and-image-section {
+        width: 100%;
+    }
+
+    /* Adjust the image size for smaller screens */
+    .member-photo {
+        width: 100px;
+        height: 150px;
+    }
+
+    /* Adjust the large image height */
+    .large-image {
+        height: 250px;
+    }
+
+    /* Adjust font sizes for readability on smaller screens */
+    .member-heading {
+        font-size: 20px;
+    }
+
+    .member-info p,
+    .main-text {
+        font-size: 12px;
+    }
+}
