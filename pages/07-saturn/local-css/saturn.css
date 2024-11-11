@@ -1,0 +1,11 @@
+table img {
+    height: 100px;
+    aspect-ratio: 1/1;
+}
+
+@media only screen and (max-width: 600px) {
+  table img {
+    height: 50px;
+    aspect-ratio: 1/1;
+}
+}
