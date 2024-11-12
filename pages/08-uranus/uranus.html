@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../resources/css/aos.css">
     <link rel="stylesheet" href="../../resources/css/materialize.css">
     <link rel="stylesheet" href="../../global/css/global.css">
+    <link rel="stylesheet" href="../../global/css/header.css">
+    <link rel="stylesheet" href="./local-css/uranus.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <meta name="description" content="Facinating information from our slice of the Universe.">
-    <meta name="keywords" content="solar system, planets, space, astronomy, universe, galaxies, stars, constellations, solar system facts, solar system images, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Mercury, Venus, Moon, Sun">
+    <meta name="keywords"
+        content="solar system, planets, space, astronomy, universe, galaxies, stars, constellations, solar system facts, solar system images, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Mercury, Venus, Moon, Sun">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:title" content="Our solar system">
@@ -31,105 +35,580 @@
 
     <title>Uranus</title>
 </head>
+
 <body>
 
     <header>
-    <nav>
-        <div class="nav-wrapper black">
-            <div class="container">
-                <a href="#" class="brand-logo"><img src="../../resources/images/space-logo.png" alt="Our logo"></a>
-                <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <nav>
+            <div class="nav-wrapper black">
+                <div class="container">
+                    <a href="#" class="brand-logo"><img src="../../resources/images/space-logo.png" alt="Our logo"></a>
+                    <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="../../index.html">Etusivu</a></li>
-                    <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Planeetat</a></li>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="../../index.html">Etusivu</a></li>
+                        <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Planeetat</a></li>
 
-                    <ul id='dropdown1' class='dropdown-content black-text'>
-                        <li><a href="../01-sun/sun.html">Aurinko</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../02-mercury/mercury.html">Merkurius</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../03-venus/venus.html">Venus</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../04-earth/earth.html">Maa</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../05-mars/mars.html">Mars</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../06-jupiter/jupiter.html">Jupiter</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../07-saturn/saturn.html">Saturnus</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../08-uranus/uranus.html">Uranus</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../09-neptune/neptune.html">Neptunus</a></li>
-                        <li class="divider" tabindex="-1"></li>
+                        <ul id='dropdown1' class='dropdown-content black-text'>
+                            <li><a href="../01-sun/sun.html">Aurinko</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../02-mercury/mercury.html">Merkurius</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../03-venus/venus.html">Venus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../04-earth/earth.html">Maa</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../05-mars/mars.html">Mars</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../06-jupiter/jupiter.html">Jupiter</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../07-saturn/saturn.html">Saturnus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../08-uranus/uranus.html">Uranus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../09-neptune/neptune.html">Neptunus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                        </ul>
+
+                        <li><a href="../contact-information/contactinformation.html">Ota Yhteyttä</a></li>
+                        <li><a href="../about_us/aboutus.html">Tietoa meistä</a></li>
                     </ul>
 
-                    <li><a href="../contact-information/contactinformation.html">Ota Yhteyttä</a></li>
-                    <li><a href="../about_us/aboutus.html">Tietoa meistä</a></li>
-                </ul>
+                    <ul class="sidenav" id="mobile-menu">
+                        <li><a href="../../index.html">Etusivu</a></li>
+                        <li><a class='dropdown-trigger' href='#' data-target='dropdown2'>Planeetat</a></li>
 
-                <ul class="sidenav" id="mobile-menu">
-                    <li><a href="../../index.html">Etusivu</a></li>
-                    <li><a class='dropdown-trigger' href='#' data-target='dropdown2'>Planeetat</a></li>
+                        <ul id='dropdown2' class='dropdown-content'>
+                            <li><a href="../01-sun/sun.html">Aurinko</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../02-mercury/mercury.html">Merkurius</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../03-venus/venus.html">Venus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../04-earth/earth.html">Maa</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../05-mars/mars.html">Mars</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../06-jupiter/jupiter.html">Jupiter</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../07-saturn/saturn.html">Saturnus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../08-uranus/uranus.html">Uranus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="../09-neptune/neptune.html">Neptunus</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                        </ul>
 
-                    <ul id='dropdown2' class='dropdown-content'>
-                        <li><a href="../01-sun/sun.html">Aurinko</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../02-mercury/mercury.html">Merkurius</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../03-venus/venus.html">Venus</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../04-earth/earth.html">Maa</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../05-mars/mars.html">Mars</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../06-jupiter/jupiter.html">Jupiter</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../07-saturn/saturn.html">Saturnus</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../08-uranus/uranus.html">Uranus</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="../09-neptune/neptune.html">Neptunus</a></li>
-                        <li class="divider" tabindex="-1"></li>
+                        <li><a href="../contact-information/contactinformation.html">Ota Yhteyttä</a></li>
+                        <li><a href="../about_us/aboutus.html">Tietoa meistä</a></li>
                     </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container row">
+            <div class="col s12 m10 l8 offset-l4 shadow-box">
 
-                    <li><a href="../contact-information/contactinformation.html">Ota Yhteyttä</a></li>
-                    <li><a href="../about_us/aboutus.html">Tietoa meistä</a></li>
-                </ul>
+                <h1><u>Uranus</u></h1>
+                <p>Uranus (symboli: ⛢ tai ♅) on aurinkokunnan seitsemäs planeetta Auringosta lukien. Se on
+                    jättiläisplaneetta, planeetoista kooltaan kolmanneksi ja massaltaan neljänneksi suurin. Uranoksen
+                    mukaan nimetty planeetta on aurinkokunnassamme ainoana nimetty kreikkalaisen jumalan mukaan; kaikki
+                    muut on nimetty roomalaisten jumalien mukaan. Planeetalla on himmeä rengasjärjestelmä ja 27
+                    tunnettua kuuta.</p>
+            </div>
+
+            <img src="./local-images/uranus.png" alt="" class="headerImg materialboxed">
+
+            <div class="navContainer">
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Aurinko</p>
+                    </div>
+                    <a href="../01-sun/sun.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Merkurius</p>
+                    </div>
+                    <a href="../02-mercury/mercury.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Venus</p>
+                    </div>
+                    <a href="../03-venus/venus.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Maa</p>
+                    </div>
+                    <a href="../04-earth/earth.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Mars</p>
+                    </div>
+                    <a href="../05-mars/mars.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Jupiter</p>
+                    </div>
+                    <a href="../06-jupiter/jupiter.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Saturnus</p>
+                    </div>
+                    <a href="../07-saturn/saturn.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Uranus</p>
+                    </div>
+                    <a href="../08-uranus/uranus.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
+                <div class="seperationLine"></div>
+                <div class="itemContainer">
+                    <div class="nameHidden">
+                        <p>Neptunus</p>
+                    </div>
+                    <a href="../09-neptune/neptune.html">
+                        <div class="navItem"></div>
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
     </header>
 
 
     <main>
+        <div class="container row shadow-box" data-aos="fade-up">
+            <h2><u>Rakenne</u></h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Uranus_rings_and_moons.jpg"
+                alt="Uranus renkaineen ja sisimpine kuineen" class="col s12 m6 l4 materialboxed">
+            <div class="col s12 m6 l8">
+                <p>Uranuksen pieni tiheys (noin 1,3 kertaa veden tiheys) viittaa siihen että se koostuu vedystä,
+                    heliumista ja vedestä.
+                    Sillä ei ole kiinteää pintaa. 1990-luvulla jättiläisplaneetat jaettiin kaasujättiläisiin ja
+                    jääjättiläisiin. Uranus
+                    kuuluu jälkimmäisiin. Nimitys liittyy planeetan syntyhistoriaan, nykyisin siellä on hyvin vähän
+                    jäätä. Itse planeetan
+                    massasta noin 20 % on vetyä, joten se eroaa selvästi kaasujättiläisistä, jotka ovat
+                    90-prosenttisesti vetyä.
+                    Uranuksen kaasukehästä on vetyä noin 83 %, noin 15 % heliumia ja noin kaksi prosenttia metaania.
+                    <br><br>
 
+                    Uranuksen sisäosien rakenteesta on erilaisia malleja, mutta niissä kaikissa planeetta on nestemäinen
+                    ja sen neste
+                    vaihtuu vähitellen kaasuksi kaasukehän rajakerroksessa. Eri malleissa on eri suhteissa "kiveä"
+                    (silikaatteja ja
+                    metalleja), "jäätä" (vettä, metaania ja ammoniakkia) sekä "kaasuja" (vetyä ja heliumia). Näissä
+                    paineissa ja
+                    lämpötiloissa "jää" on nestemäisessä muodossa.
+                </p>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m12 l12">
+                <h2><u>Akselin kallistuma</u></h2>
+                <p>Yksi Uranuksen silmiinpistävimmistä piirteistä on sen pyörähdysakselin poikkeuksellisen suuri
+                    kallistuma.
+                    Päivänseisausten aikaan toinen navoista osoittaa lähes kohti Aurinkoa. Akselin kallistuman yleisesti
+                    ajatellaan olevan
+                    98 astetta, joten planeetan toinen puoli on puolet kiertoradasta Aurinkoon ja päinvastoin. Vaikka
+                    osan vuodesta
+                    Uranuksen napa-alueet saavat auringonvalosta enemmän energiaa kuin päiväntasaajan seutu, on
+                    päiväntasaaja toistaiseksi
+                    tuntemattomasta syystä napoja lämpimämpi. Voyager 2 -avaruusluotaimen ohittaessa planeetan sen
+                    pinnalla havaittiin vain
+                    hyvin heikkoja pilvimuodostumia. Hubble-avaruusteleskooppi havainnoidessaan planeettaa 1990-luvulla
+                    havaitsi
+                    voimakkaampia, vyöhykemäisiä pilvirakenteita Auringon lähestyessä päiväntasaajaa. Vuonna 2007
+                    aurinko oli suoraan
+                    päiväntasaajan yläpuolella. Retrogradisesti nähtynä planeetan kallistuma on 82 astetta. <br><br>
+
+                    Syytä Uranuksen kallistumiseen ei varmuudella tunneta, mutta vallitsevana selityksenä on ollut
+                    esillä törmäys suuren
+                    protoplaneetan kanssa aurinkokunnan syntyvaiheessa. Kannatusta saanut ranskalaistutkija Alessandro
+                    Morbidellin teoria
+                    ehdottaa, että törmääjiä on täytynyt olla vähintään kaksi. Näin siksi, koska muutoin Uranuksen kuut
+                    olisivat jääneet
+                    kiertämään planeettaa vastakkaiseen suuntaan kuin mitä nykyään havaitsemme. Lähiaikoina planeettojen
+                    syntyä kuvaavia
+                    teorioita jouduttaneenkin tarkistamaan. Standarditeorian mukaan jättiläisplaneetat muodostuivat
+                    suhteellinen rauhaisissa
+                    olosuhteissa, kun taas nyt julkaistu tulos viittaa suurten planeettatörmäysten olleen aurinkokunnan
+                    alkuvaiheissa
+                    luultua yleisempiä.</p>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m12 l12">
+                <h2><u>Kaasukehä</u></h2>
+                <p>Uranus näyttää turkoosin tai sinertävän väriseltä piirteettömältä kiekolta näkyvässä valossa.
+                    Uranuksen syaani väri
+                    johtuu kaasukehän metaanista, jota on siinä 2 %. Metaani sirottaa sinisen valon joka suuntaan ja
+                    imee punaisen.
+                    Uranuksen pinnasta tekee piirteettömän asetyleenistä ja etaanista koostuva savusumua eli smogia
+                    muistuttava utu.
+                    Asetyleeni ja etaani syntyvät auringonsäteilyn pommittaessa metaania ja hajottaessa
+                    metaanimolekyylejä. Hajonneet
+                    molekyylit yhdistyvät uudestaan isommiksi yhdisteiksi. Lämpötila on sekä päivä- että yöpuolella noin
+                    55 kelviniä eli
+                    noin −218 °C. Uranuksen ilmakehän yläosa, stratosfääri, on viileämpi kuin Jupiterin tai Saturnuksen.
+                    Metaani muodostaa
+                    Uranuksen kaasukehään pilviä. Avaruusluotaimen väärävärikorostetussa kuvassa näkyy kymmenen
+                    sisäkkäistä ympyrää,
+                    pilvinauhaa, planeetan navan ympärillä. Korkeilla keskileveyksillä näkyy lämpökuvassa voimakas
+                    kirkas nauha ja toisella
+                    puolella tumma pitkulainen täplä kooltaan 1 700×3 000 km2. 15–40 asteen leveyksillä näkyy
+                    lämpökuvassa 2–3 astetta
+                    viileämpi nauha. Uranuksen piirteettömyyden arvellaan johtuvan sisäisen lämmönlähteen heikkoudesta.
+                    Muilla
+                    planeetoilla sisäinen lämpö tuottaa planeetan kaasukehään pilvinauhoina näkyvää liikettä. Uranuksen
+                    kaasukehä on
+                    kylmimmillään planeetan tropopaussissa, jossa paine on 0,1 ilmakehää ja lämpötila 52 K. <br><br>
+
+                    Ylimmät pilvet ovat cirruspilviä, joista 20–30 km ylempänä on vielä utua. Pilvien huipun lämpötila
+                    on 59 K.
+                    Metaanipilviä on noin 60 km pilvien huipun alla noin 1,3 bar paineessa. Noin 80 K:n lämpötilaa
+                    vastaavassa
+                    korkeudessa metaanipilvien alla on luultavasti vetysulfidipilviä, jotka eivät näy pinnalle asti.
+                    Uranuksella on
+                    samat pilvikerrokset, ammoniakkipilviä ja muita, kuin Jupiterilla, mutta ne eivät näy ylempien
+                    pilvien takia. Uranuksen
+                    kaasukehän lämpötilakäyrä korkeuden mukaan muistuttaa Saturnuksen kaasukehän vastaavaa ollen
+                    yläosaltaan tropopaussin
+                    yllä viileämpi.</p>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m12 l12">
+                <h2><u>Magneettikenttä</u></h2>
+                <p>Uranuksen magneettikenttä on voimakkaampi kuin Saturnuksella. Magneettikentän keskipiste ei sijaitse
+                    planeetan
+                    keskipisteessä, ja se on kallistunut 59° pyörähdysakselin suhteen. Uranuksenkin magneettikentän
+                    uskotaan aiheutuvan
+                    ionisoituneen aineen virtauksesta planeetan sisuksissa. Havaitun magneettisen akselin suuren
+                    poikkeaman
+                    pyörimisakselista on aiheuttanut todennäköisesti virtausliike melko matalalla pinnan alla. Myös
+                    monin tavoin Uranusta
+                    muistuttavan Neptunuksen magneettikentässä on havaittavissa vastaavanlainen ilmiö. Magneettikentän
+                    lähde on toistaiseksi
+                    tuntematon, sillä sähköä johtavan vesipitoisen vaipan olemassaolo on epävarma. <br><br>
+
+                    Yleisesti kuitenkin ajatellaan Uranuksen ja Neptunuksen tyyppisten planeettojen magneettikenttien
+                    syntyvän paineen takia
+                    ionisoituneen veden, ammoniakin ja metaanin virtauksissa. Nämä aineet hajoavat Uranuksen vaipan
+                    suurissa lämpötiloissa
+                    ja paineissa hydroksidi-ioneiksi, ammoniumioneiksi, hiileksi ja protoneiksi, jotka pystyvät
+                    virratessaan kuljettamaan
+                    sähköä. Hajonneet yhdisteet ovat ominaisuuksiltaan aivan erilaisia kuin ehjät. Ionisoitunut vesi
+                    muistuttaa sulaa
+                    suolaa, ja sillä on metallin ominaisuuksia. Uranuksen kierto itsensä ympäri aiheuttaa
+                    magneettikentän venymisen
+                    korkkiruuvimaiseksi kierteeksi planeetan taakse sen kiertäessä radallaan.</p>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m12 l12">
+                <h2><u>Löytö ja nimeäminen</u></h2>
+                <p>Uranus oli ensimmäinen planeetta, jonka voidaan sanoa löytyneen. Vaikka se näkyy juuri ja juuri
+                    paljain silminkin,
+                    merkittiin kohde tähdeksi useilla ensimmäisillä havaintokerroilla. Varhaisin tällainen merkintä on
+                    vuodelta 1690, kun
+                    John Flamsteed luetteloi planeetan 34 Tauriksi. Flamsteed havaitsi Uranuksen myöhemmin vielä kaksi
+                    kertaa, vuosina 1712
+                    ja 1715. James Bradley puolestaan näki planeetan 1748, 1750 ja 1753 sekä Tobias Mayer 1756. Pierre
+                    Charles Le Monnier ei
+                    osannut yhdistää kohteesta tekemiään lukuisia havaintoja. Hän havaitsi kohteen neljästi vuonna 1750,
+                    kahdesti 1768,
+                    kuudesti 1769 ja vielä kerran 1771.</p>
+            </div>
+            <div class="col s12 m6 l9">
+                <p>Lopulta maaliskuussa 1781 Sir William Herschel löysi planeetan käytyään läpi taivasta uudella
+                    kaukoputkellaan. Hän
+                    huomasi kohteen, joka näytti tähteä suuremmalta. Hän ilmoitti sen kuitenkin aluksi komeetaksi. Saman
+                    vuoden elokuussa
+                    kohteen liikuttua tähtien suhteen suomalainen tähtitieteilijä Anders Johan Lexell laski kohteelle
+                    radan ja sai todeta
+                    Herschelin löytäneen uuden planeetan. Herschel nimesi sen Yrjön tähdeksi (Georgium sidus) silloisen
+                    Englannin kuninkaan
+                    Yrjö III:n kunniaksi muuttaen sen kuitenkin myöhemmin Yrjön planeetaksi. Nimestä ei koskaan tullut
+                    suosittua Englannin
+                    ulkopuolella; Jérôme Lalande ehdotti vuonna 1784 nimeä Herschel, jonka ranskalaiset tähtitieteilijät
+                    pian omaksuivat.
+                    Uppsalan yliopiston Erik Prosperin ehdotti nimiä Astraea, Cybele ja Neptunus, joista kaksi
+                    ensimmäistä ovat nykyisin
+                    asteroidien nimiä. Anders Johan Lexell puolestaan ehdotti Yrjö III:n Neptunusta ja Ison-Britannian
+                    Neptunusta, Daniel
+                    Bernoulli Hypercroniusta ja Transaturnista ja eräät muut Austräata ja Minervaa.</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/William_Herschel01.jpg"
+                alt="Sir William Herschel." class="col s12 m6 l3 materialboxed">
+            <div class="col s12 m12 l12">
+                <p>Johann Bode Berliner Astronomisches Jahrbuchin päätoimittajana päätyi tukemaan Uranusta planeetan
+                    nimeksi; Maximilian
+                    Hell yhtyi tähän käyttämällä nimeä ensimmäisessä efemeridissä, joka julkaistiin Wienissä. Nimen
+                    omaksuivat myös
+                    brittiläiset tähtitieteilijät; ja vuoden 1827 Royal Astronomical Societyn julkaisuissa Uranus oli jo
+                    selvästi yleisin
+                    planeetasta käytetty nimitys. Siitä huolimatta muutamat tahot Englannissa jatkoivat Georgium Sidus-
+                    tai the Georgian
+                    -nimen käyttöä, niistä viimeisimpänä kuninkaallinen merialmanakkatoimisto, joka siirtyi käyttämään
+                    nimeä Uranus vasta
+                    vuonna 1850.</p>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m12 l12">
+                <h2><u>Tutkimus</u></h2>
+                <p>Uranuksesta tiedettiin melko vähän ennen Voyager 2:n, ainoan planeettaa lähietäisyydeltä tutkineen
+                    avaruusluotaimen,
+                    ohitusta vuonna 1986. Lähimmillään planeettaa luotain oli 24. tammikuuta. Se havaitsi Uranuksen
+                    magneettikentässä
+                    muutoksia, joista pystyttiin laskemaan planeetan kiertoaika. Aiemmin kiertoaikaa ei tunnettu
+                    lainkaan, sillä sen
+                    pinnalta ei maasta käsin ollut havaittu lainkaan yksityiskohtia. Luotaimen ottamien kuvien avulla
+                    löydettiin myös
+                    kymmenen uutta kuuta. Lisäksi Voyager 2 tutki planeetan kaasukehää ja rengasjärjestelmää. <br><br>
+
+                    Hubble-avaruusteleskooppi havainnoi Uranusta ensimmäisen kerran vuonna 1994. Teleskoopin kuvien
+                    perusteella planeetan
+                    pilvivyöhykkeiden huomattiin voimistuneen; vuonna 1999 otetut kuvat paljastivat yhä kasvanutta
+                    aktiviteettia. <br><br>
+
+                    Uranus ei aina ole ollut 7. planeetta Auringosta. Tutkimusten mukaan vastasyntynyt Neptunus oli
+                    lähempänä Aurinkoa kuin
+                    Uranus. 650 miljoonaa vuotta muodostumisensa jälkeen planeetat kuitenkin vaihtoivat paikkaa.
+                    Tutkimuksessa tutkittiin
+                    planeettojen protoplanetaarisen kaasu- ja pölykiekon tiheyttä sekä planeettojen liikkeitä ja kokoa.
+                    Tutkijat pääsivät
+                    vastaukseen, että Neptunus on vaihdellut paikkaa Uranuksen puolelta toiselle.</p>
+            </div>
+            <div class="col s12 m12 l12">
+                <h3>Havaitseminen</h3>
+                <p>Uranuksen näennäinen kirkkaus on 5,5–6,0, joten se on mahdollista nähdä paljain silmin himmeänä
+                    tähtimäisenä kohteena hyvissä havainto-olosuhteissa pimeällä ja selkeällä taivaalla. Kiikarilla
+                    planeetta erottuu jo selvästi, ja pienellä kaukoputkella se näkyy neljän kaarisekunnin laajuisena
+                    vihertävänä levynä. Lisää yksityiskohtia planeetan pinnasta paljastuu vain kaikkein tehokkaimmilla
+                    kaukoputkilla.</p>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m12 l12">
+                <h2><u>Kuut</u></h2>
+              <p>Uranuksella on 27 tunnettua kuuta. Kaksi suurinta kuuta, Titanian ja Oberonin, löysi Herschel 13. maaliskuuta 1787.
+            William Lassell löysi Arielin ja Umbrielin vuonna 1851. William Herschelin poika John nimesi vuotta myöhemmin silloin
+            tunnetut neljä kuuta. Seuraavan kuun, Mirandan, löysi Gerard Kuiper vuonna 1948. Voyager 2:n ohitus lisäsi tunnettujen
+            kuiden määrää kymmenellä, ja myöhemmin löydettiin vielä yksi kuu lisää luotaimen vanhoja kuvia tutkimalla. Sen jälkeen
+            lisää kuita on löydetty Maasta käsin kaukoputkilla: kaksi vuonna 1997, kolme vuonna 1999, kolme vuonna 2001 ja kolme
+            vuonna 2003. 1990-luvulla löytyneet kuut ovat pienikokoisia, ja osa niistä on todennäköisesti planeetan kiertoradalleen
+            kaappaamia asteroideja, sillä ne kiertävät emäplaneettaansa kaukaisilla, epäsäännöllisillä ja retrogradisilla radoilla.
+            On todennäköistä, että Uranuksella on lisää pieniä kuita yhä löytämättä.
+
+            Kuiden tiheys on noin 1,5–1,7 g/cm³, joten ne koostuvat puoliksi kivestä ja puoliksi jäästä. Useimmat kuista ovat hyvin
+            tummia, erityisesti Umbriel, joka on yksi aurinkokunnan tummimmista kappaleista. Mirandassa on dramaattisia jälkiä
+            geologisesta aktiivisuudesta, kuten valtavia kanjoneita ja jyrkänteitä, jotka ovat syntyneet törmäysten tai
+            vuorovesivoimien seurauksena. Suurin kuista on Titania, joka lähes 1 600 kilometrin läpimitallaan on aurinkokunnan
+            kahdeksanneksi suurin kuu.lähde? Uranuksen kaikki kuut on nimetty William Shakespearen ja Alexander Popen teoksissa
+            esiintyvien henkilöhahmojen mukaan.</p>
+            </div>
+            <div class="col s12 m12 l12">
+                <h3>Uranuksen suuret kuut</h3>
+                <h3>(verrattuna Maan kuuhun)</h3>
+                <table>
+                    <tr>
+                        <th>Nimi</th>
+                        <th class="hide-on-small-and-down">Kuva</th>
+                        <th>Läpimitta (km)</th>
+                        <th>Massa (kg)</th>
+                        <th class="hide-on-small-and-down">Ratasäde (km)</th>
+                        <th class="hide-on-med-and-down">Kiertoaika (d)</th>
+                        <th class="hide-on-med-and-down">Tiheys (g/cm³)</th>
+                    </tr>
+                    <tr>
+                        <td>Miranda</td>
+                        <td class="hide-on-small-and-down"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/PIA18185_Miranda%27s_Icy_Face.jpg" alt="Miranda" class="materialboxed"></td>
+                        <td>470 (14%)</td>
+                        <td>7,0 × 10¹⁹ (0,1%)</td>
+                        <td class="hide-on-small-and-down">129 000</td>
+                        <td class="hide-on-med-and-down">1,4 (35%)</td>
+                        <td class="hide-on-med-and-down">1,20 (5%)</td>
+                    </tr>
+                    <tr>
+                        <td>Ariel</td>
+                        <td class="hide-on-small-and-down"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Ariel_in_monochrome.jpg" alt="Ariel" class="materialboxed"></td>
+                        <td>1 160 (33%)</td>
+                        <td>14 × 10²⁰ (0,8%)</td>
+                        <td class="hide-on-small-and-down">191 000</td>
+                        <td class="hide-on-med-and-down">2,5 (10%)</td>
+                        <td class="hide-on-med-and-down">1,67</td>
+                    </tr>
+                    <tr>
+                        <td>Umbriel</td>
+                        <td class="hide-on-small-and-down"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Umbriel_%28moon%29.jpg" alt="Umbriel" class="materialboxed"></td>
+                        <td>1 170 (34%)</td>
+                        <td>12 × 10²⁰ (1,6%)</td>
+                        <td class="hide-on-small-and-down">266 000</td>
+                        <td class="hide-on-med-and-down">4,1 (15%)</td>
+                        <td class="hide-on-med-and-down">1,40</td>
+                    </tr>
+                    <tr>
+                        <td>Titania</td>
+                        <td class="hide-on-small-and-down"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Titania_%28moon%29_color%2C_cropped.jpg" alt="Titania" class="materialboxed"></td>
+                        <td>1 580 (45%)</td>
+                        <td>35 × 10²⁰ (4,8%)</td>
+                        <td class="hide-on-small-and-down">436 000</td>
+                        <td class="hide-on-med-and-down">8,7 (115%)</td>
+                        <td class="hide-on-med-and-down">1,72 (30%)</td>
+                    </tr>
+                    <tr>
+                        <td>Oberon</td>
+                        <td class="hide-on-small-and-down"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Voyager_2_picture_of_Oberon.jpg" alt="Oberon" class="materialboxed"></td>
+                        <td>1 520 (44%)</td>
+                        <td>30 × 10²⁰ (4,1%)</td>
+                        <td class="hide-on-small-and-down">584 000</td>
+                        <td class="hide-on-med-and-down">13,5 (150%)</td>
+                        <td class="hide-on-med-and-down">1,63 (50%)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="container row shadow-box" data-aos="fade-up">
+            <div class="col s12 m7 l9">
+                <h2><u>Renkaat</u></h2>
+                <p>Uranuksen rengasjärjestelmä löydettiin sattumalta vuonna 1977, kun James L. Elliot, Edward W. Dunham ja Douglas J. Mink
+                tutkivat tähdenpeiton avulla Uranuksen kaasukehää Kuiperin ilmakuljetusobservatoriosta käsin. Käsitellessään
+                havaintojensa tuloksia he huomasivat, että tähti oli kadonnut lyhyeksi aikaa viisi kertaa sekä ennen peittymistään
+                Uranuksen taakse että sen jälkeen. Tuloksista pääteltiin renkaiden olemassaolo, joka varmistettiin visuaalisesti
+                Voyagerin kuvista. Päärenkaita on yhteensä yhdeksän. Lisäksi Voyager löysi kaksi himmeämpää rengasta. Uloin
+                ε-rengas on noin 40 kilometrin levyinen ja hyvin selvärajainen, sillä sen molemmin puolin kiertää kaksi paimenkuuta,
+                Cordelia ja Ofelia. Kaikkien renkaiden paksuus on noin 100 metriä ja albedo vain noin 0,03. Renkaan kappaleet ovat
+                pääasiassa useiden metrien kokoisia, eikä hienojakoista pölyä juurikaan ole.</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Uranus_rings.png" alt="Uranuksen renkaat" class="col s12 m5 l3 materialboxed">
+
+             <div class="col s12 m10 l8">
+                <table>
+                    <tr>
+                        <th>Nimi</th>
+                        <th>Etäisyys Uranuksen keskipisteestä (km)</th>
+                        <th>Leveys (km)</th>
+                    </tr>
+                    <tr>
+                        <td>1986 U2R</td>
+                        <td>38 000</td>
+                        <td>n. 2 500</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>41 840</td>
+                        <td>1–3</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>42 230</td>
+                        <td>2–3</td>
+                    </tr>
+                     <tr>
+                        <td>4</td>
+                        <td>42 580</td>
+                        <td>2–3</td>
+                    </tr>
+                     <tr>
+                        <td>α (alfa)</td>
+                        <td>44 720</td>
+                        <td>7–12</td>
+                    </tr>
+                     <tr>
+                        <td>β (beeta)</td>
+                        <td>45 670</td>
+                        <td>7–12</td>
+                    </tr>
+                    <tr>
+                        <td>η (eeta)</td>
+                        <td>47 190</td>
+                        <td>0–2</td>
+                    </tr>
+                    <tr>
+                        <td>γ (gamma)</td>
+                        <td>47 630</td>
+                        <td>1–4</td>
+                    </tr>
+                    <tr>
+                        <td>δ (delta)</td>
+                        <td>48 290</td>
+                        <td>3–9</td>
+                    </tr>
+                    <tr>
+                        <td>1986 U2R</td>
+                        <td>38 000</td>
+                        <td>1–2</td>
+                    </tr>
+                    <tr>
+                        <td>ε (epsilon)</td>
+                        <td>51 140</td>
+                        <td>20–100</td>
+                    </tr>
+                </table>
+             </div>
+        </div>
     </main>
 
 
     <footer class="page-footer black">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m8 l6">
-            <h5 class="white-text">Meidän motto</h5>
-            <p class="grey-text text-lighten-4">Koodi elää, kun tiimi hengittää yhdessä.</p>
-          </div>
-          <div class="col s12 m4 l6">
-            <h5 class="white-text">More Links</h5>
-            <ul>
-              <li><a href="#">linkki</a></li>
-              <li><a href="#">linkki</a></li>
-              <li><a href="#">linkki</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
         <div class="container">
-          © 2024 S.P.A.C.E
+            <div class="row">
+                <div class="col s12 m8 l6">
+                    <h5 class="white-text">Meidän motto</h5>
+                    <p class="grey-text text-lighten-4">Koodi elää, kun tiimi hengittää yhdessä.</p>
+                </div>
+                <div class="col s12 m4 l6">
+                    <h5 class="white-text">More Links</h5>
+                    <ul>
+                        <li><a href="#">linkki</a></li>
+                        <li><a href="#">linkki</a></li>
+                        <li><a href="#">linkki</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 S.P.A.C.E
+            </div>
+        </div>
     </footer>
 
 
@@ -137,5 +616,7 @@
     <script src="../../resources/javascript/jquery-3.7.1.min.js"></script>
     <script src="../../resources/javascript/materialize.js"></script>
     <script src="../../global/javascript/global.js"></script>
+    <script src="../../global/javascript/header.js"></script>
 </body>
+
 </html>
