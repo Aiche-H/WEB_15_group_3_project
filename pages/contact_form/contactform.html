@@ -16,15 +16,78 @@
 
 <!-- Otan tän työstöön nyt huomisesta lähtien / Markus -->
 
-    <form id="myForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <input type="submit" value="Submit">
-      </form>
+<div class="form-container">
+    <form action="mailto:palaute@space.fi" method="post" enctype="text/plain">
+        <div class="row">
+            <!-- Vasen sarake -->
+            <div class="col s12 m6">
+                <!-- Yhteydenoton syy (Dropdown) EI TOIMI OIKEIN, vaikka muualla kuin tässä toimii-->
+                <div class="input-field inline">
+                    <select name="syy" required>
+                        <option value="" disabled selected>Valitse syy</option>
+                        <option value="tiedustelu">Tiedustelu</option>
+                        <option value="palaute">Palaute</option>
+                        <option value="muut">Muut</option>
+                    </select>
+                    <label for="syy">Yhteydenoton syy</label>
+                </div>
+
+                <!-- Etunimi -->
+                <div class="input-field inline">
+                    <input type="text" id="firstname" required>
+                    <label for="firstname">Etunimi</label>
+                </div>
+
+                <!-- Sähköposti -->
+                <div class="input-field">
+                    <input type="email" id="email" required>
+                    <label for="email">Sähköposti</label>
+                </div>
+
+                <!-- Suosikkiplaneetta (Radio buttons) -->
+                <label>Suosikkiplaneettasi</label>
+                <p>
+                    <label><input name="planet" type="radio" value="mercury"/><span>Merkurius</span></label>
+                    <label><input name="planet" type="radio" value="venus"/><span>Venus</span></label>
+                    <label><input name="planet" type="radio" value="earth"/><span>Maa</span></label>
+                    <label><input name="planet" type="radio" value="mars"/><span>Mars</span></label>
+                    <label><input name="planet" type="radio" value="jupiter"/><span>Jupiter</span></label>
+                    <label><input name="planet" type="radio" value="saturn"/><span>Saturnus</span></label>
+                    <label><input name="planet" type="radio" value="uranus"/><span>Uranus</span></label>
+                    <label><input name="planet" type="radio" value="neptune"/><span>Neptunus</span></label>
+                </p>
+            </div>
+
+            <!-- Oikea sarake -->
+            <div class="col s12 m6">
+                <!-- Viestikenttä -->
+                <div class="input-field">
+                    <textarea id="message" class="materialize-textarea" required></textarea>
+                    <label for="message">Viesti</label>
+                </div>
+
+                <!-- CAPTCHA (Tekstikenttä) -->
+                <div class="input-field">
+                    <input type="text" id="captcha" required>
+                    <label for="captcha">Kirjoita "olen ihminen" varmistaaksesi</label>
+                </div>
+
+                <!-- Tietosuojalausekkeen hyväksyminen -->
+                <p>
+                    <label>
+                        <input type="checkbox" required />
+                        <span>Hyväksyn tietosuojalausekkeen</span>
+                    </label>
+                </p>
+
+                <!-- Lähetä-painike -->
+                <button type="submit" class="btn btn-submit waves-effect waves-light">Lähetä</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
 
 
 
