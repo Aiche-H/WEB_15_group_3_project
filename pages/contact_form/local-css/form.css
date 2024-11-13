@@ -1,38 +1,68 @@
-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #FFFFE0;
-    border: 1px solid #000080;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Responsiivinen muotoilu */
+@media (min-width: 900px) {
+  .input-field.inline {
+      display: inline-block;
+      width: 30%;
+      margin-right: 20px;
   }
-  
-  form label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  form input, form textarea {
-    width: 96%;
-    height: 30px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #000080;
-    border-radius: 5px;
-  }
-  
-  form input:focus, form textarea:focus {
-    border-color: #000080;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  form textarea {
-    height: 200px;
-  }
+}
 
-  form [type="submit"]{
-    width: 99%;
-    background-color: #303098;
-    color: #FFFFE0;
-  }
+/* Sivun taustaväri EI TOIMI*/
+body {
+  background-color: #0D0D2E;
+  color: #E5E5E5;
+}
+
+/* Lomakkeen tyyli */
+.form-container {
+  background-color: #424242;
+  padding: 20px;
+  max-width: 2080px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #FFAA33;
+  margin: 20px auto;
+}
+
+/* Tekstiväri lomakkeen kentissä */
+input[type="text"], input[type="email"], textarea {
+  color: #E5E5E5; 
+  border-bottom: 1px solid #FFAA33; 
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  border-bottom: 1px solid #FFAA33; 
+  box-shadow: 0 1px 0 0 #FFAA33; 
+}
+
+/* Viestin tekstikentän korkeus */
+textarea#message {
+  min-height: 100px; 
+}
+
+/* Valintaruutu, dropdown ja radiopainikkeet */
+input[type="checkbox"] + span, input[type="radio"] + span {
+  color: #E5E5E5;
+}
+
+select {
+  color: #E5E5E5; 
+  border-bottom: 1px solid #FFAA33;
+}
+select:focus {
+  border-bottom: 1px solid #FFAA33;
+  box-shadow: 0 1px 0 0 #FFAA33;
+}
+
+/* Lähetä-painikkeen väri */
+.btn-submit {
+  background-color: #FFAA33; /* EI TOIMI */
+  color: #E5E5E5;
+}
+.btn-submit:hover {
+  background-color: #42a5f5; /* Vaaleansininen hover-väri */
+}
+
+/* Kahden sarakkeen jako */
+.row .col {
+  margin-bottom: 20px;
+}
