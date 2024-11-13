@@ -167,3 +167,8 @@ Haluan ilmoittaa, että olen aloittanut HTML-prototyyppien kehittämisen sekä M
 * Luotu About Us -sivu prototyyppi ja tehty siitä rautalangan mallinen. On teknisesti ottaen responsiivinen. Tekstit ovat LoremIpsumia.
 * Luotu local-kansiot & CSS tyylitiedosto
 * Lisätty indexiin sekä yhteystieto-sivulle navbariin linkki About Us
+
+## 2024-11-13
+
+* Tehty HTML-prototyyppi etusivulle
+* Lisätty index-local-kansioon etusivun tyyli- ja javascript tiedostot sekä index-img-kansio.
