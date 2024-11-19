@@ -55,11 +55,11 @@ select:focus {
 
 /* Lähetä-painikkeen väri */
 .btn-submit {
-  background-color: #FFAA33; /* EI TOIMI */
+  background-color: #FFAA33 !important;
   color: #E5E5E5;
 }
 .btn-submit:hover {
-  background-color: #42a5f5; /* Vaaleansininen hover-väri */
+  background-color: #42a5f5 !important; /* Vaaleansininen hover-väri */
 }
 
 /* Kahden sarakkeen jako */
