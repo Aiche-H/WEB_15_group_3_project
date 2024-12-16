@@ -1,24 +1,22 @@
 
 body{
-  background-color: #000000;
+  background-color: var(--background-color);
   margin: 0;
-  color: #f5f5f5;
+  color: var(--text-color);
 } 
 
 p{  
-  color: ; 
+  color: var(--text-color); 
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
+
   } 
 
 h1{
-  font-family: "orbitron", sans-serif;
+  font-family: var(--font-orbitron);
   font-size: 66px;
   font-weight: 600;
   letter-spacing: 2.5px;
-  color: ;
+  color: var(--header-color);
   text-shadow: 2px 2px 25px  rgba(0, 0, 0, 0.9);
   border: 1px solid ;
   display: inline-block;
@@ -43,14 +41,9 @@ h3{
   letter-spacing: 2.5px;
   line-height: 1.33;
   color: ;
-  text-shadow: 2px 2px 25px  rgba);
+  text-shadow: 2px 2px 25px  rgba();
   padding: 10px;
   text-align: left;
-  background: linear-gradient(to right, 
-            rgba(), 
-            rgba(),
-            rgba(),  
-             transparent );
  }
 
  h4{
@@ -59,7 +52,6 @@ h3{
   letter-spacing: 2px;
   line-height: 1.1;
   color: rgb(255, 244, 241);
-  text-shadow: 2px 2px 25px  rgba();
   margin: 15px;
  }
 
