@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="../../resources/css/materialize.css">
   <link rel="stylesheet" href="../../global/css/global.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+  <!-- Google reCAPTCHA client -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Contact us</title>
 </head>
 
@@ -87,18 +88,15 @@
     </nav>
   </header>
 
-
-
-
-
+  
   <div class="form-container">
     <form action="mailto:palaute@space.fi" method="post" enctype="text/plain">
       <div class="row">
         <!-- Vasen sarake -->
         <div class="col s12 m6">
           <!-- Yhteydenoton syy (Dropdown) EI TOIMI OIKEIN, vaikka muualla kuin tässä toimii-->
-          <div class="input-field inline">
-            <select name="syy" required>
+          <div class="input-field inline" style="display: flex; align-items: center;">
+            <select name="syy" required >
               <option value="" disabled selected>Valitse syy</option>
               <option value="tiedustelu">Tiedustelu</option>
               <option value="palaute">Palaute</option>
@@ -141,11 +139,12 @@
             <label for="message">Viesti</label>
           </div>
 
-          <!-- CAPTCHA (Tekstikenttä) -->
+          <!-- CAPTCHA (Tekstikenttä) 
           <div class="input-field">
             <input type="text" id="captcha" required>
             <label for="captcha">Kirjoita "olen ihminen" varmistaaksesi</label>
-          </div>
+          </div> -->
+          <div class="g-recaptcha" data-sitekey="6LfWp5cqAAAAAPpIJovogASgWMlxpfDPOcB7Z2Fg"></div>
 
           <!-- Tietosuojalausekkeen hyväksyminen -->
           <p>
@@ -189,8 +188,13 @@
     </div>
   </footer>
 
-
-
+  <!-- Select-elementin alustus -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });
+  </script>
 
   <script src="./local-javascript/form.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
