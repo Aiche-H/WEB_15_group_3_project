@@ -2,7 +2,12 @@
 
 body {
     color: #FFFFFF;
-    background-color: #1a1a1a; /* Adjusted for readability */
+    background-color: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.12) 20%,     
+        rgba(15, 14, 18, 0.8) 60%,    
+        rgb(0, 0, 0) 100%     
+      );; /* Adjusted for readability */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +16,52 @@ body {
 main {
     margin: 100px;
     align-items: center;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    /* Stack content vertically */
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-section, .text-and-image-section {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .team-member {
+        flex-direction: column; /* Stack image and text */
+        align-items: center; /* Center items */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .member-photo {
+        width: 80%; /* Responsive image size */
+        max-width: 300px; /* Limit image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .member-info {
+        width: 80%; /* Shrink text container */
+    }
+
+    .large-image {
+        height: 250px; /* Adjust large image height */
+    }
+}
+
+/* Freeze Shrinking at 480px */
+@media (max-width: 480px) {
+    .member-photo {
+        width: 300px; /* Fixed size for smaller screens */
+        height: 300px;
+    }
+
+    .member-info {
+        width: 300px; /* Fixed text container size */
+    }
 }
 
 .about-content {
@@ -37,9 +88,8 @@ main {
 }
 
 /* Header Styling */
-.about-header {
-    text-align: center;
-    
+.about-header h4{
+    font-size: 40px;
     
 }
 
@@ -48,6 +98,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 60px;
+    
 }
 
 .team-member {
@@ -57,8 +108,11 @@ main {
 }
 
 .member-photo {
-    width: 200px;
+    width: 300px;
     height: 300px;
+    min-width: 300px; /* Prevent shrinking below 300px */
+    min-height: 300px; /* Prevent shrinking below 300px */
+    flex-shrink: 0; /* Do not allow flexbox to shrink this element */
     background-color: #ccc; /* Placeholder for image */
     object-fit: cover;
 }
@@ -69,11 +123,13 @@ main {
     width: 250px;
     font-size: 14px;
     line-height: 1,1px;
+    
 }
 
 .member-heading {
     font-size: 25px;
     font-weight: bold;
+    
 }
 
 /* Main Text Section Styling */
@@ -83,7 +139,23 @@ main {
 }
 
 .large-image {
-    background-image: url('/pages/about_us/local-images/laama2.jpg');
+    background-image: url('/pages/index/local-css/index-img/video3.mp4');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.large-image-2 {
+    background-image: url('https://youtu.be/KG6SL6Mf7ak');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
