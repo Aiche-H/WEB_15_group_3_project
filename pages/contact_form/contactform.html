@@ -102,7 +102,7 @@
       <div class="row">
         <!-- Vasen sarake -->
         <div class="col s12 m6">
-          <!-- Yhteydenoton syy (Dropdown) EI TOIMI OIKEIN, vaikka muualla kuin tässä toimii-->
+          <!-- Yhteydenoton syy (Dropdown) korjattu-->
           <div class="input-field inline" style="display: flex; align-items: center;">
             <select name="syy" required >
               <option value="" disabled selected>Valitse syy</option>
@@ -147,7 +147,7 @@
             <label for="message">Viesti</label>
           </div>
 
-          <!-- CAPTCHA (Tekstikenttä) 
+          <!-- "CAPTCHA" (Tekstikenttä) 
           <div class="input-field">
             <input type="text" id="captcha" required>
             <label for="captcha">Kirjoita "olen ihminen" varmistaaksesi</label>
@@ -219,6 +219,53 @@
   <script src="../../resources/javascript/jquery-3.7.1.min.js"></script>
   <script src="../../resources/javascript/materialize.js"></script>
   <script src="../../global/javascript/global.js"></script>
+
+  <!-- emailjs ja recaptcha yhdistelmä -->
+  <script>
+  emailjs.init("4pNaMiNVu_a9TToRB");
+
+document.querySelector(".form-container form").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  // reCAPTCHA-vastaus
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    alert("Vahvista reCAPTCHA ennen lomakkeen lähettämistä!");
+    return;
+  }
+
+  // Haetaan lomakkeen kenttien arvot
+  const syy = document.querySelector("select[name='syy']").value;
+  const firstname = document.getElementById("firstname").value;
+  const email = document.getElementById("email").value;
+  const planet = document.querySelector("input[name='planet']:checked")?.value || "Ei valittu";
+  const message = document.getElementById("message").value;
+
+  // EmailJS:n parametrit
+  const emailParams = {
+    syy: syy,
+    firstname: firstname,
+    email: email,
+    planet: planet,
+    message: message,
+    "g-recaptcha-response": recaptchaResponse, 
+  };
+
+  // Lähetetään sähköposti
+  emailjs.send("service_fhrwk3w", "template_hmripfj", emailParams)
+    .then(
+      function(response) {
+        alert("Viesti lähetetty onnistuneesti!");
+        document.querySelector(".form-container form").reset(); 
+        grecaptcha.reset(); 
+      },
+      function(error) {
+        alert("Virhe viestin lähetyksessä: " + error.text);
+      }
+    );
+});
+</script>
+
 </body>
 
 </html>
