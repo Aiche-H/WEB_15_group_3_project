@@ -103,51 +103,42 @@
             </div>
           </div>
         </nav>
-        <div class="back-container2">  </div>
-        <div class="back-container">  </div>
 
-        <div class="hero-container">
-          <div class="header-container">
-              
-            <div class="row">
-              <div class="col s12 m12 l6">
-                <div class="text-overlay">
-                  <h2 style="text-align: left;">Lorem Ipsum</h2>
-                  <h1>DISCOVER</h1>
-                  <br>
-                  <h2 style="text-align: right;">dolor sit amet...</h2>
+          <div class="hero-container">
+            
+
+            <img src="/pages/index/local-css/index-img/tausta.jpg" alt="Space Background" class="parallaxhead bg-img" data-speedx="0.01" data-speedy="0.038" data-speedz="0.014">
+            <img src="/pages/index/local-css/index-img/maapallo4.png" alt="Earth" class="parallaxhead maa" data-speedx="0.06" data-speedy="0.24" data-speedz="0.14" style="filter: drop-shadow(0px 0px 25px rgba(14, 11, 56, 0.9));">
+             <img src="/pages/index/local-css/index-img/astronaut1.png" alt="Astronaut" class="parallaxhead astronaut" data-speedx="0.041" data-speedy="0.014"  style="filter: drop-shadow(0px 0px 15px rgba(100, 98, 101, 0.7));">
+             <div class="row">
+              <div class="col s12 m2">
+                <div class="text-overlay-side"><a href="#uutiset"><button class="button-custom">News</button></a></div>
+              </div>
+              <div class="col s12 m8">
+                <div class="text-overlay-center">
+                  <h1>the S.P.A.C.E</h1>
+                  <h2>Lorem ipsum dolores</h2>
                 </div>
               </div>
-        
-              <div class="video-box">
-                <video autoplay muted loop class="rounded-video">
-                  <source src="/pages/index/local-css/index-img/video3.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
             </div>
-   
+          
             <div class="row">
-              <div class="col s12 m12 l12">
-                <!-- Hakupalkki -->
+              <div class="col s12 m12 l6 offset-l3">
                 <div class="hakupalkki">
                   <h4>Etsi Avaruudesta</h4>
                   <input type="text" id="searchInput" placeholder="Hae sivustolta">
-                  <div id="results"></div>
-                  <p>The Universe is Yours...</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        
         </header>
         
-        <main>
-          <section class="section1">
+        <main>     
+          <section class="sectionone">
 
-            <div class="container news-container" data-aos="fade-up">
+            <div class="container news-container" data-aos="fade-up" id="uutiset">
               <div class="octo-container">
+
                 <!-- Tabit -->
                 <ul id="tabs-swipe-demo" class="tabs-custom">
                   <li class="tab col s4"><a href="#content-one" class="active"></a></li>
@@ -180,9 +171,8 @@
                         <h4>Otsikko</h4>
                         <p>alias dolore recusandae recto repudianipisicing elit. Explicabo, ipsam?</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                        <br>
-                        <a href="#" class="btn-custom">Button</a>
-                      </div>
+
+                      </div>         
                     </div>
                   </div>
                 </div>
@@ -206,9 +196,9 @@
                     </div>
         
                     <!-- Oikeanpuoleinen sarake -->
-                    <div class="col s12 m12 l5">
+                    <div class="col s12 m12 l5" >
                       <div class="img-container">
-                        <img src="/pages/index/local-css/index-img/moon.png" alt="moon" class="responsive-img">
+                        <img src="/resources/images/space-logo.png" alt="moon" class="responsive-img" style="margin: 10% auto;">
                       </div>
                     </div>
                   </div>
@@ -239,6 +229,7 @@
                       </div>
                       <div class="shadowbox">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, tempore!</p>
+                        <img src="/resources/images/space-logo.png" alt="moon" class="responsive-img">
                       </div>
                     </div>
                   </div>
@@ -247,30 +238,89 @@
             </div>
           </section>
         
-          <section>
-            <div class="container wide-container" data-aos="fade-up">
+
+          
+          <section class="sectiontwo">
+            <div class="container wide-container" data-aos="fade-up" style="border-radius: 5px; padding: 30px; border: 1px solid rgba(255, 251, 251, 0.2);">
               <div class="row">
-                <h2>Some Special Things</h2>
-                <hr>
+                <!-- Section Title -->
+                <div class="col s12">
+                  <h2>Some Special Things</h2>
+                  <hr>
+                </div>
+                
+                <!-- Left Column (Text and Widgets) -->
                 <div class="col s12 m12 l8">
                   <div class="wide-container-box">
-                    <h3>Otsikko</h3>
+                    <h4>Otsikko</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sed voluptatibus cumque natus nulla 
                       est repellat eius dolorum, totam libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                       Explicabo, ipsam?</p>
                   </div>
+                  <hr>
+                  <div class="wide-container-box">
+                    <div class="row">
+                      <!-- Widget 1 -->
+                      <div class="col s8 m4 l3">
+                        <div class="widget">
+                          <img src="/pages/index/local-css/index-img/widget.png" alt="moon" class="responsive-img" data-aos="fade-right">
+                          <div class="overlay">
+                            <div class="text-box1"><h4>Learn</h4><a href="#uutiset"><button class="button-custom">button</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Widget 2 -->
+                      <div class="col s8 m4 l3">
+                        <div class="widget">
+                          <img src="/pages/index/local-css/index-img/widget.png" alt="moon" class="responsive-img" data-aos="fade-right">
+                          <div class="overlay">
+                            <div class="text-box1"><h4>Learn</h4><a href="#uutiset"><button class="button-custom">button</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Widget 3 -->
+                      <div class="col s8 m4 l3">
+                        <div class="widget">
+                          <img src="/pages/index/local-css/index-img/widget.png" alt="moon" class="responsive-img" data-aos="fade-right">
+                          <div class="overlay">
+                            <div class="text-box1"><h4>Learn</h4><a href="#uutiset"><button class="button-custom">button</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                
+                <!-- Right Column -->
                 <div class="col s12 m12 l4">
                   <div class="wide-container-box">
-                    <h3>Otsikko</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
+                    <h4>Planeetat</h4>
+                    <p><ul><li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/02-mercury/mercury.html">Merkurius</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/03-venus/venus.html">Venus</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/04-earth/earth.html">Maa</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/05-mars/mars.html">Mars</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="./pages/09-neptune/neptune.html">Neptunus</a></li>
+                      <li class="divider" tabindex="-1"></li></ul></p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+          
         
-          <section>
+          <section class="sectionthree">
             <div class="container info-container" data-aos="fade-up">
               <div class="row">
                 <div class="col s12 back-ground2 big-box2">
@@ -318,18 +368,7 @@
               </div>
             </div>
           </section>
-        
-          <div class="parallax-container">
-            <div class="parallax">
-              <img src="/pages/index/local-css/index-img/stars.jpg" alt="Parallax Background">
-            </div>
-            <div class="parallax-text">
-              <h4>This is What's Coming</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, adipisci. Aliquid, officiis!</p>
-            </div>
-          </div>
-        
-          <br><br><br>
+
         </main>
 
 
