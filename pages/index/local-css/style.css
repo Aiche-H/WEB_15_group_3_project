@@ -9,6 +9,11 @@ p {
   font-family: "Open Sans", sans-serif;
 }
 
+i {
+  filter: drop-shadow(0px 0px 25px rgba(106, 13, 173, 0.8));
+  color: #f3f3f3;
+}
+
 hr {
   width: 70%;
   margin-left: 0;
@@ -59,6 +64,18 @@ h4 {
   line-height: 1.1;
   color: rgb(255, 244, 241);
   margin: 5px;
+}
+
+a:link {
+  color: #0cc3ea;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+a:visited {
+  color: #b7f2ff;
 }
 
 /*Hero-osio*/
@@ -122,8 +139,11 @@ h4 {
   z-index: 13;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(36, 32, 59, 0.4);
+  border: 1px solid rgba(36, 32, 59, 0.6);
   background-color: rgba(36, 32, 59, 0.3);
+  font-size: 16px;
+  padding: 15px;
+  font-weight: 600;
 }
 
 .parallaxhead {
@@ -204,9 +224,8 @@ h4 {
 /*Responsiivisuus*/
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-
   .text-overlay-sidecontent {
-    display: none; 
+    display: none;
   }
 
   .maa {
@@ -218,9 +237,8 @@ h4 {
 }
 
 @media (max-width: 768px) {
-
   .text-overlay-sidecontent {
-    display: none; 
+    display: none;
   }
 
   .hakupalkki {
@@ -235,7 +253,7 @@ h4 {
 
   .hero-container {
     height: 80vh;
-    background-image: url(/pages/index/local-css/index-img/tausta.jpg);
+    background-image: url(./index/local-css/index-img/tausta.jpg);
     background-size: contain;
   }
 
@@ -248,7 +266,6 @@ h4 {
 }
 
 @media (max-width: 480px) {
-  
   .parallaxhead {
     transform: none !important;
     transition: none !important;
@@ -296,16 +313,34 @@ section {
 }
 
 .container-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
   border-left: 2px solid rgba(255, 255, 255, 0.7);
   margin-top: 2%;
-  margin: 25px;
+  margin: 8px;
+}
+
+.text-column {
+  flex: 1.5;
+}
+
+.image-column {
+  flex: 0.5;
+}
+
+.image-column img {
+  height: auto;
+  max-width: 120px;
+  border-radius: 5px;
 }
 
 .shadowbox {
   background-color: rgba(0, 0, 0, 0.4);
+
   backdrop-filter: blur(4.1px);
   padding: 20px;
   border-radius: 8px;
@@ -374,14 +409,13 @@ section {
 
 /*Section two*/
 .sectiontwo {
+  background: url(./index-img/violet4.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   margin-bottom: 50px;
 }
 .wide-container {
-  background: rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: rgba(0, 0, 0, 0.7);
   margin: 150px auto;
   padding: 30px;
   border-left: 1px solid rgba(255, 251, 251, 0.2);
@@ -494,6 +528,7 @@ section {
   border: 2px solid rgba(255, 186, 157, 0.3);
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
   margin-top: 5px;
+  min-height: 300px;
 }
 
 .img-container2 img {

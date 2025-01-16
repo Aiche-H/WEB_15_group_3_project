@@ -1,415 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./resources/css/aos.css">
-    <link rel="stylesheet" href="./resources/css/materialize.css">
-    <link rel="stylesheet" href="./global/css/global.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./pages/index/local-css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./resources/css/aos.css" />
+    <link rel="stylesheet" href="./resources/css/materialize.css" />
+    <link rel="stylesheet" href="./global/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="./pages/index/local-css/style.css" />
 
-    <meta name="description" content="Facinating information from our slice of the Universe.">
-    <meta name="keywords" content="solar system, planets, space, astronomy, universe, galaxies, stars, constellations, solar system facts, solar system images, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Mercury, Venus, Moon, Sun">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Facinating information from our slice of the Universe."
+    />
+    <meta
+      name="keywords"
+      content="solar system, planets, space, astronomy, universe, galaxies, stars, constellations, solar system facts, solar system images, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, Mercury, Venus, Moon, Sun"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="Our solar system">
-    <meta property="og:description" content="Facinating information from our slice of the Universe.">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="#">
-    <meta property="og:url" content="#">
+    <meta property="og:title" content="Our solar system" />
+    <meta
+      property="og:description"
+      content="Facinating information from our slice of the Universe."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="#" />
+    <meta property="og:url" content="#" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Our solar system">
-    <meta name="twitter:description" content="Facinating information from our slice of the Universe.">
-    <meta name="twitter:image" content="#">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our solar system" />
+    <meta
+      name="twitter:description"
+      content="Facinating information from our slice of the Universe."
+    />
+    <meta name="twitter:image" content="#" />
 
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="translate:no">
-    <meta name="language" content="en">
-    <meta name="author" content="Dude77fi, Aiche-H, jmetsaniemi1, Kharmaa">
-    <meta name="date" content="#">
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="translate:no" />
+    <meta name="language" content="en" />
+    <meta name="author" content="Dude77fi, Aiche-H, jmetsaniemi1, Kharmaa" />
+    <meta name="date" content="#" />
 
     <title>Solar System</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
+      <nav>
+        <div class="nav-wrapper black">
+          <div class="container">
+            <a href="#" class="brand-logo"
+              ><img src="./resources/images/space-logo.png" alt="Our logo"
+            /></a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"
+              ><i class="material-icons">menu</i></a
+            >
 
-        <nav>
-          <div class="nav-wrapper black">
-            <div class="container">
-              <a href="#" class="brand-logo"><img src="./resources/images/space-logo.png" alt="Our logo"></a>
-              <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.html">Etusivu</a></li>
+              <li>
+                <a class="dropdown-trigger" href="#" data-target="dropdown1"
+                  >Planeetat</a
+                >
+              </li>
 
-              <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Etusivu</a></li>
-                <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Planeetat</a></li>
+              <ul id="dropdown1" class="dropdown-content black-text">
+                <li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/02-mercury/mercury.html">Merkurius</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/03-venus/venus.html">Venus</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/04-earth/earth.html">Maa</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/05-mars/mars.html">Mars</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/09-neptune/neptune.html">Neptunus</a></li>
+                <li class="divider" tabindex="-1"></li>
+              </ul>
 
-                <ul id='dropdown1' class='dropdown-content black-text'>
-                    <li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/02-mercury/mercury.html">Merkurius</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/03-venus/venus.html">Venus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/04-earth/earth.html">Maa</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/05-mars/mars.html">Mars</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/09-neptune/neptune.html">Neptunus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                  </ul>
+              <li>
+                <a href="./pages/contact_form/contactform.html">Ota yhteyttä</a>
+              </li>
 
-                <li><a href="./pages/contact-information/contactinformation.html">Ota yhteyttä</a></li>
-              
               <li><a href="./pages/about_us/aboutus.html">Tietoa meistä</a></li>
             </ul>
 
-              <ul class="sidenav" id="mobile-menu">
-                <li><a href="index.html">Etusivu</a></li>
-                <li><a class='dropdown-trigger' href='#' data-target='dropdown2'>Planeetat</a></li>
+            <ul class="sidenav" id="mobile-menu">
+              <li><a href="index.html">Etusivu</a></li>
+              <li>
+                <a class="dropdown-trigger" href="#" data-target="dropdown2"
+                  >Planeetat</a
+                >
+              </li>
 
-                <ul id='dropdown2' class='dropdown-content'>
-                    <li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/02-mercury/mercury.html">Merkurius</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/03-venus/venus.html">Venus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/04-earth/earth.html">Maa</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/05-mars/mars.html">Mars</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li><a href="./pages/09-neptune/neptune.html">Neptunus</a></li>
-                    <li class="divider" tabindex="-1"></li>
-                    </ul>
-                    
-                    <li><a href="./pages/contact-information/contactinformation.html">Ota yhteyttä</a></li>
-                    <li><a href="./pages/about_us/aboutus.html">Tietoa meistä</a></li>
-                  </ul>
-            </div>
+              <ul id="dropdown2" class="dropdown-content">
+                <li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/02-mercury/mercury.html">Merkurius</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/03-venus/venus.html">Venus</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/04-earth/earth.html">Maa</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/05-mars/mars.html">Mars</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
+                <li class="divider" tabindex="-1"></li>
+                <li><a href="./pages/09-neptune/neptune.html">Neptunus</a></li>
+                <li class="divider" tabindex="-1"></li>
+              </ul>
+
+              <li>
+                <a href="./pages/contact_form/contactform.html">Ota yhteyttä</a>
+              </li>
+              <li><a href="./pages/about_us/aboutus.html">Tietoa meistä</a></li>
+            </ul>
           </div>
-        </nav>
+        </div>
+      </nav>
 
-          <div class="hero-container">
-            
-
-            <img src="./pages/index/local-css/index-img/tausta.jpg" alt="Space Background" class="parallaxhead bg-img" data-speedx="0.01" data-speedy="0.038" data-speedz="0.014">
-            <img src="./pages/index/local-css/index-img/maapallo4.png" alt="Earth" class="parallaxhead maa" data-speedx="0.06" data-speedy="0.24" data-speedz="0.14" style="filter: drop-shadow(0px 0px 25px rgba(14, 11, 56, 0.9));">
-             <img src="./pages/index/local-css/index-img/astronaut1.png" alt="Astronaut" class="parallaxhead astronaut" data-speedx="0.041" data-speedy="0.014"  style="filter: drop-shadow(0px 0px 15px rgba(100, 98, 101, 0.7));">
-             <div class="row">
-              <div class="col s12 m12 l3">
-                <div class="text-overlay-side"><a href="#uutiset"><button class="button-custom" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">Uutta</button></a>
-              </div>
-              <div class="text-overlay-sidecontent" data-aos="zoom-out-right">
-              
-              <p style="text-align: left; font-size: 14px; padding: 6px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Quo fugit enim dolor eius illo</p>
+      <div class="hero-container">
+        <img
+          src="./pages/index/local-css/index-img/tausta.jpg"
+          alt="Space Background"
+          class="parallaxhead bg-img"
+          data-speedx="0.01"
+          data-speedy="0.038"
+          data-speedz="0.014"
+        />
+        <img
+          src="./pages/index/local-css/index-img/maapallo4.png"
+          alt="Earth"
+          class="parallaxhead maa"
+          data-speedx="0.06"
+          data-speedy="0.24"
+          data-speedz="0.14"
+          style="filter: drop-shadow(0px 0px 25px rgba(14, 11, 56, 0.9))"
+        />
+        <img
+          src="./pages/index/local-css/index-img/astronaut1.png"
+          alt="Astronaut"
+          class="parallaxhead astronaut"
+          data-speedx="0.041"
+          data-speedy="0.014"
+          style="filter: drop-shadow(0px 0px 15px rgba(100, 98, 101, 0.7))"
+        />
+        <div class="row">
+          <div class="col s12 m12 l3">
+            <div class="text-overlay-side">
+              <a href="#uutiset"
+                ><button
+                  class="button-custom"
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                >
+                  Uutta
+                </button></a
+              >
             </div>
             <div class="text-overlay-sidecontent" data-aos="zoom-out-right">
-              
-              <p style="text-align: left; font-size: 14px; padding: 6px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <a
+                href="http://tieku.fi/maailmankaikkeus/aurinkokunta/planeettojen-jarjestys-tassa-ovat-aurinkokunnan-planeetat-oikeassa-jarjestyksessa"
+                target="_blank"
+                >Planeettojen järjestys – Tässä ovat Aurinkokunnan planeetat
+                oikeassa järjestyksessä</a
+              >
             </div>
-              </div>
-              <div class="col s12 m8">
-                <div class="text-overlay-center">
-                  <h1 data-aos="zoom-in" data-aos-duration="2000">the S.P.A.C.E</h1>
-                  <h2 data-aos="zoom-in" data-aos-duration="2000">Lorem ipsum dolores</h2>
+            <div class="text-overlay-sidecontent" data-aos="zoom-out-right">
+              <a
+                href="http://tekniikanmaailma.fi/ufot-ovat-todellisia-usan-puolustusministerion-ex-virkamies-sanoi-kongressin-kuulustelussa/"
+                target="_blank"
+                >Ufot ”ovat todellisia” -Tekniikan maailma</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m8">
+          <div class="text-overlay-center">
+            <h1 data-aos="zoom-in" data-aos-duration="2000">the S.P.A.C.E</h1>
+            <h2 data-aos="zoom-in" data-aos-duration="2000">
+              Lorem ipsum dolores
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m12 l6 offset-l3">
+          <div class="hakupalkki">
+            <h4>Etsi Avaruudesta</h4>
+            <input type="text" id="searchInput" placeholder="Hae sivustolta" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="sectionone">
+        <div class="container news-container" data-aos="fade-up" id="uutiset">
+          <div class="octo-container">
+            <!-- Tabit -->
+            <ul id="tabs-swipe-demo" class="tabs-custom">
+              <li class="tab col s4">
+                <a href="#content-one" class="active"></a>
+              </li>
+              <li class="tab col s4"><a href="#content-two"></a></li>
+              <li class="tab col s4"><a href="#content-three"></a></li>
+            </ul>
+
+            <!-- Ensimmäinen sisältö -->
+            <div
+              id="content-one"
+              class="col s12 m12 l6 back-ground big-box mySlide"
+            >
+              <h2>What's happening?</h2>
+              <hr />
+              <p>Ajankohtaisia uutisia ja tutkimuksia</p>
+
+              <div class="row">
+                <!-- Vasemmanpuoleinen sarake -->
+                <div class="col s12 m12 l7">
+                  <div class="container-box">
+                    <div class="text-column">
+                      <h4>
+                        <a href="https://www.nasa.gov/news" target="_blank"
+                          >Uutiset NASA:lta</a
+                        >
+                      </h4>
+                      <p>
+                        Tutustu NASA:n viralliseen sivustoon
+                        avaruustutkimuksesta ja uusimmista projekteista.
+                      </p>
+                    </div>
+                    <div class="image-column">
+                      <img
+                        src="./pages/index/local-css/index-img/mars.jpg"
+                        alt="Image"
+                      />
+                    </div>
+                  </div>
+                  <div class="container-box">
+                    <div class="text-column">
+                      <h4>
+                        <a href="https://www.esa.int" target="_blank"
+                          >European Space Agency</a
+                        >
+                      </h4>
+                      <p>
+                        Tutustu ESA:n viralliseen sivustoon avaruustutkimuksesta
+                        ja uusimmista projekteista.
+                      </p>
+                    </div>
+                    <div class="image-column">
+                      <img
+                        src="./pages/index/local-css/index-img/widget.jpg"
+                        alt="Image"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Oikeanpuoleinen sarake -->
+                <div class="col s12 m12 l5">
+                  <div class="shadowbox">
+                    <h4>NASAlla on uusia suunnitelmia Mars</h4>
+                    <p>
+                      Nasa on ilmoittanut palauttavansa Marsista kerättyjen
+                      kivinäytteiden Maahan tuomisen suunnitelman
+                      suunnittelupöydälle.
+                    </p>
+                    <a
+                      href="https://tekniikanmaailma.fi/nasalla-on-uusia-suunnitelmia-mars-naytteiden-tuomiseksi-maahan/"
+                      target="_blank"
+                      >Lue lisää...</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          
-            <div class="row">
-              <div class="col s12 m12 l6 offset-l3">
-                <div class="hakupalkki" >
-                  <h4>Etsi Avaruudesta</h4>
-                  <input type="text" id="searchInput" placeholder="Hae sivustolta">
+
+            <!-- Toinen sisältö -->
+            <div
+              id="content-two"
+              class="col s12 m12 l6 back-ground big-box mySlide"
+            >
+              <h2>What's happening?</h2>
+              <hr />
+              <p>Ajankohtaisia uutisia ja tutkimuksia</p>
+              <div class="row equal-height">
+                <!-- Vasemmanpuoleinen sarake -->
+                <div class="col s12 m12 l7">
+                  <div class="container-box">
+                    <div class="text-column">
+                      <h4><a href="" target="_blank">Tähdenlennot 2025</a></h4>
+                      <p>
+                        – Tieteen kuvalehden opas vuoden upeimpiin
+                        meteoriparviin
+                      </p>
+                    </div>
+                    <div class="image-column">
+                      <img
+                        src="./pages/index/local-css/index-img/tausta.jpg"
+                        alt="Image"
+                      />
+                    </div>
+                  </div>
+                  <div class="container-box">
+                    <div class="text-column">
+                      <h4>
+                        <a
+                          href="https://tieku.fi/maailmankaikkeus/aurinkokunta/kuu/kuu-saa-oman-internetin"
+                          target="_blank"
+                          >Kuu saa oman internetin</a
+                        >
+                      </h4>
+                      <p>
+                        Kun pysyvä kuuasema valmistuu 2030-luvulla, liikenne
+                        Kuuhun lisääntyy huomattavasti.
+                      </p>
+                    </div>
+                    <div class="image-column">
+                      <img
+                        src="./pages/index/local-css/index-img/widget3.jpg"
+                        alt="Image"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Oikeanpuoleinen sarake -->
+                <div class="col s12 m12 l5">
+                  <div class="shadowbox">
+                    <h4>
+                      <a
+                        href="http://tieku.fi/maailmankaikkeus/aurinkokunta/planeettojen-jarjestys-tassa-ovat-aurinkokunnan-planeetat-oikeassa-jarjestyksessa"
+                        >Planeettojen järjestys</a
+                      >
+                    </h4>
+                    <p>
+                      – Tässä ovat Aurinkokunnan planeetat oikeassa
+                      järjestyksessä
+                    </p>
+
+                    <br />
+                    <h4>
+                      <a
+                        href="http://tekniikanmaailma.fi/ufot-ovat-todellisia-usan-puolustusministerion-ex-virkamies-sanoi-kongressin-kuulustelussa/"
+                        >Ufot ”ovat todellisia”</a
+                      >
+                    </h4>
+                    <p>-Tekniikan maailma</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolmas sisältö -->
+            <div id="content-three" class="col s12 back-ground big-box mySlide">
+              <h2>What's happening?</h2>
+              <hr />
+              <p>Ajankohtaisia uutisia ja tutkimuksia</p>
+              <div class="row equal-height">
+                <!-- Vasemmanpuoleinen sarake -->
+                <div class="col s12 m12 l7">
+                  <div class="container-box">
+                    <div class="text-column">
+                      <h4>
+                        <a
+                          href="https://tieku.fi/maailmankaikkeus/aurinkokunta/auringonpimennys/osittainen-auringonpimennys-mika-se-on-ja-milloin-se-nakyy-suomessa"
+                          target="_blank"
+                          >Osittainen auringonpimennys 2025</a
+                        >
+                      </h4>
+                      <p>
+                        - Tieteen kuvalehti kertoo mikä se on ja milloin se
+                        näkyy Suomessa?
+                      </p>
+                    </div>
+                    <div class="image-column">
+                      <img
+                        src="./pages/index/local-css/index-img/widget4.jpg"
+                        alt="Image"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="container-box">
+                    <div class="text-column">
+                      <h4>
+                        <a
+                          href="https://tekniikanmaailma.fi/marsin-hiekkadyynit-jaatyivat-kidneypavuiksi-kuva-kiertoradalta-ei-nalkaisille/"
+                          target="_blank"
+                          >Marsin hiekkadyynit jäätyivät ”kidneypavuiksi”</a
+                        >
+                      </h4>
+                      <p>– kuva kiertoradalta ei nälkäisille!</p>
+                    </div>
+                    <div class="image-column">
+                      <img
+                        src="./pages/index/local-css/index-img/mars.jpg"
+                        alt="Image"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Oikeanpuoleinen sarake -->
+                <div class="col s12 m12 l5">
+                  <div class="shadowbox">
+                    <h4>the TEAM</h4>
+                    <p>
+                      Tutustu tiimimme upeisiin jäseniin allaolevasta linkistä!
+                    </p>
+                    <a href="./pages/about_us/aboutus.html" target="_blank"
+                      >TEAM</a
+                    >
+                    <a href="./pages/about_us/aboutus.html" target="_blank">
+                      <img
+                        src="/resources/images/space-logo.png"
+                        alt="logo"
+                        class="responsive-img"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </header>
-        
-        <main>     
-          <section class="sectionone">
+        </div>
+      </section>
 
-            <div class="container news-container" data-aos="fade-up" id="uutiset">
-              <div class="octo-container">
-
-                <!-- Tabit -->
-                <ul id="tabs-swipe-demo" class="tabs-custom">
-                  <li class="tab col s4"><a href="#content-one" class="active"></a></li>
-                  <li class="tab col s4"><a href="#content-two"></a></li>
-                  <li class="tab col s4"><a href="#content-three"></a></li>
-                </ul>
-        
-                <!-- Ensimmäinen sisältö -->
-                <div id="content-one" class="col s12 m12 l6 back-ground big-box mySlide">
-                  <h2>What's happening?</h2>
-                  <hr>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus fugit ipsam rem voluptatum deserunt molestiae provident error ad ratione nam.</p>
-        
-                  <div class="row">
-                    <!-- Vasemmanpuoleinen sarake -->
-                    <div class="col s12 m12 l7">
-                      <div class="container-box">
-                        <h4><a href="https://www.nasa.gov/news" target="_blank">Uutiset NASA:lta</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                      <div class="container-box">
-                        <h4>Otsikko</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                    </div>
-        
-                    <!-- Oikeanpuoleinen sarake -->
-                    <div class="col s12 m12 l5">
-                      <div class="shadowbox">
-                        <h4>Otsikko</h4>
-                        <p>alias dolore recusandae recto repudianipisicing elit. Explicabo, ipsam?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-
-                      </div>         
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- Toinen sisältö -->
-                <div id="content-two" class="col s12 m12 l6 back-ground big-box mySlide">
-                  <h2>What's happening?</h2>
-                  <hr>
-        
-                  <div class="row equal-height">
-                    <!-- Vasemmanpuoleinen sarake -->
-                    <div class="col s12 m12 l7">
-                      <div class="container-box">
-                        <h4>Otsikko</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                      <div class="container-box">
-                        <h4>Otsikko</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                    </div>
-        
-                    <!-- Oikeanpuoleinen sarake -->
-                    <div class="col s12 m12 l5" >
-                      <div class="img-container">
-                        <img src="/resources/images/space-logo.png" alt="moon" class="responsive-img" style="margin: 10% auto;">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- Kolmas sisältö -->
-                <div id="content-three" class="col s12 back-ground big-box mySlide">
-                  <h2>What's happening?</h2>
-                  <hr>
-        
-                  <div class="row equal-height">
-                    <!-- Vasemmanpuoleinen sarake -->
-                    <div class="col s12 m12 l7">
-                      <div class="container-box">
-                        <h4>Otsikko</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                      <div class="container-box">
-                        <h4>Otsikko</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                    </div>
-        
-                    <!-- Oikeanpuoleinen sarake -->
-                    <div class="col s12 m12 l5">
-                      <div class="img-container-second">
-                        <img src="/resources/images/" alt="">
-                      </div>
-                      <div class="shadowbox">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, tempore!</p>
-                        <img src="/resources/images/space-logo.png" alt="moon" class="responsive-img">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        
-
-          
-          <section class="sectiontwo">
-            <div class="container wide-container" data-aos="fade-up">
-              <div class="row">
-                <!-- Section Title -->
-                <div class="col s12">
-                  <h2>Some Special Things</h2>
-                  <hr>
-                </div>
-                
-                <!-- Left Column (Text and Widgets) -->
-                <div class="col s12 m12 l8">
-                  <div class="wide-container-box">
-                    <h3>Otsikko</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sed voluptatibus cumque natus nulla 
-                      est repellat eius dolorum, totam libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                      Explicabo, ipsam?</p>
-                  </div>
-      
-                  <div class="wide-container-box">
-                    <div class="row">
-                      <!-- Widget 1 -->
-                      <div class="col s8 m4 l3">
-                        <div class="widget">
-                          <img src="./pages/index/local-css/index-img/widget.png" alt="moon" class="responsive-img" data-aos="fade-right">
-                          <div class="overlay">
-                            <div class="text-box1"><h4>Learn</h4><a href="#uutiset"><button class="button-custom">button</button></a></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Widget 2 -->
-                      <div class="col s8 m4 l3">
-                        <div class="widget">
-                          <img src="./pages/index/local-css/index-img/widget.png" alt="moon" class="responsive-img" data-aos="fade-right">
-                          <div class="overlay">
-                            <div class="text-box1"><h4>Learn</h4><a href="#uutiset"><button class="button-custom">button</button></a></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Widget 3 -->
-                      <div class="col s8 m4 l3">
-                        <div class="widget">
-                          <img src="./pages/index/local-css/index-img/widget.png" alt="moon" class="responsive-img" data-aos="fade-right">
-                          <div class="overlay">
-                            <div class="text-box1"><h4>Learn</h4><a href="#uutiset"><button class="button-custom">button</button></a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Right Column -->
-                <div class="col s12 m12 l4">
-                  <div class="wide-container-box" style="border-radius: 0px;border-left: 1px solid rgba(255, 251, 251, 0.2)">
-                    <h3>Planeetat</h3>
-                    <p><ul><li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/02-mercury/mercury.html">Merkurius</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/03-venus/venus.html">Venus</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/04-earth/earth.html">Maa</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/05-mars/mars.html">Mars</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="./pages/09-neptune/neptune.html">Neptunus</a></li>
-                      <li class="divider" tabindex="-1"></li></ul></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-        
-          <section class="sectionthree">
-            <div class="container info-container" data-aos="fade-up">
-              <div class="row">
-                <div class="col s12 back-ground2 big-box2">
-                  <h3>What's happening?</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus fugit ipsam rem
-                     voluptatum deserunt molestiae provident error ad ratione nam.</p>
-        
-                  <div class="row">
-                    <!-- Vasemmanpuoleinen sarake -->
-                    <div class="col s12 m12 l4">
-                      <div class="info-box">
-                        <h4>Otsikko</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsam?</p>
-                      </div>
-                      <div class="info-box">
-                        <h4>Otsikko</h4>
-                        <p>
-                          <li><u>Tieto</u>: Tieto</li>
-                          <li><u>Tieto</u>: Tieto</li>
-                          <li><u>Tieto</u>: Tieto</li>
-                        </p>
-                      </div>
-                    </div>
-        
-                    <!-- Oikeanpuoleinen sarake -->
-                    <div class="col s12 m12 l8">
-                      <div class="img-container2 image-link">
-                        <img src="./pages/index/local-css/index-img/moon.png" alt="Moon" class="responsive-img">
-                        <div class="kuunvaihe"> 
-                          <h4>Kuun Vaihe Tänään</h4>
-                        </div>
-                      <div class="overlay1">
-                          <div class="text-box1">
-                            <li><u>Kuun vaihe</u>: Täysikuu</li>
-                            <li><u>Kuun ikä</u>: 14.1 pv</li>
-                            <li><u>Etäisyys maasta</u>: 365931.07km</li>
-                            <li><u>Kuu laski</u>: klo 08:11</li>
-                            <li><u>Kuu nousee</u>: klo 15:07</li>
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-        </main>
-
-
-      <footer class="page-footer black">
-        <div class="container">
+      <section class="sectiontwo">
+        <div class="container wide-container" data-aos="fade-up">
           <div class="row">
-            <div class="col s12 m8 l6">
-              <h5 class="white-text">Meidän motto</h5>
-              <p class="grey-text text-lighten-4">Koodi elää, kun tiimi hengittää yhdessä.</p>
+            <!-- Section Title -->
+            <div class="col s12">
+              <h2>Tervetuloa</h2>
+              <hr />
             </div>
-            <div class="col s12 m4 l6">
-              <h5 class="white-text">More Links</h5>
-              <ul>
-                <li><a href="#">linkki</a></li>
-                <li><a href="#">linkki</a></li>
-                <li><a href="#">linkki</a></li>
-              </ul>
+
+            <!-- Left Column (Text and Widgets) -->
+            <div class="col s12 m12 l8">
+              <div class="wide-container-box">
+                <h4>Tule tutustumaan aurinkokuntaamme ja sen ihmeisiin</h4>
+                <p>
+                  Sivustoltamme löydät laajasti tietoa aurinkokunnastamme ja sen
+                  planeetoista. Tarjoamme ajankohtaista sisältöä ja
+                  artikkeleita, jotka valaisevat niin aurinkokunnan tutkimusta
+                  kuin sen ihmeellisiä ilmiöitä. Sivustomme päivittyy jatkuvasti
+                  uusilla uutisilla ja tutkimustuloksilla.<br />
+
+                  Planeettasivut sisältävät syvällistä tietoa kustakin
+                  planeetasta, ja ne tarjoavat monipuolisia resursseja niistä
+                  kiinnostuneille.<br /><br />
+
+                  Voit myös tutustua tiimiin, joka on tämän projektin takana.
+                  Olemme esittäytyneet ja kerromme mielellämme enemmän
+                  taustastamme ja asiantuntemuksestamme.<br />
+
+                  Mikäli sinulla on kysyttävää tai haluat ottaa yhteyttä, voit
+                  käyttää yhteydenottolomaketta. Autamme mielellämme kaikissa
+                  kysymyksissä, olivatpa ne suuria tai pieniä!<br /><br />
+
+                  Toivomme, että viihdyt sivuillamme ja löydät kaiken etsimäsi!
+                </p>
+              </div>
+
+              <div class="wide-container-box">
+                <div class="row">
+                  <!-- Widget 1 -->
+                  <div class="col s8 m4 l3">
+                    <div class="widget">
+                      <i class="large material-icons" data-aos="fade-in"
+                        >contacts</i
+                      >
+                      <div class="overlay">
+                        <div class="text-box1">
+                          <a href="./pages/contact_form/contactform.html"
+                            ><button class="button-custom">Contact</button></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Widget 2 -->
+                  <div class="col s8 m4 l3">
+                    <div class="widget">
+                      <i class="large material-icons" data-aos="fade-in"
+                        >group</i
+                      >
+                      <div class="overlay">
+                        <div class="text-box1">
+                          <a href="./pages/about_us/aboutus.html"
+                            ><button class="button-custom">About</button></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Widget 3 -->
+                  <div class="col s8 m4 l3">
+                    <div class="widget">
+                      <i class="large material-icons">new_releases</i>
+                      <div class="overlay">
+                        <div class="text-box1">
+                          <a href="#uutiset"
+                            ><button class="button-custom">News</button></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col s12 m12 l4">
+              <div
+                class="wide-container-box"
+                style="
+                  border-radius: 0px;
+                  border-left: 1px solid rgba(255, 251, 251, 0.2);
+                "
+              >
+                <h3>Planeetat</h3>
+                <p></p>
+                <ul>
+                  <li><a href="./pages/01-sun/sun.html">Aurinko</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li>
+                    <a href="./pages/02-mercury/mercury.html">Merkurius</a>
+                  </li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="./pages/03-venus/venus.html">Venus</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="./pages/04-earth/earth.html">Maa</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="./pages/05-mars/mars.html">Mars</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="./pages/06-jupiter/jupiter.html">Jupiter</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="./pages/07-saturn/saturn.html">Saturnus</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="./pages/08-uranus/uranus.html">Uranus</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li>
+                    <a href="./pages/09-neptune/neptune.html">Neptunus</a>
+                  </li>
+                  <li class="divider" tabindex="-1"></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-            © 2024 S.P.A.C.E
+      </section>
+
+      <section class="sectionthree">
+        <div class="container info-container" data-aos="fade-up">
+          <div class="row">
+            <div class="col s12 back-ground2 big-box2">
+              <h3>Esittelyssä planeettamme Kuu</h3>
+              <p>
+                Kuu on Maata kiertävä luonnon satelliitti ja ainoa
+                taivaankappale, johon ihmiset ovat koskaan astuneet. Se on
+                suurin ja massiivisin taivaankappale Maan taivaalla, ja se
+                vaikuttaa monin tavoin Maapallon elämään.
+              </p>
+              <div class="row">
+                <!-- Vasemmanpuoleinen sarake -->
+                <div class="col s12 m12 l4">
+                  <div class="info-box">
+                    <h4>Pinnan koostumus</h4>
+                    <p>
+                      Kuun pinnan koostumus on monivaiheinen ja koostuu
+                      pääasiassa kivilajeista ja mineraaleista, jotka ovat
+                      saaneet muotonsa miljoonien vuosien meteoriitti-iskujen
+                      seurauksena
+                    </p>
+                  </div>
+                  <div class="info-box">
+                    <h4>Ominaisuudet</h4>
+                    <p>
+                      <li><u>Halkaisija</u>: Tieto</li>
+                      <li><u>Massa</u>: Tieto</li>
+                      <li><u>Keskitiheys</u>: Tieto</li>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Oikeanpuoleinen sarake -->
+                <div class="col s12 m12 l8">
+                  <div class="img-container2 image-link">
+                    <img
+                      src="./pages/index/local-css/index-img/moon.png"
+                      alt="Moon"
+                      class="responsive-img"
+                    />
+                    <div class="kuunvaihe">
+                      <h4>Kuun Vaihe Tänään</h4>
+                    </div>
+                    <div class="overlay1">
+                      <div class="text-box1">
+                        <li><u>Kuun vaihe</u>: Täysikuu</li>
+                        <li><u>Kuun ikä</u>: 14.1 pv</li>
+                        <li><u>Etäisyys maasta</u>: 365931.07km</li>
+                        <li><u>Kuu laski</u>: klo 08:11</li>
+                        <li><u>Kuu nousee</u>: klo 15:07</li>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+    </main>
+
+    <footer class="page-footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m8 l6">
+            <h5 class="white-text">Meidän motto</h5>
+            <p class="grey-text text-lighten-4">
+              Koodi elää, kun tiimi hengittää yhdessä.
+            </p>
+          </div>
+          <div class="col s12 m4 l6">
+            <h5 class="white-text">More Links</h5>
+            <ul>
+              <li><a href="#">linkki</a></li>
+              <li><a href="#">linkki</a></li>
+              <li><a href="#">linkki</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">© 2024 S.P.A.C.E</div>
+      </div>
+    </footer>
 
     <script src="./pages/index/local-css/slider.js"></script>
     <script src="./resources/javascript/aos.js"></script>
     <script src="./resources/javascript/jquery-3.7.1.min.js"></script>
     <script src="./resources/javascript/materialize.js"></script>
     <script src="./global/javascript/global.js"></script>
-</body>
+  </body>
 </html>
