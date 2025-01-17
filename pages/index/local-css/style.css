@@ -9,9 +9,22 @@ p {
   font-family: "Open Sans", sans-serif;
 }
 
+a:hover {
+  color: #f3f3f3;
+}
+
 i {
   filter: drop-shadow(0px 0px 25px rgba(106, 13, 173, 0.8));
-  color: #f3f3f3;
+  color: #e7e7e7;
+  border: 1px solid rgba(156, 156, 156, 0.6);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 14px rgba(255, 255, 255, 0.4);
+}
+
+i:hover {
+  background: rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 0));
 }
 
 hr {
@@ -66,18 +79,6 @@ h4 {
   margin: 5px;
 }
 
-a:link {
-  color: #0cc3ea;
-}
-
-a:hover {
-  color: #ffffff;
-}
-
-a:visited {
-  color: #b7f2ff;
-}
-
 /*Hero-osio*/
 
 .hero-container {
@@ -104,6 +105,7 @@ a:visited {
   top: 24.4%;
   left: 70.9%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0px 0px 15px rgba(87, 68, 96, 0.7));
 }
 
 .maa {
@@ -113,6 +115,7 @@ a:visited {
   top: 40.1%;
   left: 50.8%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0px 0px 28px rgba(50, 13, 113, 0.7));
 }
 
 .text-overlay-center {
@@ -153,7 +156,7 @@ a:visited {
 
 .hakupalkki {
   position: absolute;
-  bottom: 7%;
+  bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
@@ -237,6 +240,17 @@ a:visited {
 }
 
 @media (max-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
   .text-overlay-sidecontent {
     display: none;
   }
@@ -252,7 +266,7 @@ a:visited {
   }
 
   .hero-container {
-    height: 80vh;
+    height: 100vh;
     background-image: url(./index-img/tausta.jpg);
     background-size: contain;
   }
@@ -263,9 +277,25 @@ a:visited {
   .text-overlay-center {
     top: 20%;
   }
+  .news-container {
+    padding: 0px !important;
+  }
+
+  .octo-container {
+    padding: 0px !important;
+  }
+
+  .hakupalkki {
+    bottom: 0;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
   .parallaxhead {
     transform: none !important;
     transition: none !important;
@@ -273,7 +303,9 @@ a:visited {
   }
 
   .hero-container {
-    height: 80vh;
+    height: 100vh;
+    background-image: url(./index-img/tausta.jpg);
+    background-size: contain;
   }
   .text-overlay-center {
     top: 15%;
@@ -281,6 +313,36 @@ a:visited {
 
   .hakupalkki {
     bottom: -5%;
+  }
+
+  .news-container {
+    padding: 0px !important;
+  }
+  .octo-container {
+    padding: 0px !important;
+  }
+
+  .hakupalkki {
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  .container-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-column,
+  .image-column {
+    flex: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .image-column img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
 }
 
@@ -292,9 +354,6 @@ section {
 
 /*Sectionone*/
 .sectionone {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   margin-bottom: 50px;
 }
 
@@ -320,6 +379,7 @@ section {
   padding: 15px;
   border-radius: 5px;
   border-left: 2px solid rgba(255, 255, 255, 0.7);
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
   margin-top: 2%;
   margin: 8px;
 }
@@ -336,6 +396,8 @@ section {
   height: auto;
   max-width: 120px;
   border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
 }
 
 .shadowbox {
@@ -409,21 +471,22 @@ section {
 
 /*Section two*/
 .sectiontwo {
-  background: url(./index-img/violet4.png);
+  background: radial-gradient(circle, rgb(106, 13, 173) 0%, rgb(0, 0, 0) 50%);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: 50% 50%;
   margin-bottom: 50px;
 }
 .wide-container {
   background: rgba(0, 0, 0, 0.7);
-  margin: 150px auto;
-  padding: 30px;
+  margin: 70px auto;
+  padding: 10px;
   border-left: 1px solid rgba(255, 251, 251, 0.2);
   border-right: 1px solid rgba(255, 251, 251, 0.2);
 }
 
 .wide-container-box {
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   margin: 5px;
 }
@@ -438,7 +501,6 @@ section {
 .widget {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
   position: relative;
   display: inline-block;
 }
@@ -448,13 +510,6 @@ section {
   width: 100%;
   height: auto;
   transition: transform 0.8s ease;
-  filter: drop-shadow(0px 0px 25px rgba(255, 186, 157, 0.4));
-}
-
-.widget:hover img {
-  transform: scale(2);
-  background: rgba(0, 0, 0, 0.6);
-  filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 0));
 }
 
 .overlay {
@@ -473,13 +528,12 @@ section {
 
 .widget:hover .overlay {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 /*Section three*/
 .sectionthree {
-  background-repeat: no-repeat;
-  background-size: cover;
   margin-bottom: 50px;
 }
 
@@ -514,9 +568,11 @@ section {
 .info-container {
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
   background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
   background-size: cover;
+  border-left: 1px solid rgba(255, 251, 251, 0.2);
+  border-right: 1px solid rgba(255, 251, 251, 0.2);
+  margin: 70px auto;
 }
 
 .img-container2 {
