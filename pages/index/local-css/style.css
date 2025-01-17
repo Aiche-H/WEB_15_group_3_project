@@ -22,11 +22,6 @@ a:hover {
   box-shadow: 0 2px 14px rgba(255, 255, 255, 0.4);
 }
 
-i:hover {
-  background: rgba(0, 0, 0, 0.6);
-  filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 0));
-}
-
 hr {
   width: 70%;
   margin-left: 0;
