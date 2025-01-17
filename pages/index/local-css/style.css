@@ -13,7 +13,7 @@ a:hover {
   color: #f3f3f3;
 }
 
-i {
+.custom-icon {
   filter: drop-shadow(0px 0px 25px rgba(106, 13, 173, 0.8));
   color: #e7e7e7;
   border: 1px solid rgba(156, 156, 156, 0.6);
@@ -306,6 +306,7 @@ h4 {
     height: 100vh;
     background-image: url(./index-img/tausta.jpg);
     background-size: contain;
+    background-repeat: no-repeat;
   }
   .text-overlay-center {
     top: 15%;
