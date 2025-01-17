@@ -20,7 +20,7 @@ function showSlides() {
   updateTabs(slideIndex - 1);
 
   // Asetetaan 5 sekunnin aikaviive
-  setTimeout(showSlides, 9000);
+  setTimeout(showSlides, 5000);
 }
 
 // Funktio tabien päivittämiseksi
