@@ -387,6 +387,7 @@ section {
   margin: 0px auto;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  
 }
 
 .octo-container {
@@ -394,6 +395,7 @@ section {
     url(./index-img/spaceman.jpg);
   background-repeat: no-repeat;
   padding: 35px;
+  min-height: 720px;
 }
 
 .container-box {
