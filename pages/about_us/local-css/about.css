@@ -1,17 +1,15 @@
 
 
 body {
-    color: #FFFFFF;
-    background-color: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.12) 20%,     
-        rgba(15, 14, 18, 0.8) 60%,    
-        rgb(0, 0, 0) 100%     
-      );; /* Adjusted for readability */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    background-color: var(--background-color);
+    margin: 0;
+    color: var(--text-color);
+  }
+  
+  p {
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+  }
 
 main {
     margin: 100px;
@@ -52,8 +50,8 @@ main {
     }
 }
 
-/* Freeze Shrinking at 480px */
-@media (max-width: 480px) {
+/* Freeze Shrinking at 580px */
+@media (max-width: 580px) {
     .member-photo {
         width: 300px; /* Fixed size for smaller screens */
         height: 300px;
@@ -139,7 +137,7 @@ main {
 }
 
 .large-image {
-    background-image: url('/pages/index/local-css/index-img/video3.mp4');
+    background-image: url('https://cdn.esahubble.org/archives/images/wallpaper2/heic1509a.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,6 +150,9 @@ main {
     color: #fff;
     font-size: 24px;
     font-weight: bold;
+}
+.picture-about p {
+    font-size: 10px;
 }
 
 .large-image-2 {
@@ -203,4 +204,3 @@ main {
     .main-text {
         font-size: 12px;
     }
-}
