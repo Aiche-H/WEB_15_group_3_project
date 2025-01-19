@@ -86,8 +86,6 @@ Projektin toteutuksessa on hyödynnetty seuraavia teknologioita:
 
 ### **Ominaisuudet**
 
-Listaa projektisi tärkeimmät ominaisuudet selkeästi. Esimerkiksi:
-
 - Navigointivalikko planeetoille.
 - Responsiivinen muotoilu (Materialize CSS).
 - Sähköpostilomake, jossa EmailJS-integraatio ja reCAPTCHA-suojaus.
@@ -98,16 +96,12 @@ Listaa projektisi tärkeimmät ominaisuudet selkeästi. Esimerkiksi:
 
 ### **Ylläpitäjät ja kontribuutiot**
 
-Lisää osio, jossa mainitaan projektin tekijät tai kehitykseen osallistuneet:
-
 - [![Kharmaa](https://img.shields.io/github/followers/Kharmaa.svg?style=social&label=Kharmaa)](https://github.com/Kharmaa)
 - [![jmetsaniemi1](https://img.shields.io/github/followers/jmetsaniemi1.svg?style=social&label=jmetsaniemi1)](https://github.com/jmetsaniemi1)
 - [![Dude77fi](https://img.shields.io/github/followers/Dude77fi.svg?style=social&label=Dude77fi)](https://github.com/Dude77fi)
 - [![AICHE-H](https://img.shields.io/github/followers/Aiche-H.svg?style=social&label=Aiche-H)](https://github.com/Aiche-H)
 
 ### **Kehitysympäristö**
-
-Mainitse kehitystyökaluista ja vaatimuksista:
 
 - **Editorit:** Visual Studio Code, Prettier lisäosalla.
 - **Palvelimet:** Live Server paikalliseen testaukseen.
@@ -116,8 +110,6 @@ Mainitse kehitystyökaluista ja vaatimuksista:
 ---
 
 ### **Tiedossa olevat ongelmat**
-
-Jos projektissa on keskeneräisiä ominaisuuksia tai korjattavia bugeja, mainitse ne avoimesti:
 
 - Dropdown-valikko ei tue tällä hetkellä kosketuslaitteita täydellisesti.
 - Responsiivisuus on testattu vain tietyillä laitteilla.
