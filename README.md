@@ -100,10 +100,10 @@ Listaa projektisi tärkeimmät ominaisuudet selkeästi. Esimerkiksi:
 
 Lisää osio, jossa mainitaan projektin tekijät tai kehitykseen osallistuneet:
 
-- Johannes
-- Markus
-- Riikka
-- [Oma nimesi]
+- [![Kharmaa](https://img.shields.io/github/followers/Kharmaa.svg?style=social&label=Kharmaa)](https://github.com/Kharmaa)
+- [![jmetsaniemi1](https://img.shields.io/github/followers/jmetsaniemi1.svg?style=social&label=jmetsaniemi1)](https://github.com/jmetsaniemi1)
+- [![Dude77fi](https://img.shields.io/github/followers/Dude77fi.svg?style=social&label=Dude77fi)](https://github.com/Dude77fi)
+- [![AICHE-H](https://img.shields.io/github/followers/Aiche-H.svg?style=social&label=Aiche-H)](https://github.com/Aiche-H)
 
 ### **Kehitysympäristö**
 
