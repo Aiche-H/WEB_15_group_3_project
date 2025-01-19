@@ -1,174 +1,250 @@
-# version info
+# Web Project README
 
-## Navigointi
+- [Web Project README](#web-project-readme)
+  - [Version Info](#version-info)
+  - [Projektin tavoitteet](#projektin-tavoitteet)
+  - [Käytetyt teknologiat](#käytetyt-teknologiat)
+  - [Asennusohjeet](#asennusohjeet)
+  - [Käyttöohjeet](#käyttöohjeet)
+  - [Tulevat parannukset](#tulevat-parannukset)
+    - [**Ominaisuudet**](#ominaisuudet)
+    - [**Ylläpitäjät ja kontribuutiot**](#ylläpitäjät-ja-kontribuutiot)
+    - [**Kehitysympäristö**](#kehitysympäristö)
+    - [**Tiedossa olevat ongelmat**](#tiedossa-olevat-ongelmat)
+  - [Päivitysten julkaiseminen](#päivitysten-julkaiseminen)
+  - [Päivitykset ja lisäykset](#päivitykset-ja-lisäykset)
+  - [Päivämääräkohtaiset muutokset](#päivämääräkohtaiset-muutokset)
+    - [2024-10-10](#2024-10-10)
+    - [2024-10-15](#2024-10-15)
+    - [2024-10-25](#2024-10-25)
+    - [2024-10-31](#2024-10-31)
+    - [2024-11-01](#2024-11-01)
+    - [2024-11-13](#2024-11-13)
+    - [2024-11-19](#2024-11-19)
+    - [2024-11-26](#2024-11-26)
+    - [2024-12-04](#2024-12-04)
+    - [2024-12-16](#2024-12-16)
+    - [2024-12-18](#2024-12-18)
+    - [2025-01-08](#2025-01-08)
+    - [2025-01-17](#2025-01-17)
+    - [Global.css](#globalcss)
 
-* [2024-10-10](#2024-10-10)
-* [2024-10-15](#2024-10-15)
-* [2024-10-25](#2024-10-25)
+## Version Info
+
+Tämä projekti on staattinen tiedonhakusivu, joka keskittyy aurinkoon ja sen ympärillä oleviin planeettoihin. Sen tavoitteena on tarjota käyttäjille visuaalisesti miellyttävä ja kiinnostava kokemus. Sivusto on suunniteltu helposti navigoitavaksi ja responsiiviseksi, ja se hyödyntää nykyaikaisia web-teknologioita, kuten CSS-animaatioita ja interaktiivista JavaScriptiä, parhaan käyttökokemuksen takaamiseksi. Sivu on erityisesti suunnattu niille, jotka haluavat oppia lisää aurinkokunnasta tyylikkäässä ja järjestelmällisessä ympäristössä.
+
+---
+
+## Projektin tavoitteet
+
+Projektin tavoitteena on luoda visuaalisesti miellyttävä ja helppokäyttöinen tiedonhakusivu, joka esittelee aurinkoa ja sen planeettoja. Sivusto tarjoaa käyttäjille interaktiivisen ja opettavaisen kokemuksen yhdistämällä modernia teknologiaa ja houkuttelevaa muotoilua.
+
+---
+
+## Käytetyt teknologiat
+
+Projektin toteutuksessa on hyödynnetty seuraavia teknologioita:
+
+- **HTML5** - Perusrakenne ja sisältö.
+- **CSS3 (Materialize CSS)** - Tyylit ja responsiivisuus.
+- **JavaScript (jQuery)** - Interaktiivisuus ja toiminnallisuudet.
+- **EmailJS** - Sähköpostien käsittely.
+- **Prettier** - Koodin formatointi ja yhtenäistäminen.
+
+---
+
+## Asennusohjeet
+
+1. Kloonaa projekti paikallisesti:
+
+   ```bash
+   git clone https://github.com/Aiche-H/WEB_15_group_3_project.git
+   ```
+
+2. Avaa projektin tiedostot selaimessa tai kehitysympäristössä (esim. Visual Studio Code).
+3. Käytä paikallista palvelinta, kuten **Live Server**, testaamiseen.
+
+---
+
+## Käyttöohjeet
+
+1. Navigoi sivustolla dropdown-valikkojen ja muiden elementtien avulla.
+2. Täytä ja lähetä lomake EmailJS:n kautta.
+3. Nauti visuaalisista animaatioista ja responsiivisesta suunnittelusta.
+
+---
+
+## Tulevat parannukset
+
+- Lisää sivuja muille planeetoille.
+- Parannettu interaktiivisuus ja animaatiot.
+- Mahdollisuus hakea tietoa API:sta dynaamisesti.
+
+---
+
+---
+
+### **Ominaisuudet**
+
+Listaa projektisi tärkeimmät ominaisuudet selkeästi. Esimerkiksi:
+
+- Navigointivalikko planeetoille.
+- Responsiivinen muotoilu (Materialize CSS).
+- Sähköpostilomake, jossa EmailJS-integraatio ja reCAPTCHA-suojaus.
+- Live-video avaruudesta.
+- Visuaalisia tehosteita (hover-efektit, animaatiot).
+
+---
+
+### **Ylläpitäjät ja kontribuutiot**
+
+Lisää osio, jossa mainitaan projektin tekijät tai kehitykseen osallistuneet:
+
+- Johannes
+- Markus
+- Riikka
+- [Oma nimesi]
+
+### **Kehitysympäristö**
+
+Mainitse kehitystyökaluista ja vaatimuksista:
+
+- **Editorit:** Visual Studio Code, Prettier lisäosalla.
+- **Palvelimet:** Live Server paikalliseen testaukseen.
+- **Versiohallinta:** Git & GitHub.
+
+---
+
+### **Tiedossa olevat ongelmat**
+
+Jos projektissa on keskeneräisiä ominaisuuksia tai korjattavia bugeja, mainitse ne avoimesti:
+
+- Dropdown-valikko ei tue tällä hetkellä kosketuslaitteita täydellisesti.
+- Responsiivisuus on testattu vain tietyillä laitteilla.
+
+---
 
 ## Päivitysten julkaiseminen
 
-lisäykset tulee julkaista aina **feature/nimi**-branchiin.
+Lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 
 **Ohjeet:**
 
 1. Luo uusi branch nimellä **feature/[planeetan nimi]**.
 2. Tee muutokset.
-3. lisää muutokset **README.md** tidostooon.
-4. Julkaise muutokset githubiin **branchillä jonka loit**
+3. Lisää muutokset **README.md** tiedostoon.
+4. Julkaise muutokset GitHubiin **branchillä, jonka loit**.
 5. Tee pull request pääbranchiin.
 
 **Tällä varmistetaan, että:**
 
-* Kaikki muutokset ovat helposti seurattavissa.
-* Vältetään merge-konflikteja.
-* Projektin koodi pysyy järjestyksessä.
+- Kaikki muutokset ovat helposti seurattavissa.
+- Vältetään merge-konflikteja.
+- Projektin koodi pysyy järjestyksessä.
 
-## päivitykset ja lisäykset
+---
 
--pohjat planeetoille tehty ja meta tiedot lisätty
+## Päivitykset ja lisäykset
 
--testattu uusi branch + merge + testattu visual studio codessa - Johannes + markus + Riikka
+- Pohjat planeetoille tehty ja metatiedot lisätty.
+- Testattu uusi branch + merge + testattu Visual Studio Codessa - Johannes + Markus + Riikka.
 
-## 2024-10-10
+---
+
+## Päivämääräkohtaiset muutokset
+
+### 2024-10-10
 
 **Olen toteuttanut seuraavat muutokset sivuston navigointiin:**
 
-* **Uusi logo ja sivunavigointi:** Lisäsin uuden, visuaalisesti houkuttelevan logon ja implementoin toimivan sivunavigoinnin, joka parantaa sivuston käytettävyyttä.
-* **Parannettu JavaScript-toiminnallisuus:** Muokkaamalla js-tiedostoa varmistin, että sivunavigointi toimii sujuvasti ja responsiivisesti kaikilla laitteilla.
-* **Dropdown-valikko planeetoille:** Lisäsin dropdown-valikon, jonka avulla käyttäjät voivat helposti siirtymällä eri planeettojen välillä.
-* **Visuaaliset parannukset Materialize CSS:llä:** Hyödynnin Materialize CSS -kirjastoa luodakseni miellyttävän käyttökokemuksen:
-  * **Hover-efekti:** Navigointipalkki vaihtuu vaaleammaksi väriltään, kun käyttäjä siirtää hiiren osoittimen sen päälle.
-  * **Selkeät linkit:** Avattavan valikon linkkien väri on muutettu mustaksi, mikä parantaa luettavuutta.
+- Uusi logo ja sivunavigointi lisätty.
+- Parannettu JavaScript-toiminnallisuus navigointia varten.
+- Dropdown-valikko planeetoille lisätty.
+- Visuaaliset parannukset Materialize CSS -kirjastolla:
+  - Hover-efekti navigointipalkkiin.
+  - Selkeämpi ulkoasu valikon linkeille.
 
-## 2024-10-15
+### 2024-10-15
 
-Kyllä, voin kirjoittaa tämän sinulle ammattimaisemmin suomeksi:
-
-**Commit viesti:**
-
-Lisättiin kaikille sivuille yhteinen footer [alaviite] sekä varmistettiin, että ikonit toimivat kaikilla sivuilla. Lisättiin myös navigaatio kaikkiin index-tiedostoihin.
+**Commit viesti:** Lisättiin kaikille sivuille yhteinen footer ja korjattiin ikonien toimivuus.
 
 **Muutokset:**
 
-* Lisättiin footer kaikille sivuille
-* Korjattiin ikonien toimiminen kaikilla sivuilla
-* Lisättiin navigaatio kaikkiin index-tiedostoihin
+- Footer lisätty kaikille sivuille.
+- Korjattu ikonien toimivuus kaikilla sivuilla.
+- Lisätty navigaatio kaikkiin index-tiedostoihin.
 
-**Tiedostomuutokset:**
+### 2024-10-25
 
-* README.md (muokattu)
-* index.html (muokattu)
-* indexFiles/ (kansio)
-  * indexContact.html (muokattu)
-  * indexEarth.html (muokattu)
-  * ... (muut index-tiedostot)
+**Projektin kansiorakenne päivitetty.**
 
-## 2024-10-25
+- Selkeämpi kansiorakenne projektin kasvua varten.
+- Jokaiselle sivulle oma kansio (CSS, JS, data, kuvat).
+- Testattu linkitysten ja resurssien toimivuus.
 
-### Projektin kansiorakenteen päivitys
+### 2024-10-31
 
-## Uusi kansiorakenne
+**Aurinko-sivun päivitykset:**
 
-Projektin kansiorakenne on päivitetty selkeämmäksi ja paremmin skaalautuvaksi. Kaikki muutokset on testattu huolellisesti toimivuuden varmistamiseksi.
+- Uudet tiedostot: `header.css`, `orbitanimation.css`, `header.js`.
+- CSS-luokkien lisääminen asetteluun.
+- Hover-efektit ja animaatiot lisätty.
+- Navigoinnin ulkonäön parannus.
 
-### 📁 resources/
+### 2024-11-01
 
-Sisältää kaikki projektin yleiset resurssit:
+**Mercurius- ja Venus-projektit:**
 
-* `📁images/`:projektin laajat kuvat
-* `📁data/`:projektin laajat ladattavat tiedostot
-* `📁css/`:projektin laajat css kirjastot ja frameworkit
-* `📁javascript/`:projektin laajat javascript kirjastot ja frameworkit
+- Aloitettu HTML-prototyyppien kehitys.
+- Lisätty visuaalisia käyttöliittymän osia.
 
-### 📁 pages/
+### 2024-11-13
 
-Jokaiselle sivulle oma kansionsa, joka sisältää:
+- Ensimmäinen HTML-koodi lomakkeesta luotu.
 
-* `index.html` - Sivun päätiedosto esim: `earth.html`
-* `📁local-css/` - Sivukohtaiset CSS-tiedostot
-* `📁local-javascript/` - Sivukohtaiset JavaScript-tiedostot
-* `📁local-data/` - Sivukohtainen data
-* `📁local-images/` - Sivukohtaiset kuvat
+### 2024-11-19
 
-*Huom: joka tiedosto sivun omassa kansiossa nimetään esim. `earth.css` korvataan kunkin sivun nimellä*
+- Headerin ja footerin lisääminen.
+- Lähetä-painikkeen toiminnan korjaaminen.
 
-### 📁 global/
+### 2024-11-26
 
-Sisältää koko projektin laajuiset tiedostot:
+- CSS-tyylit lisätty lomakkeelle.
 
-* `📁CSS`: global.css
-* `📁javascript`: global.js
+### 2024-12-04
 
-## Muutoksien hyödyt
+- Koodin siistiminen Prettierillä.
 
-* Selkeämpi ja johdonmukaisempi kansiorakenne
+### 2024-12-16
 
-* Parempi skaalautuvuus projektin kasvaessa
-* Helpompi ylläpidettävyys
-* Sivukohtaisten resurssien selkeä organisointi
-* Testattu yhteensopivuus - kaikki linkitykset toimivat
+- Dropdown-valikko saatu toimimaan.
 
-## Testaus
+### 2024-12-18
 
-Kaikki muutokset on testattu perusteellisesti:
+- Otsikko ja teksti lisätty.
 
-* Tiedostojen linkitykset
-* Resurssien saatavuus
-* Sivujen toimivuus
+### 2025-01-08
 
-## 2024-10-31
+**Toiminnot lisätty:**
 
-## README: Muutokset aurinko-sivulle
+- EmailJS ja reCAPTCHA toimiviksi.
 
-### Tehdyt muutokset
+### 2025-01-17
 
-* **Uusien tiedostojen lisääminen:**
-  * `header.css`: Sisältää tyylit sivun otsikko-osalle.
-  * `orbitanimation.css`: Sisältää tyylit kiertoradan animaatioihin.
-  * `header.js`: Sisältää JavaScript-koodia, joka hallinnoi otsikon toiminnallisuuksia (esim. interaktiivisuus).
-* **Tiedostojen sijainti:** Kaikki yllä mainitut tiedostot on lisätty `global`-kansioon.
-* **CSS-luokkien lisääminen:** Sivun asetteluun on lisätty uusia CSS-luokkia, jotka määrittelevät elementtien ulkoasun ja sijainnin. Nämä luokat hyödyntävät `header.css` ja `orbitanimation.css` -tiedostoissa määriteltyjä tyylejä.
+**Viimeisimmät muutokset:**
 
-### Muutosten vaikutus
+- Ulkoasun viimeistely.
+- Navigaation päivitys.
+- Domain lisätty reCAPTCHA-asetuksiin.
+- Profiilikuvat ja -tekstit lisätty.
+- Yhden kuvan linkkaaminen lisätty.
+- Live-video avaruudesta linkitetty.
+- Tekstiä luotu ja tyylitiedostoja päivitetty.
+- Etusivun ulkoasua parannettu.
+- Uusia custom CSS-arvoja otettu käyttöön.
 
-Nämä muutokset parantavat aurinko-sivun ulkoasua ja käyttäjäkokemusta. Uudet CSS-luokat mahdollistavat dynaamisemman ja visuaalisesti miellyttävämmän sivun rakenteen. `orbitanimation.css` tuo sivulle interaktiivisuutta ja visuaalista kiinnostavuutta. `header.js` on custom navigoinnin hoves efektin toiminnallisuus.
+---
 
-**Tarkempi kuvaus muutoksista:**
+### Global.css
 
-* `header`-elementille on lisätty luokka `.headerContainer`, joka määrittelee sen koon, fontin ja värit.
-* `orbitanimation.css` sisältää animaation, joka pyörittää kuvaa hitaasti ympyrän muotoisessa radassa. Animaatio on liitetty
-* `header.js` sisältää JavaScript-koodin, joka muuttaa custom planeetta navigoinnin ulkonäköä hoverilla.
-
-## 2024-11-01
-
-Toki! Tässä on muutamia pidempiä ilmoitusvaihtoehtoja, joihin voit lisätä vielä lisää yksityiskohtia projektistasi ja tavoitteistasi:
-
-### **HTML-prototyypit Mercurius- ja Venus-projekteille**
-
-Haluan ilmoittaa, että olen aloittanut HTML-prototyyppien kehittämisen sekä Mercurius- että Venus-projekteille. Tällä hetkellä olen keskittynyt luomaan visuaalisen käyttöliittymän, joka heijastaa projektien tavoitteita ja tarjoaa käyttäjille intuitiivisen kokemuksen.
-
-**Mercurius-projekti:**
-
-* Prototyyppi sisältää kuvia ja tekstin toimivan navigoinnen ja muita toiminallisuuksia.
-
-### **Venus-projekti:**
-
-* Prototyypin kehitys on alkuvaiheessa.
-
-## 2024-11-02
-
-* viimeistelty venus HTML prtotyyppi
-* viimeistelty maa HTML prototyyppi
-
-
-## 2024-11-00
-
-* Luotu About Us -sivu prototyyppi ja tehty siitä rautalangan mallinen. On teknisesti ottaen responsiivinen. Tekstit ovat LoremIpsumia.
-* Luotu local-kansiot & CSS tyylitiedosto
-* Lisätty indexiin sekä yhteystieto-sivulle navbariin linkki About Us
-
-## 2024-11-13
-
-* Tehty HTML-prototyyppi etusivulle
-* Lisätty index-local-kansioon etusivun tyyli- ja javascript tiedostot sekä index-img-kansio.
+- Päivitetty fonttien ja otsikkojen tyylimäärityksiä.
