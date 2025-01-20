@@ -69,12 +69,10 @@ function updateParallaxEffect(e) {
   parallax_el.forEach((el) => {
     let speedx = parseFloat(el.dataset.speedx) || 0.1;
     let speedy = parseFloat(el.dataset.speedy) || 0.1;
-    let speedz = parseFloat(el.dataset.speedz) || 0.1;
 
     el.style.transform = `
             translateX(calc(-50% + ${-xValue * speedx}px)) 
             translateY(calc(-50% + ${yValue * speedy}px)) 
-            translateZ(${speedz * 50}px) 
             rotateY(${rotateDegree * rotateSpeed}deg)
         `;
   });
