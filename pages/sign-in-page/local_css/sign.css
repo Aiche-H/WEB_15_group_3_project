@@ -1,2 +1,44 @@
+.earth-image {
+    max-width: 430px;
+    max-height: 430px;
+    position: fixed;
+    right: -200px;
+    top: 170px;
+    z-index: 1000;
+}
 
+@media screen and (min-width: 850px) {
+    .earth-image {
+        max-width: 600px;
+        max-height: 600px;
+        right: -300px;
+        top: 100px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .earth-image {
+        max-width: 380px;
+        max-height: 380px;
+        right: -200px;
+        top: 220px;
+    }
+}
+@media screen and (max-width: 473px) {
+    .earth-image {
+        max-width: 280px;
+        max-height: 280px;
+        right: -200px;
+        top: 260px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .earth-image {
+        opacity: 0;
+    }
+}
+
+#sign-in-text {
+    max-width: 500px;
+    
+}
 
