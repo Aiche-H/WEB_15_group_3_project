@@ -5,6 +5,10 @@
     right: -200px;
     top: 170px;
     z-index: 1000;
+    transition: right 0.3s ease, top 0.3s ease, transform 0.3s ease;
+    opacity: 0.5;
+    transform-origin: center center;
+    z-index: -1;
 }
 
 @media screen and (min-width: 850px) {
