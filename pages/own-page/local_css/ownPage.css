@@ -1,0 +1,329 @@
+/* Yleiset tyylit */
+body {
+    background-image: url('../../../resources/images/space-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Profiilikortti ja muut kortit */
+.card {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-content {
+    color: white !important;
+}
+
+.card-title {
+    color: white !important;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Profiilikuva ja avatar-valinta */
+.profile-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+#change-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #26a69a;
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.avatar-option {
+    position: relative;
+    text-align: center;
+}
+
+.avatar-option img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.avatar-option img:hover {
+    transform: scale(1.1);
+}
+
+.avatar-option input[type="radio"] {
+    display: none;
+}
+
+.avatar-option input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid #d5d6d6;
+    border-radius: 50%;
+}
+
+.avatar-option label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+/* Modaalit */
+.modal {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white !important;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal h4 {
+    color: white !important;
+}
+
+.input-field label {
+    color: white !important;
+}
+
+.input-field input {
+    color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid #26a69a !important;
+    box-shadow: 0 1px 0 0 #26a69a !important;
+}
+
+.input-field .prefix {
+    color: white !important;
+}
+
+/* Painikkeet */
+.btn {
+    background-color: #818181 !important;
+}
+
+.btn-flat {
+    color: white !important;
+}
+
+.btn-floating {
+    background-color: #c9c9c9 !important;
+}
+
+/* Profiilitiedot */
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    color: white;
+}
+
+.profile-info strong {
+    color: #ebebeb;
+}
+
+/* Profiilin asetukset -painikkeet */
+.profile-settings-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.profile-settings-buttons .btn {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.profile-settings-buttons .btn i {
+    margin-right: 10px;
+}
+
+/* Vahvistusmodaali */
+.red-text {
+    color: #ff5252 !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#delete-profile-dialog .modal-content p {
+    margin: 10px 0;
+    color: white;
+}
+
+#delete-profile-dialog .btn.red {
+    background-color: #ff5252 !important;
+}
+
+#delete-profile-dialog .btn.red:hover {
+    background-color: #ff1744 !important;
+}
+
+/* Modaalien animaatiot */
+.modal.open {
+    opacity: 1;
+}
+
+.modal.open .modal-content {
+    transform: translateY(0);
+}
+
+/* Footer */
+.modal .modal-footer {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-footer .white-text {
+    color: white !important;
+}
+
+.page-footer .grey-text {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.page-footer a {
+    color: #ffffff !important;
+}
+
+.page-footer a:hover {
+    color: #848484 !important;
+}
+
+/* Leaderboard */
+.leaderboard {
+    margin-top: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.leaderboard th {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.leaderboard td {
+    padding: 8px 10px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard tr:last-child td {
+    border-bottom: none;
+}
+
+.leaderboard tr.current-user {
+    background-color: rgba(38, 166, 154, 0.2);
+    font-weight: bold;
+}
+
+.leaderboard tr.current-user td {
+    color: #f9fcfc;
+}
+
+
+
+.leaderboard td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+.leaderboard td:last-child {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Scrollbar tyylit */
+.leaderboard::-webkit-scrollbar {
+    width: 8px;
+}
+
+.leaderboard::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
