@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../resources/css/aos.css">
+    <link rel="stylesheet" href="../../../resources/css/materialize.css">
+    <link rel="stylesheet" href="../../../global/css/global.css">
+    <link rel="stylesheet" href="../../../global/css/header.css">
+    <link rel="stylesheet" href="../../../global/css/orbitanimation.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="local_css/ownPage.css">
+
+    <title>Oma profiili - S.P.A.C.E</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper black">
+                <div class="container">
+                    <a href="#" class="brand-logo"><img src="../../../resources/images/space-logo.png" alt="Our logo"></a>
+                    <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="../../../index.html">Etusivu</a></li>
+                        <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Planeetat</a></li>
+                        <li><a href="../../contact_form/contactform.html">Ota yhteyttä</a></li>
+                        <li><a href="../../about_us/aboutus.html">Tietoa meistä</a></li>
+                        <li><a href="../sign.html">Kirjaudu ulos</a></li>
+                    </ul>
+
+                    <ul class="sidenav" id="mobile-menu">
+                        <li><a href="../../../index.html">Etusivu</a></li>
+                        <li><a class='dropdown-trigger' href='#' data-target='dropdown2'>Planeetat</a></li>
+                        <li><a href="../../contact_form/contactform.html">Ota yhteyttä</a></li>
+                        <li><a href="../../about_us/aboutus.html">Tietoa meistä</a></li>
+                        <li><a href="../sign.html">Kirjaudu ulos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card profile-card">
+                        <div class="card-content">
+                            <span class="card-title">Profiili</span>
+                            <div class="profile-image">
+                                <img src="https://img.freepik.com/free-vector/donkey-with-face-expression-white-background_1308-80934.jpg?semt=ais_hybrid&w=740" alt="Profiilikuva" class="circle responsive-img" id="current-avatar">
+                                <a href="#" id="change-avatar-btn" class="btn-floating btn-small waves-effect waves-light">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                            </div>
+                            <div class="profile-info">
+                                <p><strong>Käyttäjätunnus:</strong> <span id="username-display"></span></p>
+                                <p><strong>Sähköposti:</strong> <span id="email-display"></span></p>
+                                <p><strong>Liittynyt:</strong> <span id="join-date"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" id="edit-profile-btn" class="waves-effect waves-light btn">
+                                <i class="material-icons left">edit</i>Muokkaa profiilia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m8">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Leaderboard</span>
+                            <div class="leaderboard">
+                                <table class="striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Sija</th>
+                                            <th>Käyttäjätunnus</th>
+                                            <th>Pisteet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="current-user">
+                                            <td>15</td>
+                                            <td>OmaProfiili</td>
+                                            <td>750</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>SpaceMaster</td>
+                                            <td>1500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>GalaxyExplorer</td>
+                                            <td>1450</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>StarGazer</td>
+                                            <td>1400</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>CosmicTraveler</td>
+                                            <td>1350</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>PlanetHunter</td>
+                                            <td>1300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>AstroNerd</td>
+                                            <td>1250</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>SpaceCadet</td>
+                                            <td>1200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>MoonWalker</td>
+                                            <td>1150</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>StarChild</td>
+                                            <td>1100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>CosmicKid</td>
+                                            <td>1050</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Viimeisimmät vierailut</span>
+                            <div class="recent-visits">
+                                <!-- Tähän tulee käyttäjän viimeisimmät vierailut -->
+                                <p class="center-align">Ei vielä vierailuja</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profiilin muokkaus -modaali -->
+        <div id="edit-profile-dialog" class="modal">
+            <div class="modal-content">
+                <h4>Profiilin asetukset</h4>
+                <div class="profile-settings-buttons">
+                    <button type="button" id="change-password-btn" class="btn waves-effect waves-light">
+                        <i class="material-icons left">lock</i>Vaihda salasana
+                    </button>
+                    <button type="button" id="change-email-btn" class="btn waves-effect waves-light">
+                        <i class="material-icons left">email</i>Vaihda sähköposti
+                    </button>
+                    <button type="button" id="delete-profile-btn" class="btn waves-effect waves-light red">
+                        <i class="material-icons left">delete</i>Poista profiili
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salasanan vaihto -modaali -->
+        <div id="change-password-dialog" class="modal">
+            <div class="modal-content">
+                <h4>Vaihda salasana</h4>
+                <form id="change-password-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="new-password" name="new-password" required>
+                        <label for="new-password">Uusi salasana</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" required>
+                        <label for="confirm-new-password">Vahvista uusi salasana</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn waves-effect waves-light">
+                            Tallenna
+                            <i class="material-icons right">save</i>
+                        </button>
+                        <button type="button" class="modal-close btn-flat waves-effect">Peruuta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sähköpostin vaihto -modaali -->
+        <div id="change-email-dialog" class="modal">
+            <div class="modal-content">
+                <h4>Vaihda sähköposti</h4>
+                <form id="change-email-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" id="new-email" name="new-email" required>
+                        <label for="new-email">Uusi sähköposti</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" id="confirm-new-email" name="confirm-new-email" required>
+                        <label for="confirm-new-email">Vahvista uusi sähköposti</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn waves-effect waves-light">
+                            Tallenna
+                            <i class="material-icons right">save</i>
+                        </button>
+                        <button type="button" class="modal-close btn-flat waves-effect">Peruuta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Profiilin poisto -modaali -->
+        <div id="delete-profile-dialog" class="modal">
+            <div class="modal-content">
+                <h4>Vahvista profiilin poisto</h4>
+                <p class="red-text">HUOMIO! Tämä toiminto on peruuttamaton. Profiilisi ja kaikki siihen liittyvät tiedot poistetaan pysyvästi.</p>
+                <p>Oletko varma, että haluat poistaa profiilisi?</p>
+                <div class="modal-footer">
+                    <button type="button" id="confirm-delete-btn" class="btn waves-effect waves-light red">
+                        <i class="material-icons left">delete</i>Kyllä, poista profiili
+                    </button>
+                    <button type="button" class="modal-close btn-flat waves-effect">Peruuta</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avatar-valinta -modaali -->
+        <div id="avatar-selection-dialog" class="modal">
+            <div class="modal-content">
+                <h4>Valitse avatar</h4>
+                <div class="avatar-grid">
+                    <div class="avatar-option">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=1" alt="Avatar 1" class="circle responsive-img">
+                        <input type="radio" name="avatar" value="https://api.dicebear.com/7.x/avataaars/svg?seed=1" id="avatar1">
+                        <label for="avatar1"></label>
+                    </div>
+                    <div class="avatar-option">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=2" alt="Avatar 2" class="circle responsive-img">
+                        <input type="radio" name="avatar" value="https://api.dicebear.com/7.x/avataaars/svg?seed=2" id="avatar2">
+                        <label for="avatar2"></label>
+                    </div>
+                    <div class="avatar-option">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=3" alt="Avatar 3" class="circle responsive-img">
+                        <input type="radio" name="avatar" value="https://api.dicebear.com/7.x/avataaars/svg?seed=3" id="avatar3">
+                        <label for="avatar3"></label>
+                    </div>
+                    <div class="avatar-option">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=4" alt="Avatar 4" class="circle responsive-img">
+                        <input type="radio" name="avatar" value="https://api.dicebear.com/7.x/avataaars/svg?seed=4" id="avatar4">
+                        <label for="avatar4"></label>
+                    </div>
+                    <div class="avatar-option">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=5" alt="Avatar 5" class="circle responsive-img">
+                        <input type="radio" name="avatar" value="https://api.dicebear.com/7.x/avataaars/svg?seed=5" id="avatar5">
+                        <label for="avatar5"></label>
+                    </div>
+                    <div class="avatar-option">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=6" alt="Avatar 6" class="circle responsive-img">
+                        <input type="radio" name="avatar" value="https://api.dicebear.com/7.x/avataaars/svg?seed=6" id="avatar6">
+                        <label for="avatar6"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="save-avatar-btn" class="btn waves-effect waves-light" style="background-color: #000000;">
+                        Tallenna
+                        <i class="material-icons right">save</i>
+                    </button>
+                    <button type="button" class="modal-close btn-flat waves-effect">Peruuta</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer black" style="background-color: rgba(0, 0, 0, 0.7) !important; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 l6">
+                    <h5 class="white-text">Meidän motto</h5>
+                    <p class="grey-text text-lighten-4">Koodi elää, kun tiimi hengittää yhdessä.</p>
+                </div>
+                <div class="col s12 m4 l6">
+                    <h5 class="white-text">Linkit</h5>
+                    <ul>
+                        <li><a href="#">Linkki</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style="background-color: rgba(0, 0, 0, 0.8) !important; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="container">© 2024 S.P.A.C.E</div>
+        </div>
+    </footer>
+
+    <script src="../../../resources/javascript/aos.js"></script>
+    <script src="../../../resources/javascript/jquery-3.7.1.min.js"></script>
+    <script src="../../../resources/javascript/materialize.js"></script>
+    <script src="../../../global/javascript/global.js"></script>
+    <script src="local_js/ownPage.js"></script>
+</body>
+</html> 

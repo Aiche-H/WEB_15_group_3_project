@@ -27,6 +27,7 @@
     - [2024-12-18](#2024-12-18)
     - [2025-01-08](#2025-01-08)
     - [2025-01-17](#2025-01-17)
+    - [2025-05-05](#2025-05-05)
     - [Global.css](#globalcss)
 
 ## Version Info
@@ -45,52 +46,169 @@ Projektin tavoitteena on luoda visuaalisesti miellyttävä ja helppokäyttöinen
 
 Projektin toteutuksessa on hyödynnetty seuraavia teknologioita:
 
-- **HTML5** - Perusrakenne ja sisältö.
-- **CSS3 (Materialize CSS)** - Tyylit ja responsiivisuus.
-- **JavaScript (jQuery)** - Interaktiivisuus ja toiminnallisuudet.
-- **EmailJS** - Sähköpostien käsittely.
-- **Prettier** - Koodin formatointi ja yhtenäistäminen.
+- **Frontend:**
+  - **HTML5** - Perusrakenne ja sisältö.
+  - **CSS3 (Materialize CSS)** - Tyylit ja responsiivisuus.
+  - **JavaScript (jQuery)** - Interaktiivisuus ja toiminnallisuudet.
+  - **EmailJS** - Sähköpostien käsittely.
+  - **Prettier** - Koodin formatointi ja yhtenäistäminen.
+
+- **Backend:**
+  - **Node.js** - Palvelinympäristö ja moduulien hallinta.
+  - **Express.js** - Reititys ja HTTP-pyyntöjen käsittely.
+  - **Mongoose** - MongoDB-tietokannan objektimallinnus ja kyselyt.
+  - **MongoDB Atlas** - Pilvipohjainen NoSQL-tietokanta.
+  - **dotenv** - Ympäristömuuttujien hallinta (esim. `MONGO_URI`).
+
+- **Työkalut:**
+  - **Postman** - API-pyyntöjen testaaminen (GET, POST, PUT, DELETE).
+  - **npm** - Pakettien hallinta (`package.json`).
 
 ---
 
 ## Asennusohjeet
 
-1. Kloonaa projekti paikallisesti:
-
+1. **Kloonaa projekti paikallisesti:**
    ```bash
    git clone https://github.com/Aiche-H/WEB_15_group_3_project.git
    ```
 
-2. Avaa projektin tiedostot selaimessa tai kehitysympäristössä (esim. Visual Studio Code).
-3. Käytä paikallista palvelinta, kuten **Live Server**, testaamiseen.
+2. **Asenna Node.js-moduulit:**
+
+   Siirry projektin juurihakemistoon:
+   ```bash
+   cd WEB_15_group_3_project
+   ```
+
+   Asenna riippuvuudet:
+   ```bash
+   npm install
+   ```
+
+3. **Konfiguroi ympäristömuuttujat:**
+
+   - Luo `.env`-tiedosto projektin juureen (jos sitä ei ole).
+   - Lisää MongoDB Atlas -yhteysosoite:
+     ```
+     MONGO_URI=mongodb+srv://<käyttäjä>:<salasana>@spacesignin.a9iig.mongodb.net/SpaceDatabase?retryWrites=true&w=majority
+     ```
+   - Vaihda `<käyttäjä>` ja `<salasana>` tiimin MongoDB Atlas -tunnuksiin.
+
+   **⚠️ HUOMIO! HUOMIO!**
+   
+    - Varmista, että .env-tiedosto on lisätty .gitignore-tiedostoon. Tämä suojaa salaisia tunnuksia päätymästä GitHubiin.
+    - .gitignore-sisältö:
+    ```
+    node_modules/
+    .env
+    *.log
+    ```
+
+4. **Käynnistä palvelin:**
+
+   ```bash
+   node index.js
+   ```
+
+   - Palvelin käynnistyy porttiin `4000` (tai `.env`-tiedostossa määriteltyyn `PORT`-arvoon).
+   - Näet viestit: `MongoDB connected` ja `Server is running on port 4000`.
+   - **Porttihuomio:** Jos portti 4000 on varattu, muuta `index.js`:ssä rivi `const PORT = process.env.PORT || 4000;` toiseen arvoon (esim. 5000) tai määritä `PORT` `.env`-tiedostossa (esim. `PORT=5000`).
+
+5. **Testaa frontend paikallisesti:**
+
+   - Avaa projektin tiedostot selaimessa tai käytä Live Server -laajennusta Visual Studio Codessa.
 
 ---
 
 ## Käyttöohjeet
 
-1. Navigoi sivustolla dropdown-valikkojen ja muiden elementtien avulla.
-2. Täytä ja lähetä lomake EmailJS:n kautta.
-3. Nauti visuaalisista animaatioista ja responsiivisesta suunnittelusta.
+### 1. Frontend:
+
+- Navigoi sivustolla dropdown-valikkojen ja muiden elementtien avulla.
+- Täytä ja lähetä lomake EmailJS:n kautta.
+- Nauti visuaalisista animaatioista ja responsiivisesta suunnittelusta.
+
+### 2. Backend (API):
+
+Käytä Postmania seuraaviin kutsuihin:
+
+- `GET /api/users` – Hae kaikki käyttäjät.
+- `POST /api/users` – Luo uusi käyttäjä  
+  Esim.:
+  ```json
+  {
+    "username": "new_user",
+    "email": "new@example.com"
+  }
+  ```
+- `PUT /api/users/:id` – Päivitä käyttäjä  
+  Esim.:
+  ```json
+  PUT /api/users/67c746b307be876656bdebd1
+  {
+    "first_name": "Johan"
+  }
+  ```
+- `DELETE /api/users/:id` – Poista käyttäjä
+
+- **Base URL:** `http://localhost:4000` (tai muu portti, jos muutettu)
+
+### 3. MongoDB Atlas:
+
+- Tarkista tietokannan sisältö Atlasin käyttöliittymässä tai shellillä:
+  ```bash
+  use SpaceDatabase
+  db.users.find()
+  ```
+---
+
+## Projektin tietokannan tiedostorakenne
+
+Projekti käyttää seuraavaa tietokantapohjaista rakennetta backendissä:
+
+- `database/methods/` – Sisältää CRUD-operaatioiden logiikan:
+  - `PUT.js`: Päivittää olemassa olevia dokumentteja (esim. `findByIdAndUpdate`)
+  - `DELETE.js`: Poistaa dokumentteja (esim. `findByIdAndDelete`)
+  - `GET.js`: Hakee tietokannasta dataa (esim. `find`)
+  - `POST.js`: Luo uusia dokumentteja (esim. `create`)
+
+- `models/` – Määrittelee MongoDB-skeemat Mongoosea käyttäen:
+  - `contactForm.js`: Lomakedatan skeema (esim. yhteydenottolomake)
+  - `gameQuestion.js`: Pelikysymysten skeema
+  - `leaderboard.js`: Tulostaulukon skeema
+  - `user.js`: Käyttäjien skeema (esim. `username`, `email`, `first_name`)
+
+- `routes/` – Reitit HTTP-pyyntöjen käsittelyyn:
+  - `contactForm.js`: Reitit lomakedatan käsittelyyn
+  - `leaderboard.js`: Reitit tulostaulukon hallintaan
+  - `questions.js`: Reitit pelikysymysten hallintaan
+  - `users.js`: Reitit käyttäjien CRUD-operaatioihin (GET, POST, PUT, DELETE)
+
+- Muut tiedostot:
+  - `.env`: Sisältää ympäristömuuttujat, kuten `MONGO_URI` (MongoDB-yhteysosoite). Älä lisää tätä GitHubiin!
+  - `db.js`: MongoDB-yhteyden muodostaminen Mongoosea käyttäen.
+  - `index.js`: Pääsovellus, käynnistää Express-palvelimen ja yhdistää tietokantaan.
+  - `package.json`: Määrittelee projektin riippuvuudet (esim. `express`, `mongoose`, `dotenv`)
 
 ---
 
 ## Tulevat parannukset
 
 - Lisää sivuja muille planeetoille.
-- Parannettu interaktiivisuus ja animaatiot.
-- Mahdollisuus hakea tietoa API:sta dynaamisesti.
+- Parannettu interaktiivisuus ja animaatiot frontendissä.
+- Dynaaminen API-tietojen haku backendistä frontendille.
+- Lisää validointeja ja virheenkäsittelyä CRUD-operaatioihin.
 
 ---
 
----
-
-### **Ominaisuudet**
+## Ominaisuudet
 
 - Navigointivalikko planeetoille.
 - Responsiivinen muotoilu (Materialize CSS).
 - Sähköpostilomake, jossa EmailJS-integraatio ja reCAPTCHA-suojaus.
 - Live-video avaruudesta.
 - Visuaalisia tehosteita (hover-efektit, animaatiot).
+- Backend-tuki käyttäjien, lomakkeiden, pelikysymysten ja tulostaulukon hallintaan.
 
 ---
 
@@ -101,13 +219,15 @@ Projektin toteutuksessa on hyödynnetty seuraavia teknologioita:
 - [![Dude77fi](https://img.shields.io/github/followers/Dude77fi.svg?style=social&label=Dude77fi)](https://github.com/Dude77fi)
 - [![AICHE-H](https://img.shields.io/github/followers/Aiche-H.svg?style=social&label=Aiche-H)](https://github.com/Aiche-H)
 
-### **Kehitysympäristö**
+## Kehitysympäristö
 
-- **Editorit:** Visual Studio Code, Prettier lisäosalla.
-- **Palvelimet:** Live Server paikalliseen testaukseen.
-- **Versiohallinta:** Git & GitHub.
+- **Editorit:** Visual Studio Code, Prettier-lisäosalla
+- **Palvelimet:** Live Server frontendin testaukseen, Node.js backendille
+- **Versiohallinta:** Git & GitHub
+- **API-testaus:** Postman
 
 ---
+
 
 ### **Tiedossa olevat ongelmat**
 
@@ -234,6 +354,21 @@ Lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 - Tekstiä luotu ja tyylitiedostoja päivitetty.
 - Etusivun ulkoasua parannettu.
 - Uusia custom CSS-arvoja otettu käyttöön.
+
+### 2025-05-05
+
+**Tietokanta tiedostorakenne, yhdistys MongoDB ja testaus Postmanilla:**
+
+- Luotu tietokannan tiedostorakenne.
+- Yhdistetty MongoDB.
+- Testattu toimivuu Postmanilla.
+- PUT, GET, DELETE, POST metodit tehty. Oli pakko tehdä kaikki, jotta pystyi testaamaan users toimivuutta kunnolla.
+- .env -tiedosto
+- .gitignore -tiedosto
+- db.js & index.js konfiguraatio
+- routes/users.js aloitettu
+- models/user.js aloitettu
+- Ohjeet luotu README.md -tiedostoon.
 
 ---
 

@@ -1,12 +1,19 @@
-const Product = require("../../../models/Product");
+const User = require('../../models/user');
+const mongoose = require('mongoose');
 
+const getUsers = async (req, res) => {
+  try {
+    console.log('GET /api/users called');
+    console.log('Database:', mongoose.connection.db.databaseName);
+    console.log('Collection:', User.collection.collectionName);
+    const users = await User.find();
+    console.log('Users found:', users);
+    res.status(200).json(users);
+  } catch (err) {
+    console.error('Error fetching users:', err);
+    res.status(500).json({ error: err.message });
+  }
+};
 
-async function GET(context) {
-  context.log("GET.js aloitetaan...");
+module.exports = { getUsers };
 
-  const products = await Product.find();
-  return { status: 200, jsonBody: products };
-}
-
-
-module.exports = { GET };
