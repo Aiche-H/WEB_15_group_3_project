@@ -15,5 +15,24 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = { getUsers };
+const getCurrentUser = async (req, res) => {
+  try {
+    // Käyttäjän ID on auth-middlewaren kautta req.userId:ssä
+    const user = await User.findById(req.userId).select('-password');
+    
+    if (!user) {
+      return res.status(404).json({ error: 'Käyttäjää ei löydy' });
+    }
+
+    res.json(user);
+  } catch (err) {
+    console.error('Virhe käyttäjän haussa:', err);
+    res.status(500).json({ error: 'Käyttäjän tietojen haku epäonnistui' });
+  }
+};
+
+module.exports = { 
+  getUsers,
+  getCurrentUser
+};
 

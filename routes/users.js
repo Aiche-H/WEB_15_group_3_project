@@ -1,6 +1,7 @@
 // routes/users.js
 const express = require('express');
 const router = express.Router();
+const auth = require('./routes_user_auth.js/auth.js');
 
 // PUT operation
 const putUsers = require('../database/methods/PUT');
@@ -11,17 +12,29 @@ const getUsers = require('../database/methods/GET');
 // DELETE operation
 const deleteUsers = require('../database/methods/DELETE');
 
-// Update user
-router.put('/:id', putUsers.updateUser);
+// Kirjaudu sisään
+router.post('/login', postUsers.loginUser);
 
-// Create user
-router.post('/', postUsers.createUser);
+// Rekisteröidy
+router.post('/register', postUsers.registerUser);
 
-// Delete user
-router.delete('/:id', deleteUsers.deleteUser);
+// Palauta salasana
+router.post('/reset-password', postUsers.resetPassword);
 
-// Get users
-router.get('/', getUsers.getUsers);
+// Hae nykyisen käyttäjän tiedot
+router.get('/current', auth, getUsers.getCurrentUser);
+
+// Päivitä käyttäjä
+router.put('/:id', auth, putUsers.updateUser);
+
+// Luo käyttäjä
+router.post('/', auth, postUsers.createUser);
+
+// Poista käyttäjä
+router.delete('/:id', auth, deleteUsers.deleteUser);
+
+// Hae kaikki käyttäjät
+router.get('/', auth, getUsers.getUsers);
 
 module.exports = router;
 

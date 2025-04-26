@@ -1,5 +1,8 @@
 // MODAALIT REGISTER JA PASSWORD RECOVERY
 
+// Importataan tietokantaoperaatiot
+const { loginUser, registerUser, resetPassword } = require('../../../database/methods/sign/POST');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Alustetaan Materialize modaalit
     var elems = document.querySelectorAll('.modal');
@@ -11,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const openRegisterModalBtn = document.getElementById('open-register-modal');
     const openPasswordRecoveryBtn = document.getElementById('open-password-recovery');
     const closeButtons = document.querySelectorAll('.modal-close');
+    const signInForm = document.getElementById('sign-in-form');
+    const registerForm = document.getElementById('register-form');
+    const passwordRecoveryForm = document.getElementById('password-recovery-form');
 
     // Rekisteröitymismodaalin avaaminen
     openRegisterModalBtn.addEventListener('click', function(e) {
@@ -36,6 +42,59 @@ document.addEventListener('DOMContentLoaded', function() {
                 instance.close();
             }
         });
+    });
+
+    // Kirjaudu sisään
+    signInForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const data = await loginUser({ username, password });
+            localStorage.setItem('token', data.token);
+            window.location.href = '../own-page/ownPage.html';
+        } catch (error) {
+            M.toast({html: 'Virhe kirjautumisessa. Tarkista käyttäjätunnus ja salasana.'});
+        }
+    });
+
+    // Rekisteröidy
+    registerForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const username = document.getElementById('new-username').value;
+        const password = document.getElementById('new-password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+            M.toast({html: 'Salasanat eivät täsmää!'});
+            return;
+        }
+
+        try {
+            await registerUser({ email, username, password });
+            M.toast({html: 'Rekisteröityminen onnistui! Voit nyt kirjautua sisään.'});
+            var instance = M.Modal.getInstance(registerModal);
+            instance.close();
+        } catch (error) {
+            M.toast({html: 'Virhe rekisteröitymisessä. Tarkista tiedot ja yritä uudelleen.'});
+        }
+    });
+
+    // Palauta salasana
+    passwordRecoveryForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('recovery-email').value;
+
+        try {
+            await resetPassword(email);
+            M.toast({html: 'Salasanan palautuslinkki on lähetetty sähköpostiisi.'});
+            var instance = M.Modal.getInstance(passwordRecoveryModal);
+            instance.close();
+        } catch (error) {
+            M.toast({html: 'Virhe salasanan palautuksessa. Tarkista sähköpostiosoite.'});
+        }
     });
 
     // Maapallon liike hiiren mukaan

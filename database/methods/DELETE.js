@@ -5,21 +5,22 @@ const mongoose = require('mongoose');
 // Deletes a user
 const deleteUser = async (req, res) => {
   try {
-    const userId = req.params.id.trim();
+    const userId = req.userId;
 
     if (!mongoose.Types.ObjectId.isValid(userId)) {
-      return res.status(400).json({ error: 'Invalid user ID format' });
+      return res.status(400).json({ error: 'Virheellinen käyttäjän ID' });
     }
 
     const deletedUser = await User.findByIdAndDelete(userId);
 
     if (!deletedUser) {
-      return res.status(404).json({ message: 'User not found!' });
+      return res.status(404).json({ error: 'Käyttäjää ei löydy' });
     }
 
-    res.json({ message: 'User deleted successfully', user: deletedUser });
+    res.json({ message: 'Käyttäjä poistettu onnistuneesti', user: deletedUser });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Virhe käyttäjän poistossa:', err);
+    res.status(500).json({ error: 'Käyttäjän poisto epäonnistui' });
   }
 };
 
