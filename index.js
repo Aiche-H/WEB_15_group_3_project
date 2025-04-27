@@ -5,6 +5,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use('/api/users', require('./routes/users'));
+app.use('/api/auth', require('./routes/users'));
 
 const PORT = process.env.PORT || 4000;
 

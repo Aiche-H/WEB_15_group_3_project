@@ -1,7 +1,7 @@
-// routes/users.js
 const express = require('express');
 const router = express.Router();
 const auth = require('./routes_user_auth.js/auth.js');
+const cors = require('cors');
 
 // PUT operation
 const putUsers = require('../database/methods/PUT');
