@@ -28,7 +28,7 @@
     - [2025-01-08](#2025-01-08)
     - [2025-01-17](#2025-01-17)
     - [2025-04-05](#2025-04-05)
-    - [2025-04-04](#2025-04-28)
+    - [2025-04-28](#2025-04-28)
     - [Global.css](#globalcss)
 
 ## Version Info
@@ -380,11 +380,6 @@ Lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 
 ---
 
-### Global.css
-
-- Päivitetty fonttien ja otsikkojen tyylimäärityksiä.
-
-
 ### 2025-04-28
 
 **Tietokanta tiedostorakenne päivitys, omat sivut, salasana hashaus, brypt ja testaus Postmanilla:**
@@ -417,3 +412,9 @@ Lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 - Käyttäjäkokemus:
   - Lisätty onnistuneiden operaatioiden vahvistukset palvelimen terminaalissa ja selaimen dev-toolsissa
   - Pari virheilmoitusta
+
+---
+
+### Global.css
+
+- Päivitetty fonttien ja otsikkojen tyylimäärityksiä.
