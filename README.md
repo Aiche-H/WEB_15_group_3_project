@@ -27,7 +27,8 @@
     - [2024-12-18](#2024-12-18)
     - [2025-01-08](#2025-01-08)
     - [2025-01-17](#2025-01-17)
-    - [2025-05-05](#2025-05-05)
+    - [2025-04-05](#2025-04-05)
+    - [2025-04-04](#2025-04-28)
     - [Global.css](#globalcss)
 
 ## Version Info
@@ -399,20 +400,20 @@ Lisäykset tulee julkaista aina **feature/nimi**-branchiin.
   - Lisätty käyttäjän poisto
 
 - Salasanan hallinta:
- - Lisätty salasanan hashaus bcrypt-kirjastolla
- - Korjattu salasanan vertailu
- - Lisätty salasanan vaihto
+  - Lisätty salasanan hashaus bcrypt-kirjastolla
+  - Korjattu salasanan vertailu
+  - Lisätty salasanan vaihto
 
 - Käyttöliittymän päivitykset:
- - Lisätty profiilitietojen näyttäminen
- - Lisätty modaalit käyttäjän tietojen muokkaamiseen
- - Lisätty varmistusviestit toiminnoille
+  - Lisätty profiilitietojen näyttäminen
+  - Lisätty modaalit käyttäjän tietojen muokkaamiseen
+  - Lisätty varmistusviestit toiminnoille
 
 - Tietoturvapäivitykset:
- - Lisätty salasanojen hashaus
- - Lisätty token-pohjainen autentikointi
- - Lisätty tietojen validointi
+  - Lisätty salasanojen hashaus
+  - Lisätty token-pohjainen autentikointi
+  - Lisätty tietojen validointi
 
 - Käyttäjäkokemus:
- - Lisätty onnistuneiden operaatioiden vahvistukset palvelimen terminaalissa ja selaimen dev-toolsissa
- - Pari virheilmoitusta
+  - Lisätty onnistuneiden operaatioiden vahvistukset palvelimen terminaalissa ja selaimen dev-toolsissa
+  - Pari virheilmoitusta
