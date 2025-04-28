@@ -13,16 +13,46 @@ const getUsers = require('../database/methods/GET');
 const deleteUsers = require('../database/methods/DELETE');
 
 // Kirjaudu sisään
-router.post('/login', postUsers.loginUser);
+router.post('/login', async (req, res) => {
+    console.log('Kirjautumispyyntö saapunut:', req.body);
+    try {
+        console.log('Kutsutaan loginUser funktiota');
+        await postUsers.loginUser(req, res);
+        console.log('loginUser funktio suoritettu');
+    } catch (error) {
+        console.error('Kirjautumisvirhe:', error);
+        res.status(401).json({ error: error.message });
+    }
+});
 
 // Rekisteröidy
-router.post('/register', postUsers.registerUser);
+router.post('/register', async (req, res) => {
+    console.log('Rekisteröitymispyyntö saapunut:', req.body);
+    try {
+        const result = await postUsers.registerUser(req.body);
+        console.log('Rekisteröityminen onnistui:', result);
+        res.json(result);
+    } catch (error) {
+        console.error('Rekisteröitymisvirhe:', error);
+        res.status(400).json({ error: error.message });
+    }
+});
 
 // Palauta salasana
 router.post('/reset-password', postUsers.resetPassword);
 
 // Hae nykyisen käyttäjän tiedot
-router.get('/current', auth, getUsers.getCurrentUser);
+router.get('/current', auth, async (req, res) => {
+    console.log('Käyttäjätietojen haku pyyntö saapunut, userId:', req.userId);
+    try {
+        const result = await getUsers.getCurrentUser(req.userId);
+        console.log('Käyttäjätiedot haettu:', result);
+        res.json(result);
+    } catch (error) {
+        console.error('Käyttäjätietojen haun virhe:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // Päivitä käyttäjä
 router.put('/:id', auth, putUsers.updateUser);

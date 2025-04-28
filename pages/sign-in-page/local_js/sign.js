@@ -45,19 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Kirjaudu sisään
-    signInForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        try {
-            const data = await loginUser({ username, password });
-            localStorage.setItem('token', data.token);
-            window.location.href = '../own-page/ownPage.html';
-        } catch (error) {
-            M.toast({html: 'Virhe kirjautumisessa. Tarkista käyttäjätunnus ja salasana.'});
-        }
-    });
+    signInForm.addEventListener('submit', handleLogin);
 
     // Rekisteröidy
     registerForm.addEventListener('submit', async function(e) {
@@ -218,3 +206,62 @@ document.addEventListener('DOMContentLoaded', function() {
         targetScale = 1 - (scrollPercent * 0.2);
     });
 });
+
+// Kirjautumisen käsittely
+async function handleLogin(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    try {
+        console.log('Yritetään kirjautua sisään...');
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(data.error || 'Kirjautuminen epäonnistui');
+        }
+        
+        console.log('Kirjautuminen onnistui, token saatu');
+        
+        // Tallenna token
+        localStorage.setItem('token', data.token);
+        
+        // Hae käyttäjän tiedot
+        console.log('Haetaan käyttäjän tiedot...');
+        const userResponse = await fetch('/api/users/current', {
+            headers: {
+                'Authorization': `Bearer ${data.token}`
+            }
+        });
+        
+        if (!userResponse.ok) {
+            throw new Error('Käyttäjätietojen haku epäonnistui');
+        }
+        
+        const userData = await userResponse.json();
+        console.log('Käyttäjän tiedot haettu:', userData);
+        console.log('Käyttäjän rooli:', userData.role);
+        
+        // Ohjaa käyttäjän roolin mukaan
+        if (userData.role === 'admin') {
+            console.log('Käyttäjä on admin, ohjataan admin-sivulle (/pages/admin/admin.html)');
+            window.location.href = '/pages/admin/admin.html';
+        } else {
+            console.log('Käyttäjä on tavallinen käyttäjä, ohjataan ownPage-sivulle (/pages/own-page/ownPage.html)');
+            window.location.href = '/pages/own-page/ownPage.html';
+        }
+        
+    } catch (error) {
+        console.error('Virhe kirjautumisessa:', error);
+        M.toast({html: error.message, classes: 'red'});
+    }
+}

@@ -1,0 +1,266 @@
+/* Yleiset tyylit */
+body {
+    background-image: url('../../../resources/images/space-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Profiilikortti ja muut kortit */
+.card {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-content {
+    color: white !important;
+}
+
+.card-title {
+    color: white !important;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Profiilikuva */
+.profile-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Tilastokortit */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 48px;
+    color: #26a69a;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 10px 0;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+/* Käyttäjätaulukko */
+.user-management {
+    margin-top: 30px;
+}
+
+#userTable {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#userTable th {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white;
+    padding: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+#userTable td {
+    padding: 12px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Toimintopainikkeet */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-small {
+    padding: 0 10px;
+}
+
+.btn-edit {
+    background-color: #ffd600 !important;
+}
+
+.btn-delete {
+    background-color: #d32f2f !important;
+}
+
+/* Hakukenttä */
+.input-field .prefix {
+    color: white !important;
+}
+
+#searchUsers {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+    padding-left: 4rem;
+    color: white !important;
+}
+
+#searchUsers:focus {
+    border-bottom: 1px solid #26a69a !important;
+    box-shadow: 0 1px 0 0 #26a69a !important;
+}
+
+.input-field label {
+    color: white !important;
+}
+
+/* Lisätään yleinen sääntö kaikille input-kentille */
+.input-field input {
+    color: white !important;
+}
+
+/* Modaalit */
+.modal {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+.modal .modal-content {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white !important;
+    padding: 24px;
+}
+
+.modal h4 {
+    color: white !important;
+    margin-bottom: 20px;
+}
+
+.modal .input-field {
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px !important;
+}
+
+/* Select-kentät */
+.select-wrapper input.select-dropdown {
+    color: white !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #26a69a !important;
+    box-shadow: 0 1px 0 0 #26a69a !important;
+}
+
+.dropdown-content {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: white !important;
+}
+
+.dropdown-content li:hover, .dropdown-content li.active {
+    background-color: rgba(38, 166, 154, 0.2) !important;
+}
+
+/* Pikahallinta */
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quick-actions .btn-large {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    background-color: rgba(38, 166, 154, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quick-actions .btn-large:hover {
+    background-color: rgba(38, 166, 154, 0.3) !important;
+}
+
+.quick-actions .btn-large i {
+    margin-right: 10px;
+}
+
+/* Responsiiviset tyylit */
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    #userTable {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .quick-actions .btn-large {
+        font-size: 1rem;
+        height: auto;
+        line-height: 1.5;
+        padding: 10px 20px;
+    }
+}

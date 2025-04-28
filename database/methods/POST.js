@@ -60,31 +60,43 @@ const createUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   try {
+    console.log('loginUser funktio alkaa, req.body:', req.body);
     const { email, password } = req.body;
 
     // Etsi käyttäjä sähköpostilla
+    console.log('Etsitään käyttäjää sähköpostilla:', email);
     const user = await User.findOne({ email });
     if (!user) {
+      console.log('Käyttäjää ei löydy');
       return res.status(401).json({ error: 'Virheellinen sähköposti tai salasana' });
     }
+    console.log('Käyttäjä löydetty:', user.username);
 
     // Tarkista salasana
+    console.log('Tarkistetaan salasana');
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
+      console.log('Salasana ei täsmää');
       return res.status(401).json({ error: 'Virheellinen sähköposti tai salasana' });
     }
+    console.log('Salasana täsmää');
 
     // Luo JWT token
+    console.log('Luodaan JWT token');
     const token = jwt.sign(
       { userId: user._id },
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
+    console.log('Token luotu');
 
     // Päivitä viimeisin kirjautuminen
+    console.log('Päivitetään viimeisin kirjautuminen');
     user.last_login = new Date();
     await user.save();
+    console.log('Viimeisin kirjautuminen päivitetty');
 
+    console.log('Lähetetään vastaus');
     res.json({
       token,
       user: {
@@ -94,6 +106,7 @@ const loginUser = async (req, res) => {
         role: user.role
       }
     });
+    console.log('Vastaus lähetetty');
   } catch (err) {
     console.error('Kirjautumisvirhe:', err);
     res.status(500).json({ error: 'Kirjautuminen epäonnistui' });
