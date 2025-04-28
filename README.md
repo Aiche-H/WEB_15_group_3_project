@@ -220,7 +220,7 @@ Projekti käyttää seuraavaa tietokantapohjaista rakennetta backendissä:
 
 ---
 
-### **Ylläpitäjät ja kontribuutiot**
+### **Ylläpitäjät**
 
 - [![Kharmaa](https://img.shields.io/github/followers/Kharmaa.svg?style=social&label=Kharmaa)](https://github.com/Kharmaa)
 - [![jmetsaniemi1](https://img.shields.io/github/followers/jmetsaniemi1.svg?style=social&label=jmetsaniemi1)](https://github.com/jmetsaniemi1)
