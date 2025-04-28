@@ -411,7 +411,7 @@ Lisäykset tulee julkaista aina **feature/nimi**-branchiin.
 
 - Käyttäjäkokemus:
   - Lisätty onnistuneiden operaatioiden vahvistukset palvelimen terminaalissa ja selaimen dev-toolsissa
-  - Pari virheilmoitusta
+  - Pari virheilmoitusta lisätty
 
 ---
 
