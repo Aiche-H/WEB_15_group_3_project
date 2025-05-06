@@ -1,0 +1,93 @@
+.ranking-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.ranking-table th {
+  background-color: rgba(10, 88, 106, 0.9);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: left;
+}
+
+.ranking-table td {
+  text-align: left;
+  color: #ffffff;
+  background-color: rgba(10, 88, 106, 0.4);
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Player name */
+.ranking-table td:nth-child(2) {
+  font-size: 1.15em;
+}
+
+/* Top 1 player */
+.ranking-table tr:first-child td {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 230, 0);
+}
+/* Top 2 player */
+.ranking-table tr:nth-child(2) td {
+  font-size: 1.25em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: rgba(213, 213, 213, 0.797);
+  font-weight: bold;
+}
+
+/* Top 3 player */
+.ranking-table tr:nth-child(3) td {
+  font-size: 1.2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 136, 0);
+  font-weight: bold;
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.leaderboard-section h4 {
+  color: white;
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ranking-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ranking-table .rank {
+  font-weight: bold;
+  width: 50px;
+  text-align: center;
+}
+
+.ranking-table .points {
+  text-align: right;
+  width: 80px;
+  font-weight: bold;
+}
+
+.ranking-table tr:nth-child(even) td {
+  background-color: rgba(12, 195, 234, 0.6);
+}
+
+@media screen and (max-width: 992px) {
+  .leaderboard-section {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
