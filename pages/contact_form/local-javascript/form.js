@@ -6,11 +6,11 @@ const form = document.getElementById('myForm');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
-  if (cooldown) return; // if cooldown is true, do nothing
+  if (cooldown) return;
 
-  cooldown = true; // set cooldown to true
+  cooldown = true;
   setTimeout(() => {
-    cooldown = false; // reset cooldown after 10 seconds
+    cooldown = false;
   }, 10000);
 
   const name = document.getElementById('name').value;
@@ -30,16 +30,38 @@ form.addEventListener('submit', function(event) {
     return;
   }
 
-  emailjs.send(serviceID, templateID, templateParams)
-    .then((response) => {
-      if (response.status === 200) {
-        console.log('Email sent!');
-        console.log(response.status, response.text);
-        alert('Email sent successfully!');
-        window.location.href = 'https://example.com'; // redirect to main page (REMEMBER TO CHANGE THIS!)
-      } else {
-        console.log('Error sending email:', response.status, response.text);
-        alert('Error sending email: ' + response.status);
-      }
-    })
+  // Tallennetaan lomaketiedot omaan tietokantaan
+  fetch('/api/contactform', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(templateParams)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Tietojen tallennus epäonnistui palvelimelle');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Tieto tallennettu:', data);
+
+    emailjs.send(serviceID, templateID, templateParams)
+      .then((response) => {
+        if (response.status === 200) {
+          console.log('Email sent!');
+          console.log(response.status, response.text);
+          alert('Email sent successfully!');
+          window.location.href = 'https://example.com'; // redirect to main page (REMEMBER TO CHANGE THIS!)
+        } else {
+          console.log('Error sending email:', response.status, response.text);
+          alert('Error sending email: ' + response.status);
+        }
+      });
+  })
+  .catch(error => {
+    console.error('Virhe tallennuksessa tai sähköpostin lähetyksessä:', error);
+    alert('Tapahtui virhe. Yritä myöhemmin uudelleen.');
+  });
 });
