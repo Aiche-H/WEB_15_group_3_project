@@ -1,12 +1,24 @@
 // MODAALIT REGISTER JA PASSWORD RECOVERY
 
-// Importataan tietokantaoperaatiot
-const { loginUser, registerUser, resetPassword } = require('../../../database/methods/sign/POST');
-
 document.addEventListener('DOMContentLoaded', function() {
+    // API endpoints
+    const API_BASE_URL = '/api/auth';
+    const ENDPOINTS = {
+        LOGIN: `${API_BASE_URL}/login`,
+        REGISTER: `${API_BASE_URL}/register`,
+        RESET_PASSWORD: `${API_BASE_URL}/reset-password`
+    };
+
     // Alustetaan Materialize modaalit
     var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
+    var instances = M.Modal.init(elems, {
+        dismissible: true,
+        opacity: 0.5,
+        inDuration: 300,
+        outDuration: 200,
+        startingTop: '4%',
+        endingTop: '10%'
+    });
 
     // Haetaan tarvittavat elementit
     const registerModal = document.getElementById('sign-in-dialog');
@@ -45,7 +57,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Kirjaudu sisään
-    signInForm.addEventListener('submit', handleLogin);
+    signInForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            console.log('Yritetään kirjautua:', username);
+            console.log('Käytettävä endpoint:', ENDPOINTS.LOGIN);
+            console.log('Lähetettävä data:', { email: username, password });
+            const response = await fetch(ENDPOINTS.LOGIN, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    email: username,
+                    password 
+                })
+            });
+
+            console.log('Vastaus status:', response.status);
+            const data = await response.json();
+            console.log('Vastaus data:', data);
+            
+            if (!response.ok) {
+                throw new Error(data.error || 'Kirjautuminen epäonnistui');
+            }
+
+            console.log('Kirjautuminen onnistui:', data);
+            
+            // Tallenna token
+            localStorage.setItem('token', data.token);
+            
+            // Debug: tulosta tokenin payload
+            try {
+                const payload = JSON.parse(atob(data.token.split('.')[1]));
+                console.log('Token payload:', payload);
+                console.log('Kirjautuneen käyttäjän rooli:', payload.role);
+                if (payload.role === 'admin') {
+                    console.log('Käyttäjä on admin, ohjataan admin-sivulle');
+                    setTimeout(() => {
+                        window.location.href = '../admin-page/admin.html';
+                    }, 1000);
+                    return;
+                } else {
+                    console.log('Käyttäjä EI ole admin, ohjataan ownPage.html');
+                }
+            } catch (e) {
+                console.log('Tokenin purku epäonnistui:', e);
+            }
+            
+            // Näytä onnistumisviesti
+            M.toast({html: 'Kirjautuminen onnistui!', classes: 'green'});
+            
+            // Ohjaa käyttäjä omalle sivulle (vain jos ei admin)
+            setTimeout(() => {
+                window.location.href = '../own-page/ownPage.html';
+            }, 1000);
+        } catch (error) {
+            console.error('Kirjautumisvirhe:', error);
+            M.toast({html: error.message || 'Virhe kirjautumisessa. Tarkista sähköposti ja salasana.', classes: 'red'});
+        }
+    });
 
     // Rekisteröidy
     registerForm.addEventListener('submit', async function(e) {
@@ -56,17 +130,49 @@ document.addEventListener('DOMContentLoaded', function() {
         const confirmPassword = document.getElementById('confirm-password').value;
 
         if (password !== confirmPassword) {
-            M.toast({html: 'Salasanat eivät täsmää!'});
+            M.toast({html: 'Salasanat eivät täsmää!', classes: 'red'});
             return;
         }
 
         try {
-            await registerUser({ email, username, password });
-            M.toast({html: 'Rekisteröityminen onnistui! Voit nyt kirjautua sisään.'});
+            console.log('Yritetään rekisteröityä:', email);
+            const response = await fetch(ENDPOINTS.REGISTER, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    username,
+                    password
+                })
+            });
+
+            const data = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(data.error || 'Rekisteröityminen epäonnistui');
+            }
+
+            console.log('Rekisteröityminen onnistui:', data);
+            
+            // Tallenna token jos se tulee rekisteröitymisen yhteydessä
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+            }
+            
+            // Näytä onnistumisviesti
+            M.toast({html: 'Rekisteröityminen onnistui! Voit nyt kirjautua sisään.', classes: 'green'});
+            
+            // Sulje modaali
             var instance = M.Modal.getInstance(registerModal);
             instance.close();
+            
+            // Tyhjennä lomake
+            registerForm.reset();
         } catch (error) {
-            M.toast({html: 'Virhe rekisteröitymisessä. Tarkista tiedot ja yritä uudelleen.'});
+            console.error('Rekisteröitymisvirhe:', error);
+            M.toast({html: error.message || 'Virhe rekisteröitymisessä. Tarkista tiedot ja yritä uudelleen.', classes: 'red'});
         }
     });
 
@@ -76,12 +182,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('recovery-email').value;
 
         try {
-            await resetPassword(email);
-            M.toast({html: 'Salasanan palautuslinkki on lähetetty sähköpostiisi.'});
+            console.log('Yritetään palauttaa salasana:', email);
+            const response = await fetch(ENDPOINTS.RESET_PASSWORD, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Salasanan palautus epäonnistui');
+            }
+
+            M.toast({html: 'Salasanan palautuslinkki on lähetetty sähköpostiisi.', classes: 'green'});
             var instance = M.Modal.getInstance(passwordRecoveryModal);
             instance.close();
+            passwordRecoveryForm.reset();
         } catch (error) {
-            M.toast({html: 'Virhe salasanan palautuksessa. Tarkista sähköpostiosoite.'});
+            console.error('Salasanan palautusvirhe:', error);
+            M.toast({html: error.message || 'Virhe salasanan palautuksessa. Tarkista sähköpostiosoite.', classes: 'red'});
         }
     });
 
@@ -206,62 +327,3 @@ document.addEventListener('DOMContentLoaded', function() {
         targetScale = 1 - (scrollPercent * 0.2);
     });
 });
-
-// Kirjautumisen käsittely
-async function handleLogin(event) {
-    event.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    
-    try {
-        console.log('Yritetään kirjautua sisään...');
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
-        
-        const data = await response.json();
-        
-        if (!response.ok) {
-            throw new Error(data.error || 'Kirjautuminen epäonnistui');
-        }
-        
-        console.log('Kirjautuminen onnistui, token saatu');
-        
-        // Tallenna token
-        localStorage.setItem('token', data.token);
-        
-        // Hae käyttäjän tiedot
-        console.log('Haetaan käyttäjän tiedot...');
-        const userResponse = await fetch('/api/users/current', {
-            headers: {
-                'Authorization': `Bearer ${data.token}`
-            }
-        });
-        
-        if (!userResponse.ok) {
-            throw new Error('Käyttäjätietojen haku epäonnistui');
-        }
-        
-        const userData = await userResponse.json();
-        console.log('Käyttäjän tiedot haettu:', userData);
-        console.log('Käyttäjän rooli:', userData.role);
-        
-        // Ohjaa käyttäjän roolin mukaan
-        if (userData.role === 'admin') {
-            console.log('Käyttäjä on admin, ohjataan admin-sivulle (/pages/admin/admin.html)');
-            window.location.href = '/pages/admin/admin.html';
-        } else {
-            console.log('Käyttäjä on tavallinen käyttäjä, ohjataan ownPage-sivulle (/pages/own-page/ownPage.html)');
-            window.location.href = '/pages/own-page/ownPage.html';
-        }
-        
-    } catch (error) {
-        console.error('Virhe kirjautumisessa:', error);
-        M.toast({html: error.message, classes: 'red'});
-    }
-}

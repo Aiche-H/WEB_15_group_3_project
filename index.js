@@ -1,25 +1,62 @@
-const express = require('express');
-const connectDB = require('./db');
-const app = express();
+const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
+const app = express();
+let dbConnected = false;
+
+// CORS
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://school-team-project.vercel.app'
+    // Lisää preview-URLit tänne, jos haluat
+  ]
+}));
+
+// JSON-bodyt
 app.use(express.json());
-app.use('/api/users', require('./routes/users'));
-app.use('/api/auth', require('./routes/users'));
 
-const PORT = process.env.PORT || 4000;
+// Staattiset hakemistot
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/pages', express.static(path.join(__dirname, 'pages')));
+app.use('/resources', express.static(path.join(__dirname, 'resources')));
+app.use('/global', express.static(path.join(__dirname, 'global')));
 
-const startServer = async () => {
-  try {
-    await connectDB();
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  } catch (err) {
-    console.error('Failed to start server due to database connection error:', err);
-    process.exit(1);
+// Yhdistä MongoDB: vain kerran per cold start
+app.use(async (req, res, next) => {
+  if (!dbConnected) {
+    try {
+      await connectDB();
+      dbConnected = true;
+      console.log('[Vercel] MongoDB yhteys onnistui');
+    } catch (err) {
+      return next(err);
+    }
   }
-};
+  next();
+});
 
-startServer();
+// API-reitit
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+
+// Testireitti
+app.get('/test', (req, res) => {
+  res.send('Testi toimii!');
+});
+
+// Catch-all (regex, ei string)
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
+
+// Express-error handler
+app.use((err, req, res, next) => {
+  console.error('[Vercel] Virhe:', err.stack);
+  res.status(500).json({ message: err.message || 'Jotain meni pieleen!' });
+});
+
+// Exportataan app (EI app.listen)
+module.exports = app;
 

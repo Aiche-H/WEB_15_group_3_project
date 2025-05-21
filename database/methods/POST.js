@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 
 const createUser = async (req, res) => {
   try {
+    console.log('[Vercel] Creating new user:', { email: req.body.email, username: req.body.username });
     const {
       user_id,
       username,
@@ -44,12 +45,12 @@ const createUser = async (req, res) => {
 
     // Save the new user to the database
     const savedUser = await newUser.save();
-    console.log("Added user:", savedUser);
+    console.log('[Vercel] User created successfully:', { id: savedUser._id, email: savedUser.email });
 
     // Respond with a 201 Created status and the saved user data
     res.status(201).json(savedUser);
   } catch (err) {
-    console.error("Error adding user:", err);
+    console.error('[Vercel] Error creating user:', { error: err.message, stack: err.stack });
     // Respond with a 500 Internal Server Error status and the error message
     res.status(500).json({
       error: "Failed to create user",
@@ -60,43 +61,60 @@ const createUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   try {
-    console.log('loginUser funktio alkaa, req.body:', req.body);
+    console.log('[BACKEND] Login attempt with body:', req.body);
     const { email, password } = req.body;
 
-    // Etsi käyttäjä sähköpostilla
-    console.log('Etsitään käyttäjää sähköpostilla:', email);
+    if (!email || !password) {
+      console.log('[BACKEND] Missing email or password');
+      return res.status(400).json({ error: 'Sähköposti ja salasana vaaditaan' });
+    }
+
+    console.log('[BACKEND] Searching for user with email:', email);
     const user = await User.findOne({ email });
+    console.log('[BACKEND] User found:', user);
+    
     if (!user) {
-      console.log('Käyttäjää ei löydy');
+      console.log('[BACKEND] User not found with email:', email);
       return res.status(401).json({ error: 'Virheellinen sähköposti tai salasana' });
     }
-    console.log('Käyttäjä löydetty:', user.username);
 
-    // Tarkista salasana
-    console.log('Tarkistetaan salasana');
+    console.log('[BACKEND] Käyttäjän rooli:', user.role);
+
     const isMatch = await bcrypt.compare(password, user.password);
+    console.log('[BACKEND] Password match result:', isMatch);
+
     if (!isMatch) {
-      console.log('Salasana ei täsmää');
+      console.log('[BACKEND] Password does not match');
       return res.status(401).json({ error: 'Virheellinen sähköposti tai salasana' });
     }
-    console.log('Salasana täsmää');
 
-    // Luo JWT token
-    console.log('Luodaan JWT token');
+    if (!process.env.JWT_SECRET) {
+      console.error('[BACKEND] JWT_SECRET is not defined!');
+      return res.status(500).json({ error: 'Sisäinen palvelinvirhe' });
+    }
+
     const token = jwt.sign(
-      { userId: user._id },
+      { userId: user._id, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
-    console.log('Token luotu');
+    console.log('[BACKEND] Luotu token:', token);
+    const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+    console.log('[BACKEND] Token payload:', payload);
 
-    // Päivitä viimeisin kirjautuminen
-    console.log('Päivitetään viimeisin kirjautuminen');
     user.last_login = new Date();
     await user.save();
-    console.log('Viimeisin kirjautuminen päivitetty');
 
-    console.log('Lähetetään vastaus');
+    console.log('[BACKEND] Login successful, palautetaan token ja käyttäjä:', {
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role
+      }
+    });
+
     res.json({
       token,
       user: {
@@ -106,10 +124,13 @@ const loginUser = async (req, res) => {
         role: user.role
       }
     });
-    console.log('Vastaus lähetetty');
   } catch (err) {
-    console.error('Kirjautumisvirhe:', err);
-    res.status(500).json({ error: 'Kirjautuminen epäonnistui' });
+    console.error('[BACKEND] Login error:', { 
+      error: err.message, 
+      stack: err.stack,
+      body: req.body 
+    });
+    res.status(500).json({ error: 'Kirjautuminen epäonnistui: ' + err.message });
   }
 };
 

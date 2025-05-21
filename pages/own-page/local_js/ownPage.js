@@ -1,8 +1,3 @@
-// Importataan tietokantaoperaatiot
-const { fetchUserData } = require('../../database/methods/ownPage/GET');
-const { updateUserData } = require('../../database/methods/ownPage/PUT');
-const { deleteUser } = require('../../database/methods/ownPage/DELETE');
-
 document.addEventListener('DOMContentLoaded', function() {
     // Modaalin elementit
     const avatarModal = document.getElementById('avatar-selection-dialog');
@@ -32,312 +27,281 @@ document.addEventListener('DOMContentLoaded', function() {
     const changeEmailModalInstance = M.Modal.init(changeEmailModal);
     const deleteProfileModalInstance = M.Modal.init(deleteProfileModal);
 
+    // Alusta dropdown-valikot
+    const dropdowns = document.querySelectorAll('.dropdown-trigger');
+    if (dropdowns.length > 0) {
+        M.Dropdown.init(dropdowns, {
+            constrainWidth: false,
+            coverTrigger: false,
+            hover: true
+        });
+    }
+
+    // API endpoints
+    const API_BASE_URL = '/api';
+    const ENDPOINTS = {
+        CURRENT_USER: `${API_BASE_URL}/users/profile`,
+        UPDATE_USER: `${API_BASE_URL}/users/update`,
+        DELETE_USER: `${API_BASE_URL}/users/delete`,
+        LAST_VISITS: `${API_BASE_URL}/users/visits`
+    };
+
     // Päivitä käyttöliittymä käyttäjän tiedoilla
-    function updateUserInterface() {
-        if (!currentUser) return;
+    function updateUserInterface(userData) {
+        if (!userData) return;
+        
+        console.log('Päivitetään käyttöliittymä:', userData);
 
         // Päivitä profiilitiedot
-        document.getElementById('username-display').textContent = currentUser.username;
-        document.getElementById('email-display').textContent = currentUser.email;
-        document.getElementById('join-date').textContent = new Date(currentUser.registration_date).toLocaleDateString('fi-FI');
+        document.getElementById('username-display').textContent = userData.username || 'Ei saatavilla';
+        document.getElementById('email-display').textContent = userData.email || 'Ei saatavilla';
+        
+        // Muotoile päivämäärä suomalaiseen muotoon
+        const registrationDate = userData.registration_date ? 
+            new Date(userData.registration_date).toLocaleDateString('fi-FI', {
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric'
+            }) : 'Ei saatavilla';
+        
+        document.getElementById('join-date').textContent = registrationDate;
 
         // Päivitä profiilikuva
-        if (currentUser.avatar) {
-            currentAvatar.src = currentUser.avatar;
+        if (userData.avatar) {
+            currentAvatar.src = userData.avatar;
         }
 
-        // Päivitä modaalien kentät
-        document.getElementById('edit-username').value = currentUser.username;
-        document.getElementById('edit-email').value = currentUser.email;
+        // Päivitä viimeisimmät vierailut
+        updateLastVisits(userData.lastVisits || []);
     }
 
-    // Avaa avatar-modaali
-    changeAvatarBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        avatarModalInstance.open();
-    });
+    // Päivitä viimeisimmät vierailut
+    function updateLastVisits(visits) {
+        const recentVisitsContainer = document.querySelector('.recent-visits');
+        if (!visits || visits.length === 0) {
+            recentVisitsContainer.innerHTML = '<p class="center-align">Ei vielä vierailuja</p>';
+            return;
+        }
 
-    // Avaa profiilin asetukset -modaali
-    editProfileBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        editProfileModalInstance.open();
-    });
+        const visitsList = visits.map(visit => {
+            const date = new Date(visit.timestamp).toLocaleDateString('fi-FI', {
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            return `<div class="visit-item">
+                        <span class="visit-date">${date}</span>
+                        <span class="visit-page">${visit.page}</span>
+                    </div>`;
+        }).join('');
 
-    // Avaa salasanan vaihto -modaali
-    changePasswordBtn.addEventListener('click', function() {
-        editProfileModalInstance.close();
-        changePasswordModalInstance.open();
-    });
+        recentVisitsContainer.innerHTML = `
+            <div class="visits-list">
+                ${visitsList}
+            </div>
+        `;
+    }
 
-    // Avaa sähköpostin vaihto -modaali
-    changeEmailBtn.addEventListener('click', function() {
-        editProfileModalInstance.close();
-        changeEmailModalInstance.open();
-    });
+    // Tallenna vierailu
+    async function saveVisit() {
+        try {
+            const token = localStorage.getItem('token');
+            if (!token) return;
 
-    // Avaa profiilin poisto -modaali
-    deleteProfileBtn.addEventListener('click', function() {
-        editProfileModalInstance.close();
-        deleteProfileModalInstance.open();
-    });
+            const response = await fetch(ENDPOINTS.LAST_VISITS, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    page: 'Oma profiili',
+                    timestamp: new Date()
+                })
+            });
 
-    // Tallenna valittu avatar
-    saveAvatarBtn.addEventListener('click', async function() {
-        const selectedAvatar = document.querySelector('input[name="avatar"]:checked');
-        if (selectedAvatar) {
-            try {
-                await updateUserData(currentUser._id, localStorage.getItem('token'), {
-                    avatar: selectedAvatar.value
-                });
-
-                currentAvatar.src = selectedAvatar.value;
-                avatarModalInstance.close();
-                M.toast({html: 'Avatar päivitetty!'});
-            } catch (error) {
-                M.toast({html: 'Virhe avatarin päivityksessä'});
+            if (!response.ok) {
+                throw new Error('Vierailun tallennus epäonnistui');
             }
-        } else {
-            M.toast({html: 'Valitse ensin avatar!'});
-        }
-    });
-
-    // Valitse avatar klikkaamalla kuvaa
-    document.querySelectorAll('.avatar-option img').forEach(img => {
-        img.addEventListener('click', function() {
-            const radio = this.previousElementSibling;
-            radio.checked = true;
-        });
-    });
-
-    // Tallenna uusi salasana
-    document.getElementById('change-password-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const newPassword = document.getElementById('new-password').value;
-        const confirmPassword = document.getElementById('confirm-new-password').value;
-
-        if (newPassword !== confirmPassword) {
-            M.toast({html: 'Salasanat eivät täsmää!'});
-            return;
-        }
-
-        try {
-            await updateUserData(currentUser._id, localStorage.getItem('token'), {
-                password: newPassword
-            });
-
-            changePasswordModalInstance.close();
-            M.toast({html: 'Salasana vaihdettu!'});
         } catch (error) {
-            M.toast({html: 'Virhe salasanan päivityksessä'});
+            console.error('Virhe vierailun tallennuksessa:', error);
         }
-    });
+    }
 
-    // Tallenna uusi sähköposti
-    document.getElementById('change-email-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const newEmail = document.getElementById('new-email').value;
-        const confirmEmail = document.getElementById('confirm-new-email').value;
-
-        if (newEmail !== confirmEmail) {
-            M.toast({html: 'Sähköpostiosoitteet eivät täsmää!'});
-            return;
-        }
-
+    // Hae käyttäjän tiedot
+    async function fetchUserData() {
         try {
-            await updateUserData(currentUser._id, localStorage.getItem('token'), {
-                email: newEmail
-            });
-
-            currentUser.email = newEmail;
-            document.getElementById('email-display').textContent = newEmail;
-            changeEmailModalInstance.close();
-            M.toast({html: 'Sähköposti vaihdettu!'});
-        } catch (error) {
-            M.toast({html: 'Virhe sähköpostin päivityksessä'});
-        }
-    });
-
-    // Vahvista profiilin poisto
-    confirmDeleteBtn.addEventListener('click', async function() {
-        try {
-            await deleteUser(currentUser._id, localStorage.getItem('token'));
-
-            deleteProfileModalInstance.close();
-            M.toast({html: 'Profiili poistettu!'});
+            console.log('Haetaan käyttäjän tiedot...');
+            const token = localStorage.getItem('token');
             
-            // Poista token ja ohjaa kirjautumissivulle
-            localStorage.removeItem('token');
-            setTimeout(() => {
-                window.location.href = '../sign.html';
-            }, 2000);
-        } catch (error) {
-            M.toast({html: 'Virhe profiilin poistossa'});
-        }
-    });
+            if (!token) {
+                console.error('Token puuttuu');
+                window.location.href = '../../sign-in-page/sign.html';
+                return;
+            }
 
-    // Tarkista kirjautuminen ja hae käyttäjän tiedot
-    const token = localStorage.getItem('token');
-    if (!token) {
-        window.location.href = '../sign.html';
-    } else {
-        fetchUserData(token)
-            .then(user => {
-                currentUser = user;
-                updateUserInterface();
-            })
-            .catch(error => {
-                M.toast({html: 'Virhe käyttäjän tietojen haussa'});
+            console.log('Lähetetään pyyntö:', ENDPOINTS.CURRENT_USER);
+            const response = await fetch(ENDPOINTS.CURRENT_USER, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
             });
-    }
-});
 
-// Hae käyttäjän tiedot
-const fetchUserData = async () => {
-    try {
-        const response = await fetch('/api/users/current', {
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            console.log('Vastaus saatu:', {
+                status: response.status,
+                statusText: response.statusText,
+                headers: Object.fromEntries(response.headers.entries())
+            });
+
+            if (!response.ok) {
+                if (response.status === 401) {
+                    console.error('Käyttäjän autentikointi epäonnistui');
+                    localStorage.removeItem('token');
+                    window.location.href = '../../sign-in-page/sign.html';
+                    return;
+                }
+
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
             }
-        });
 
-        if (!response.ok) {
-            throw new Error('Käyttäjän tietojen haku epäonnistui');
-        }
-
-        const userData = await response.json();
-        updateProfileDisplay(userData);
-    } catch (error) {
-        console.error('Virhe käyttäjän tietojen haussa:', error);
-        M.toast({html: 'Virhe käyttäjän tietojen haussa', classes: 'red'});
-    }
-};
-
-// Päivitä profiilin näyttö
-const updateProfileDisplay = (userData) => {
-    document.getElementById('username-display').textContent = userData.username;
-    document.getElementById('email-display').textContent = userData.email;
-    document.getElementById('join-date').textContent = new Date(userData.registration_date).toLocaleDateString('fi-FI');
-    if (userData.avatar) {
-        document.getElementById('current-avatar').src = userData.avatar;
-    }
-};
-
-// Vaihda salasana
-const changePassword = async (newPassword) => {
-    try {
-        const response = await fetch('/api/users/current', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify({ password: newPassword })
-        });
-
-        if (!response.ok) {
-            throw new Error('Salasanan vaihto epäonnistui');
-        }
-
-        M.toast({html: 'Salasana vaihdettu onnistuneesti', classes: 'green'});
-    } catch (error) {
-        console.error('Virhe salasanan vaihdossa:', error);
-        M.toast({html: 'Virhe salasanan vaihdossa', classes: 'red'});
-    }
-};
-
-// Vaihda sähköposti
-const changeEmail = async (newEmail) => {
-    try {
-        const response = await fetch('/api/users/current', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify({ email: newEmail })
-        });
-
-        if (!response.ok) {
-            throw new Error('Sähköpostin vaihto epäonnistui');
-        }
-
-        M.toast({html: 'Sähköposti vaihdettu onnistuneesti', classes: 'green'});
-        fetchUserData(); // Päivitä näyttö
-    } catch (error) {
-        console.error('Virhe sähköpostin vaihdossa:', error);
-        M.toast({html: 'Virhe sähköpostin vaihdossa', classes: 'red'});
-    }
-};
-
-// Poista profiili
-const deleteProfile = async () => {
-    if (!confirm('Haluatko varmasti poistaa profiilisi? Tätä toimintoa ei voi perua.')) {
-        return;
-    }
-
-    try {
-        const response = await fetch('/api/users/current', {
-            method: 'DELETE',
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                console.error('Virheellinen content-type:', contentType);
+                throw new Error('Palvelimen vastaus ei ole JSON-muodossa');
             }
-        });
 
-        if (!response.ok) {
-            throw new Error('Profiilin poisto epäonnistui');
+            let userData;
+            const responseText = await response.text();
+            console.log('Palvelimen vastaus:', responseText);
+
+            try {
+                userData = JSON.parse(responseText);
+            } catch (parseError) {
+                console.error('JSON-parsinnan virhe:', parseError);
+                throw new Error('Palvelimen vastaus ei ole kelvollinen JSON-muoto');
+            }
+
+            if (!userData || typeof userData !== 'object') {
+                console.error('Virheellinen vastausmuoto:', userData);
+                throw new Error('Virheellinen vastausmuoto palvelimelta');
+            }
+
+            console.log('Käyttäjän tiedot haettu:', userData);
+            currentUser = userData;
+            updateUserInterface(userData);
+
+            // Tallenna vierailu
+            await saveVisit();
+
+            return userData;
+        } catch (error) {
+            console.error('Virhe käyttäjän tietojen haussa:', error);
+            M.toast({html: 'Virhe käyttäjän tietojen haussa: ' + error.message, classes: 'red'});
+            if (error.message.includes('401')) {
+                localStorage.removeItem('token');
+                window.location.href = '../../sign-in-page/sign.html';
+            }
         }
-
-        localStorage.removeItem('token');
-        window.location.href = '/index.html';
-    } catch (error) {
-        console.error('Virhe profiilin poistossa:', error);
-        M.toast({html: 'Virhe profiilin poistossa', classes: 'red'});
     }
-};
 
-// Tapahtumankäsittelijät
-document.addEventListener('DOMContentLoaded', () => {
-    // Hae käyttäjän tiedot sivun latautuessa
-    fetchUserData();
+    // Päivitä käyttäjän tiedot
+    async function updateUserData(updateData) {
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(ENDPOINTS.UPDATE_USER, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updateData)
+            });
 
-    // Profiilin muokkaus -modaali
-    const editProfileBtn = document.getElementById('edit-profile-btn');
-    const editProfileDialog = document.getElementById('edit-profile-dialog');
-    M.Modal.init(editProfileDialog);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-    editProfileBtn.addEventListener('click', () => {
-        const modal = M.Modal.getInstance(editProfileDialog);
-        modal.open();
-    });
-
-    // Salasanan vaihto
-    const changePasswordForm = document.getElementById('change-password-form');
-    changePasswordForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const newPassword = document.getElementById('new-password').value;
-        const confirmPassword = document.getElementById('confirm-new-password').value;
-
-        if (newPassword !== confirmPassword) {
-            M.toast({html: 'Salasanat eivät täsmää', classes: 'red'});
-            return;
+            const updatedUser = await response.json();
+            currentUser = updatedUser;
+            updateUserInterface(updatedUser);
+            return updatedUser;
+        } catch (error) {
+            console.error('Virhe päivityksessä:', error);
+            throw error;
         }
-
-        await changePassword(newPassword);
-        const modal = M.Modal.getInstance(document.getElementById('change-password-dialog'));
-        modal.close();
-        changePasswordForm.reset();
-    });
+    }
 
     // Sähköpostin vaihto
-    const changeEmailBtn = document.getElementById('change-email-btn');
-    changeEmailBtn.addEventListener('click', () => {
-        const newEmail = prompt('Syötä uusi sähköpostiosoite:');
-        if (newEmail) {
-            changeEmail(newEmail);
-        }
-    });
+    async function changeEmail(newEmail) {
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(ENDPOINTS.UPDATE_USER, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ email: newEmail })
+            });
 
-    // Profiilin poisto
-    const deleteProfileBtn = document.getElementById('delete-profile-btn');
-    deleteProfileBtn.addEventListener('click', deleteProfile);
-}); 
+            if (!response.ok) {
+                throw new Error('Sähköpostin vaihto epäonnistui');
+            }
+
+            M.toast({html: 'Sähköposti vaihdettu onnistuneesti', classes: 'green'});
+            fetchUserData(); // Päivitä näyttö
+        } catch (error) {
+            console.error('Virhe sähköpostin vaihdossa:', error);
+            M.toast({html: 'Virhe sähköpostin vaihdossa', classes: 'red'});
+        }
+    }
+
+    // Poista profiili
+    async function deleteProfile() {
+        if (!confirm('Haluatko varmasti poistaa profiilisi? Tätä toimintoa ei voi perua.')) {
+            return;
+        }
+
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(ENDPOINTS.DELETE_USER, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Profiilin poisto epäonnistui');
+            }
+
+            localStorage.removeItem('token');
+            window.location.href = '/public/index.html';
+        } catch (error) {
+            console.error('Virhe profiilin poistossa:', error);
+            M.toast({html: 'Virhe profiilin poistossa', classes: 'red'});
+        }
+    }
+
+    // Event listeners
+    changeAvatarBtn?.addEventListener('click', () => avatarModalInstance.open());
+    editProfileBtn?.addEventListener('click', () => editProfileModalInstance.open());
+    changePasswordBtn?.addEventListener('click', () => changePasswordModalInstance.open());
+    changeEmailBtn?.addEventListener('click', () => changeEmailModalInstance.open());
+    deleteProfileBtn?.addEventListener('click', () => deleteProfileModalInstance.open());
+    
+    // Alusta sivu
+    fetchUserData();
+});
