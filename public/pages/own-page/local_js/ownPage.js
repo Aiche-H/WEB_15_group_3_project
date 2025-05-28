@@ -1,3 +1,4 @@
+// Poistetaan require-komennot, koska ne eivät toimi selaimessa
 document.addEventListener('DOMContentLoaded', function() {
     // Modaalin elementit
     const avatarModal = document.getElementById('avatar-selection-dialog');
