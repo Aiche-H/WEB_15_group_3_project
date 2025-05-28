@@ -1,7 +1,11 @@
 const express = require('express');
+const connectDB = require('./db');
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/users');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
+
 
 const app = express();
 let dbConnected = false;
