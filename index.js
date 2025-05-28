@@ -14,7 +14,7 @@ let dbConnected = false;
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://school-team-project.vercel.app'
+    'https://webbi-gamma.vercel.app'
     // Lisää preview-URLit tänne, jos haluat
   ]
 }));
