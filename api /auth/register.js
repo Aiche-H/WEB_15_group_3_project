@@ -31,7 +31,9 @@ module.exports = async (req, res) => {
             email,
             username,
             password: hashedPassword,
-            // Voit lisätä muita kenttiä halutessasi, esim. first_name, last_name
+            first_name: '',
+            last_name: '',
+            // Voit lisätä muita kenttiä halutessasi, esim. avatar, role jne.
         });
 
         await newUser.save();
